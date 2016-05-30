@@ -19,9 +19,25 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Profissionais aqui perto</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>YanoneKaffeesatz-Regular.otf</string>
+		<string>YanoneKaffeesatz-Thin.otf</string>
+		<string>DancingScript-Regular.otf</string>
+		<string>DancingScriptOT.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

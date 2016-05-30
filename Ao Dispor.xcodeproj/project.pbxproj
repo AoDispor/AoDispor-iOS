@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0823231CEA292700CFC8B9 /* Professional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0823221CEA292700CFC8B9 /* Professional.swift */; };
 		0D4924531CE616B600F3B0D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4924521CE616B600F3B0D3 /* AppDelegate.swift */; };
 		0D4924551CE616B600F3B0D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4924541CE616B600F3B0D3 /* ViewController.swift */; };
 		0D4924581CE616B600F3B0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4924561CE616B600F3B0D3 /* Main.storyboard */; };
@@ -14,6 +15,15 @@
 		0D49245D1CE616B600F3B0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D49245B1CE616B600F3B0D3 /* LaunchScreen.storyboard */; };
 		0D4924681CE616B600F3B0D3 /* Ao_DisporTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4924671CE616B600F3B0D3 /* Ao_DisporTests.swift */; };
 		0D4924731CE616B600F3B0D3 /* Ao_DisporUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4924721CE616B600F3B0D3 /* Ao_DisporUITests.swift */; };
+		0D4924831CE618F100F3B0D3 /* ProfessionalKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4924821CE618F100F3B0D3 /* ProfessionalKolodaView.swift */; };
+		0D4924841CE619A700F3B0D3 /* DancingScript-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4924801CE617DB00F3B0D3 /* DancingScript-Regular.otf */; };
+		0D4924871CE62D4800F3B0D3 /* YanoneKaffeesatz-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4924861CE6228700F3B0D3 /* YanoneKaffeesatz-Thin.otf */; };
+		0D4924881CE62D4A00F3B0D3 /* YanoneKaffeesatz-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4924851CE6228700F3B0D3 /* YanoneKaffeesatz-Regular.otf */; };
+		0DF0B9981CEA1E0700B0DE0E /* ProfessionalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0B9971CEA1E0700B0DE0E /* ProfessionalCard.swift */; };
+		0DF0B99A1CEA1E8500B0DE0E /* ProfessionalCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DF0B9991CEA1E8500B0DE0E /* ProfessionalCard.xib */; };
+		71141404CA8AB9EB61694A0A /* Pods_Ao_DisporTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514334F00DAF0DAA6D6599EB /* Pods_Ao_DisporTests.framework */; };
+		95547C43E5B9167EC839B204 /* Pods_Ao_Dispor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECB4FA04BEB0998768BB9D3 /* Pods_Ao_Dispor.framework */; };
+		F2F4D139ECED58E2D2733BE9 /* Pods_Ao_DisporUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E62D2608EA1907C28033 /* Pods_Ao_DisporUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0823221CEA292700CFC8B9 /* Professional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professional.swift; sourceTree = "<group>"; };
 		0D49244F1CE616B600F3B0D3 /* Ao Dispor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ao Dispor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4924521CE616B600F3B0D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D4924541CE616B600F3B0D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,23 @@
 		0D49246E1CE616B600F3B0D3 /* Ao DisporUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ao DisporUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4924721CE616B600F3B0D3 /* Ao_DisporUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ao_DisporUITests.swift; sourceTree = "<group>"; };
 		0D4924741CE616B600F3B0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D4924801CE617DB00F3B0D3 /* DancingScript-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.otf"; sourceTree = "<group>"; };
+		0D4924821CE618F100F3B0D3 /* ProfessionalKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalKolodaView.swift; sourceTree = "<group>"; };
+		0D4924851CE6228700F3B0D3 /* YanoneKaffeesatz-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Regular.otf"; sourceTree = "<group>"; };
+		0D4924861CE6228700F3B0D3 /* YanoneKaffeesatz-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Thin.otf"; sourceTree = "<group>"; };
+		0D8A18CB1CEF5B2200FDC1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0D8A18CC1CEF5B5F00FDC1B9 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
+		0DF0B9971CEA1E0700B0DE0E /* ProfessionalCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalCard.swift; sourceTree = "<group>"; };
+		0DF0B9991CEA1E8500B0DE0E /* ProfessionalCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfessionalCard.xib; sourceTree = "<group>"; };
+		514334F00DAF0DAA6D6599EB /* Pods_Ao_DisporTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58779CD22F142658C10567FB /* Pods-Ao DisporTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests.debug.xcconfig"; sourceTree = "<group>"; };
+		714790A1F914255E00C9E64E /* Pods-Ao Dispor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao Dispor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor.release.xcconfig"; sourceTree = "<group>"; };
+		7D5A8FD58636B28D4B4E45C6 /* Pods-Ao Dispor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao Dispor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor.debug.xcconfig"; sourceTree = "<group>"; };
+		AD27B88418AAA41DCC096676 /* Pods-Ao DisporTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE66E62D2608EA1907C28033 /* Pods_Ao_DisporUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECB4FA04BEB0998768BB9D3 /* Pods_Ao_Dispor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_Dispor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80AFB1CF0F94A3F971095B2 /* Pods-Ao DisporUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E391725D2C3B3CE0C87C57CC /* Pods-Ao DisporUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95547C43E5B9167EC839B204 /* Pods_Ao_Dispor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71141404CA8AB9EB61694A0A /* Pods_Ao_DisporTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F4D139ECED58E2D2733BE9 /* Pods_Ao_DisporUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				0D4924511CE616B600F3B0D3 /* Ao Dispor */,
+				0D4924811CE617E000F3B0D3 /* Resources */,
 				0D4924661CE616B600F3B0D3 /* Ao DisporTests */,
 				0D4924711CE616B600F3B0D3 /* Ao DisporUITests */,
 				0D4924501CE616B600F3B0D3 /* Products */,
+				463DC96EE2C72512608360AC /* Pods */,
+				8CA176353A052902890D36A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +133,10 @@
 			children = (
 				0D4924521CE616B600F3B0D3 /* AppDelegate.swift */,
 				0D4924541CE616B600F3B0D3 /* ViewController.swift */,
+				0D0823221CEA292700CFC8B9 /* Professional.swift */,
+				0DF0B9971CEA1E0700B0DE0E /* ProfessionalCard.swift */,
+				0DF0B9991CEA1E8500B0DE0E /* ProfessionalCard.xib */,
+				0D4924821CE618F100F3B0D3 /* ProfessionalKolodaView.swift */,
 				0D4924561CE616B600F3B0D3 /* Main.storyboard */,
 				0D4924591CE616B600F3B0D3 /* Assets.xcassets */,
 				0D49245B1CE616B600F3B0D3 /* LaunchScreen.storyboard */,
@@ -125,6 +163,39 @@
 			path = "Ao DisporUITests";
 			sourceTree = "<group>";
 		};
+		0D4924811CE617E000F3B0D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D4924851CE6228700F3B0D3 /* YanoneKaffeesatz-Regular.otf */,
+				0D4924861CE6228700F3B0D3 /* YanoneKaffeesatz-Thin.otf */,
+				0D4924801CE617DB00F3B0D3 /* DancingScript-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		463DC96EE2C72512608360AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D5A8FD58636B28D4B4E45C6 /* Pods-Ao Dispor.debug.xcconfig */,
+				714790A1F914255E00C9E64E /* Pods-Ao Dispor.release.xcconfig */,
+				58779CD22F142658C10567FB /* Pods-Ao DisporTests.debug.xcconfig */,
+				AD27B88418AAA41DCC096676 /* Pods-Ao DisporTests.release.xcconfig */,
+				E391725D2C3B3CE0C87C57CC /* Pods-Ao DisporUITests.debug.xcconfig */,
+				D80AFB1CF0F94A3F971095B2 /* Pods-Ao DisporUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8CA176353A052902890D36A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AECB4FA04BEB0998768BB9D3 /* Pods_Ao_Dispor.framework */,
+				514334F00DAF0DAA6D6599EB /* Pods_Ao_DisporTests.framework */,
+				AE66E62D2608EA1907C28033 /* Pods_Ao_DisporUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D4924771CE616B600F3B0D3 /* Build configuration list for PBXNativeTarget "Ao Dispor" */;
 			buildPhases = (
+				7FB6C74F3073DB167F007A02 /* 📦 Check Pods Manifest.lock */,
 				0D49244B1CE616B600F3B0D3 /* Sources */,
 				0D49244C1CE616B600F3B0D3 /* Frameworks */,
 				0D49244D1CE616B600F3B0D3 /* Resources */,
+				5A97D43C6D728A2C0E809983 /* 📦 Embed Pods Frameworks */,
+				E6734E1DB83CDDF85B6E8BD5 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D49247A1CE616B600F3B0D3 /* Build configuration list for PBXNativeTarget "Ao DisporTests" */;
 			buildPhases = (
+				AB722880F55A3EE3858ED48C /* 📦 Check Pods Manifest.lock */,
 				0D49245F1CE616B600F3B0D3 /* Sources */,
 				0D4924601CE616B600F3B0D3 /* Frameworks */,
 				0D4924611CE616B600F3B0D3 /* Resources */,
+				37C527F3181D4EF7BC0229F2 /* 📦 Embed Pods Frameworks */,
+				E9A0ED41F5D6534E1D09E04C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D49247D1CE616B600F3B0D3 /* Build configuration list for PBXNativeTarget "Ao DisporUITests" */;
 			buildPhases = (
+				577953E1B62D58CD60EFE33A /* 📦 Check Pods Manifest.lock */,
 				0D49246A1CE616B600F3B0D3 /* Sources */,
 				0D49246B1CE616B600F3B0D3 /* Frameworks */,
 				0D49246C1CE616B600F3B0D3 /* Resources */,
+				F41F948E5FB2B2BBF81A9D7B /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +311,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4924841CE619A700F3B0D3 /* DancingScript-Regular.otf in Resources */,
+				0D4924881CE62D4A00F3B0D3 /* YanoneKaffeesatz-Regular.otf in Resources */,
+				0D4924871CE62D4800F3B0D3 /* YanoneKaffeesatz-Thin.otf in Resources */,
 				0D49245D1CE616B600F3B0D3 /* LaunchScreen.storyboard in Resources */,
 				0D49245A1CE616B600F3B0D3 /* Assets.xcassets in Resources */,
 				0D4924581CE616B600F3B0D3 /* Main.storyboard in Resources */,
+				0DF0B99A1CEA1E8500B0DE0E /* ProfessionalCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +337,138 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37C527F3181D4EF7BC0229F2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		577953E1B62D58CD60EFE33A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A97D43C6D728A2C0E809983 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FB6C74F3073DB167F007A02 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB722880F55A3EE3858ED48C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E6734E1DB83CDDF85B6E8BD5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A0ED41F5D6534E1D09E04C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41F948E5FB2B2BBF81A9D7B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D49244B1CE616B600F3B0D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF0B9981CEA1E0700B0DE0E /* ProfessionalCard.swift in Sources */,
+				0D4924831CE618F100F3B0D3 /* ProfessionalKolodaView.swift in Sources */,
 				0D4924551CE616B600F3B0D3 /* ViewController.swift in Sources */,
+				0D0823231CEA292700CFC8B9 /* Professional.swift in Sources */,
 				0D4924531CE616B600F3B0D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +509,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D4924571CE616B600F3B0D3 /* Base */,
+				0D8A18CB1CEF5B2200FDC1B9 /* en */,
+				0D8A18CC1CEF5B5F00FDC1B9 /* pt-PT */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -357,6 +568,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -395,13 +607,16 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
 		0D4924781CE616B600F3B0D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D5A8FD58636B28D4B4E45C6 /* Pods-Ao Dispor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
@@ -411,8 +626,10 @@
 		};
 		0D4924791CE616B600F3B0D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 714790A1F914255E00C9E64E /* Pods-Ao Dispor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
@@ -422,6 +639,7 @@
 		};
 		0D49247B1CE616B600F3B0D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58779CD22F142658C10567FB /* Pods-Ao DisporTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Ao DisporTests/Info.plist";
@@ -434,6 +652,7 @@
 		};
 		0D49247C1CE616B600F3B0D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD27B88418AAA41DCC096676 /* Pods-Ao DisporTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Ao DisporTests/Info.plist";
@@ -446,6 +665,7 @@
 		};
 		0D49247E1CE616B600F3B0D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E391725D2C3B3CE0C87C57CC /* Pods-Ao DisporUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Ao DisporUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -457,6 +677,7 @@
 		};
 		0D49247F1CE616B600F3B0D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80AFB1CF0F94A3F971095B2 /* Pods-Ao DisporUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Ao DisporUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -485,6 +706,7 @@
 				0D4924791CE616B600F3B0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D49247A1CE616B600F3B0D3 /* Build configuration list for PBXNativeTarget "Ao DisporTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +715,7 @@
 				0D49247C1CE616B600F3B0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D49247D1CE616B600F3B0D3 /* Build configuration list for PBXNativeTarget "Ao DisporUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +724,7 @@
 				0D49247F1CE616B600F3B0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
