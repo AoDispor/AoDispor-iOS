@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (3.4.0)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - Arrow (2.0.0)
+  - FontAwesome.swift (0.7.3)
+  - Koloda (3.1.1):
+    - pop (~> 1.0)
+  - PermissionScope (1.0.2)
+  - pop (1.0.9)
+  - thenPromise (1.3.0)
+  - ws (1.0.0):
+    - Alamofire (~> 3.3)
+    - Arrow (~> 2.0)
+    - thenPromise (~> 1.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - Arrow
+  - FontAwesome.swift
+  - Koloda
+  - PermissionScope
+  - thenPromise
+  - ws (from `https://github.com/DjinnGA/ws.git`)
+
+EXTERNAL SOURCES:
+  ws:
+    :git: https://github.com/DjinnGA/ws.git
+
+CHECKOUT OPTIONS:
+  ws:
+    :commit: c8b1d44ba244619a757310b3d2b9e40389e82a94
+    :git: https://github.com/DjinnGA/ws.git
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  Arrow: 806707ba453f402b0f2affe55e4b15c882d5fa45
+  FontAwesome.swift: f694fe0f667d6d3390b5919cdb0556a27b75d427
+  Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
+  PermissionScope: 860828c5516d349b6f49e5491799cfef33c5ccc7
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  thenPromise: a272022349ddbc5cb55c77a1412001dbfffb02f4
+  ws: faecc29f80da5e9ae788a91ccdba5d3a07231fb6
+
+PODFILE CHECKSUM: f417e2371ac8142c7fe9adb6d9f1cd74a2a965c3
+
+COCOAPODS: 1.0.1
