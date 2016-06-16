@@ -48,7 +48,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znE-fB-rRJ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="De quem precisa?" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVi-BP-L3r">
+                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="De quem precisa?" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVi-BP-L3r" userLabel="Barra de Pesquisa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <color key="barTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -65,7 +65,7 @@
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghO-AR-Pbm">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Contactar"/>
+                                                <state key="normal" title="cenas"/>
                                                 <connections>
                                                     <action selector="contactProfessional:" destination="KBv-lS-DqA" eventType="touchUpInside" id="C8E-jF-d2B"/>
                                                 </connections>
@@ -292,6 +292,7 @@
                         <outlet property="profileDescription" destination="kgN-nh-gnc" id="4do-Ld-GHo"/>
                         <outlet property="rate" destination="rcL-RJ-MB6" id="wRU-hS-wqZ"/>
                         <outlet property="titleLabel" destination="CtM-7P-hqW" id="iZk-pY-e5k"/>
+                        <outlet property="unfavoriteButton" destination="Iqp-F4-M8I" id="KpZ-Rf-sT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7N-gA-QAx" userLabel="First Responder" sceneMemberID="firstResponder"/>

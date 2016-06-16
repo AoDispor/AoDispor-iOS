@@ -11,6 +11,8 @@
 		0D45FD3C1D12BE9E00E34FD8 /* profileDescription.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD381D12BE9E00E34FD8 /* profileDescription.html */; };
 		0D45FD3D1D12BE9E00E34FD8 /* YanoneKaffeesatz-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD391D12BE9E00E34FD8 /* YanoneKaffeesatz-Regular.otf */; };
 		0D45FD3E1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD3A1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf */; };
+		0D45FD451D12C5EC00E34FD8 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD431D12C5EC00E34FD8 /* en.lproj */; };
+		0D45FD461D12C5EC00E34FD8 /* pt-PT.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD441D12C5EC00E34FD8 /* pt-PT.lproj */; };
 		0D6AE3961CFF81FC00C7A793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3951CFF81FC00C7A793 /* AppDelegate.swift */; };
 		0D6AE3981CFF81FC00C7A793 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */; };
 		0D6AE39D1CFF81FC00C7A793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6AE39B1CFF81FC00C7A793 /* Main.storyboard */; };
@@ -58,13 +60,15 @@
 		0D45FD381D12BE9E00E34FD8 /* profileDescription.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = profileDescription.html; path = "Ao Dispor/Resources/profileDescription.html"; sourceTree = "<group>"; };
 		0D45FD391D12BE9E00E34FD8 /* YanoneKaffeesatz-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.otf"; path = "Ao Dispor/Resources/YanoneKaffeesatz-Regular.otf"; sourceTree = "<group>"; };
 		0D45FD3A1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Thin.otf"; path = "Ao Dispor/Resources/YanoneKaffeesatz-Thin.otf"; sourceTree = "<group>"; };
+		0D45FD431D12C5EC00E34FD8 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = "Ao Dispor/en.lproj"; sourceTree = "<group>"; };
+		0D45FD441D12C5EC00E34FD8 /* pt-PT.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pt-PT.lproj"; path = "Ao Dispor/pt-PT.lproj"; sourceTree = "<group>"; };
 		0D6AE3921CFF81FC00C7A793 /* Ao Dispor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ao Dispor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6AE3951CFF81FC00C7A793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		0D6AE39C1CFF81FC00C7A793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0D6AE39E1CFF81FC00C7A793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D6AE39E1CFF81FC00C7A793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Ao Dispor/Assets.xcassets"; sourceTree = "<group>"; };
 		0D6AE3A11CFF81FC00C7A793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0D6AE3A31CFF81FC00C7A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D6AE3A31CFF81FC00C7A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Ao Dispor/Info.plist"; sourceTree = "<group>"; };
 		0D6AE3A81CFF81FC00C7A793 /* Ao DisporTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ao DisporTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6AE3AC1CFF81FC00C7A793 /* Ao_DisporTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ao_DisporTests.swift; sourceTree = "<group>"; };
 		0D6AE3AE1CFF81FC00C7A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,9 +80,6 @@
 		0D6AE3DB1CFF845A00C7A793 /* ProfessionalKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalKolodaView.swift; sourceTree = "<group>"; };
 		0D6AE3DD1CFF84A600C7A793 /* ProfessionalCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalCard.swift; sourceTree = "<group>"; };
 		0D6AE3DE1CFF84A600C7A793 /* ProfessionalCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfessionalCard.xib; sourceTree = "<group>"; };
-		0D6AE3E21CFF867E00C7A793 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		0D6AE3E31CFF86B400C7A793 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
-		0D6AE3E41CFF86B400C7A793 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0D761A701D0F093E005AF870 /* FavoriteViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
 		0D761A731D0F5AD5005AF870 /* FavoriteModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModalViewController.swift; sourceTree = "<group>"; };
 		0D79C4C71D106738000C5851 /* LastCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastCard.swift; sourceTree = "<group>"; };
@@ -160,9 +161,7 @@
 				0DBB84351D11EC5E005F90D0 /* FavoritePresentationViewController.swift */,
 				0D761A721D0F0C52005AF870 /* Views */,
 				0D6AE39B1CFF81FC00C7A793 /* Main.storyboard */,
-				0D6AE39E1CFF81FC00C7A793 /* Assets.xcassets */,
 				0D6AE3A01CFF81FC00C7A793 /* LaunchScreen.storyboard */,
-				0D6AE3A31CFF81FC00C7A793 /* Info.plist */,
 				0DBB19BF1D007ECC002F25A3 /* CardExplorerViewController.swift */,
 				0D6AE3D71CFF844700C7A793 /* Resources+Extensions.swift */,
 			);
@@ -190,6 +189,10 @@
 		0D6AE3D21CFF840E00C7A793 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D6AE39E1CFF81FC00C7A793 /* Assets.xcassets */,
+				0D6AE3A31CFF81FC00C7A793 /* Info.plist */,
+				0D45FD431D12C5EC00E34FD8 /* en.lproj */,
+				0D45FD441D12C5EC00E34FD8 /* pt-PT.lproj */,
 				0D45FD381D12BE9E00E34FD8 /* profileDescription.html */,
 				0D45FD371D12BE9E00E34FD8 /* DancingScript-Regular.otf */,
 				0D45FD391D12BE9E00E34FD8 /* YanoneKaffeesatz-Regular.otf */,
@@ -363,7 +366,9 @@
 				0D6AE39D1CFF81FC00C7A793 /* Main.storyboard in Resources */,
 				0D45FD3D1D12BE9E00E34FD8 /* YanoneKaffeesatz-Regular.otf in Resources */,
 				0D45FD3B1D12BE9E00E34FD8 /* DancingScript-Regular.otf in Resources */,
+				0D45FD461D12C5EC00E34FD8 /* pt-PT.lproj in Resources */,
 				0D6AE3E01CFF84A600C7A793 /* ProfessionalCard.xib in Resources */,
+				0D45FD451D12C5EC00E34FD8 /* en.lproj in Resources */,
 				0D45FD3C1D12BE9E00E34FD8 /* profileDescription.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,8 +569,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D6AE39C1CFF81FC00C7A793 /* Base */,
-				0D6AE3E21CFF867E00C7A793 /* en */,
-				0D6AE3E31CFF86B400C7A793 /* pt-PT */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -574,7 +577,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D6AE3A11CFF81FC00C7A793 /* Base */,
-				0D6AE3E41CFF86B400C7A793 /* pt-PT */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -673,6 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -689,6 +692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

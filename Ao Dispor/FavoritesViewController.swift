@@ -22,7 +22,7 @@ class FavoritesViewController:UICollectionViewController {
         self.collectionView!.backgroundColor = UIColor.clearColor()
         self.view.setImageViewAsBackground("Background")
 
-        self.navigationItem.title = "Favoritos"
+        self.navigationItem.title = NSLocalizedString("Favoritos", comment:"")
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -58,13 +58,13 @@ class FavoritesViewController:UICollectionViewController {
 extension FavoritesViewController:DZNEmptyDataSetSource {
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         let attributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
-        return  NSAttributedString(string: "Ainda não marcou nenhum profissional como favorito.", attributes: attributes)
+        return  NSAttributedString(string: NSLocalizedString("Ainda não marcou nenhum profissional como favorito.", comment:""), attributes: attributes)
     }
 
     func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
         let attributes = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                           NSBackgroundColorAttributeName: UIColor.perHourBlue()]
-        return NSAttributedString(string: "Comece a adicionar favoritos", attributes: attributes)
+        return NSAttributedString(string: NSLocalizedString("Comece a adicionar favoritos", comment:""), attributes: attributes)
     }
 }
 

@@ -20,6 +20,7 @@ class FavoriteModalViewController: UIViewController {
     @IBOutlet weak var profileDescription : UIWebView!
 
     @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var unfavoriteButton: UIButton!
 
     override func loadView() {
         super.loadView()
@@ -32,6 +33,10 @@ class FavoriteModalViewController: UIViewController {
         /*let view = self.view as? ProfessionalCard
         view?.fillWithData(professional)
         view?.shouldShowFullDescription = false*/
+
+        self.contactButton.setTitle(NSLocalizedString("Contactar", comment: ""), forState: .Normal)
+        self.unfavoriteButton.setTitle(NSLocalizedString("Desfavoritar", comment: ""), forState: .Normal)
+
         self.avatar.af_setImageWithURL(NSURL(string: professional.avatarURL)!)
         self.name?.text = professional.name
         self.titleLabel.attributedText = self.getMutableStringWithHighlightedText(professional.title)
@@ -71,12 +76,13 @@ class FavoriteModalViewController: UIViewController {
         let string_id = professional.string_id
 
         API.sharedInstance.telephoneFor(string_id).then { privateInfo in
-            let alertController = UIAlertController(title: "Contactar este profissional", message: "Entre imediatamante en contacto com este profissional através do número:\n\(privateInfo.phone)", preferredStyle: .Alert)
+            let string = NSLocalizedString("Entre imediatamante em contacto com este profissional através do número:", comment: "")
+            let alertController = UIAlertController(title: NSLocalizedString("Contactar este profissional", comment:""), message: "\(string)\n\(privateInfo.phone)", preferredStyle: .Alert)
 
-            let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment:""), style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
 
-            let OKAction = UIAlertAction(title: "Telefonar", style: .Default) { (action) in
+            let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .Default) { (action) in
                 let phone = "tel://\(privateInfo.phone)"
                 let open = NSURL(string: phone)!
 
@@ -84,7 +90,7 @@ class FavoriteModalViewController: UIViewController {
             }
             alertController.addAction(OKAction)
 
-            let SMSAction = UIAlertAction(title: "Enviar SMS", style: .Default) { (action) in
+            let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .Default) { (action) in
                 let messageVC = MFMessageComposeViewController()
                 messageVC.body = "";
                 messageVC.recipients = [privateInfo.phone]

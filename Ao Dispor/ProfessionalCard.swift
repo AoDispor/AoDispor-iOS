@@ -61,7 +61,6 @@ extension ProfessionalCard:UIWebViewDelegate {
         webView.frame.size = webView.sizeThatFits(CGSizeZero)
 
         if(!shouldShowFullDescription) {
-            print("cenas")
             return
         }
 

@@ -39,11 +39,12 @@ class MasterViewController: CardExplorerViewController {
         super.viewDidLoad()
 
         self.searchBar.delegate = self
+        self.searchBar.placeholder = NSLocalizedString("De quem precisa?", comment: "")
 
         pscope.addPermission(LocationWhileInUsePermission(),
-                             message: "Para lhe mostrarmos profissionais perto de si.")
-        pscope.headerLabel.text = "Atenção!"
-        pscope.bodyLabel.text = "Precisamos de aceder à sua localização."
+                             message: NSLocalizedString("Para lhe mostrarmos profissionais perto de si.", comment:""))
+        pscope.headerLabel.text = NSLocalizedString("Atenção!", comment:"")
+        pscope.bodyLabel.text = NSLocalizedString("Precisamos de aceder à sua localização.", comment:"")
         pscope.show({ finished, results in
                 self.startupdatingLocationManager()
             }, cancelled: { (results) -> Void in
@@ -71,10 +72,15 @@ class MasterViewController: CardExplorerViewController {
 
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)] as Dictionary!
 
-        let rightButton = UIBarButtonItem(title: "Favoritos", style: .Done, target: self, action: #selector(MasterViewController.showFavorites))
+        let rightButton = UIBarButtonItem(title: NSLocalizedString("Favoritos", comment:""), style: .Done, target: self, action: #selector(MasterViewController.showFavorites))
         rightButton.setTitleTextAttributes(attributes, forState: .Normal)
         rightButton.title = String.fontAwesomeIconWithName(.StarO)
         self.navigationItem.rightBarButtonItem = rightButton
+
+
+        contactButton.setTitle(NSLocalizedString("Contactar", comment: ""), forState: .Normal)
+        favoriteButton.setTitle(NSLocalizedString("Guardar", comment: ""), forState: .Normal)
+        nextButton.setTitle(NSLocalizedString("Seguinte", comment: ""), forState: .Normal)
 
         favoriteButton.setTitleColor(UIColor.lightGrayColor(), forState: .Disabled)
         favoriteButton.setTitle(String.fontAwesomeIconWithName(.StarO), forState: .Disabled)
@@ -155,7 +161,7 @@ class MasterViewController: CardExplorerViewController {
         if segue.identifier == "showFavorites" {
             let controller = segue.destinationViewController as! FavoritesViewController
             controller.favorites = self.favorites
-            controller.navigationItem.title = "Favoritos"
+            controller.navigationItem.title = NSLocalizedString("Favoritos", comment:"")
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
     }
@@ -173,6 +179,9 @@ class MasterViewController: CardExplorerViewController {
 
             return lastCard!
         }
+
+        self.contactButton.enabled = true
+        self.favoriteButton.enabled = true
 
         //if almost done, load the next page
         if(index >= UInt(self.loadMoreCutoff)) {
@@ -215,12 +224,13 @@ extension MasterViewController {
         let string_id = professional.string_id
 
         API.sharedInstance.telephoneFor(string_id).then { privateInfo in
-            let alertController = UIAlertController(title: "Contactar este profissional", message: "Entre imediatamante en contacto com este profissional através do número:\n\(privateInfo.phone)", preferredStyle: .Alert)
+            let string = NSLocalizedString("Entre imediatamante em contacto com este profissional através do número:", comment: "")
+            let alertController = UIAlertController(title: NSLocalizedString("Contactar este profissional", comment:""), message: "\(string)\n\(privateInfo.phone)", preferredStyle: .Alert)
 
-            let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment:""), style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
 
-            let OKAction = UIAlertAction(title: "Telefonar", style: .Default) { (action) in
+            let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .Default) { (action) in
                 let phone = "tel://\(privateInfo.phone)"
                 let open = NSURL(string: phone)!
 
@@ -228,7 +238,7 @@ extension MasterViewController {
             }
             alertController.addAction(OKAction)
 
-            let SMSAction = UIAlertAction(title: "Enviar SMS", style: .Default) { (action) in
+            let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .Default) { (action) in
                 let messageVC = MFMessageComposeViewController()
                 messageVC.body = "";
                 messageVC.recipients = [privateInfo.phone]
