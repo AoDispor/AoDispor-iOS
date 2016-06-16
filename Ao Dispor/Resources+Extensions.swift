@@ -42,3 +42,18 @@ class MarginLabel:UILabel {
         super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }
 }
+
+extension UIView {
+    func setImageViewAsBackground(named: String) {
+        // veio daqui http://stackoverflow.com/a/32997867
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = UIScreen.mainScreen().bounds.size.height
+
+        let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
+        imageViewBackground.image = UIImage(named: named)
+        imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
+
+        self.addSubview(imageViewBackground)
+        self.sendSubviewToBack(imageViewBackground)
+    }
+}

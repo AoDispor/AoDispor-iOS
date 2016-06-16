@@ -1,0 +1,6 @@
+framework module thenPromise {
+  umbrella header "thenPromise-umbrella.h"
+
+  export *
+  module * { export * }
+}

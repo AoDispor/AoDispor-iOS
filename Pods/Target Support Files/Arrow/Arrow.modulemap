@@ -1,0 +1,6 @@
+framework module Arrow {
+  umbrella header "Arrow-umbrella.h"
+
+  export *
+  module * { export * }
+}

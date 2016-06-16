@@ -16,29 +16,27 @@ import FontAwesome_swift
 import PermissionScope
 import CoreSpotlight
 import MobileCoreServices
+import MessageUI
 
 private let endPercentage = 0.8
 
 class MasterViewController: CardExplorerViewController {
     @IBOutlet weak var searchBar: UISearchBar!
 
+    @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+
     var favorites = Array<Professional>()
+
     var loadMoreCutoff:Int = 0
     var waiting = false
 
     let locationManager = CLLocationManager()
     let pscope = PermissionScope()
-    private var allowedDirections = [SwipeResultDirection.Left, SwipeResultDirection.Right]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)] as Dictionary!
-
-        let rightButton = UIBarButtonItem(title: "Favoritos", style: .Done, target: self, action: #selector(MasterViewController.showFavorites))
-        rightButton.setTitleTextAttributes(attributes, forState: .Normal)
-        rightButton.title = String.fontAwesomeIconWithName(.StarO)
-        self.navigationItem.rightBarButtonItem = rightButton
 
         self.searchBar.delegate = self
 
@@ -55,8 +53,8 @@ class MasterViewController: CardExplorerViewController {
         self.startupdatingLocationManager()
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         let titleView = UILabel()
         titleView.text = "Ao Dispor"
@@ -71,13 +69,17 @@ class MasterViewController: CardExplorerViewController {
         titleView.userInteractionEnabled = true
         titleView.addGestureRecognizer(recognizer)
 
-        /*self.navigationController?.navigationBar.topItem?.title = "Ao Dispor"
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "DancingScriptOT", size: 36)!, NSForegroundColorAttributeName: UIColor.titleBlue() ]*/
+        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)] as Dictionary!
 
-        // isto veio daqui e é feio http://stackoverflow.com/a/10491149
-        /*let singleTap = UITapGestureRecognizer(target: self, action: #selector(MasterViewController.resetSearch))
-        self.navigationController?.navigationBar.subviews[1].userInteractionEnabled = true
-        self.navigationController?.navigationBar.subviews[1].addGestureRecognizer(singleTap)*/
+        let rightButton = UIBarButtonItem(title: "Favoritos", style: .Done, target: self, action: #selector(MasterViewController.showFavorites))
+        rightButton.setTitleTextAttributes(attributes, forState: .Normal)
+        rightButton.title = String.fontAwesomeIconWithName(.StarO)
+        self.navigationItem.rightBarButtonItem = rightButton
+
+        favoriteButton.setTitleColor(UIColor.lightGrayColor(), forState: .Disabled)
+        favoriteButton.setTitle(String.fontAwesomeIconWithName(.StarO), forState: .Disabled)
+
+        self.updateFavoritesButtonStar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,33 +96,13 @@ class MasterViewController: CardExplorerViewController {
         }
     }
 
-    /*func showDialogScreen() {
-        let alertController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: .Alert)
-
-        let margin:CGFloat = 8.0
-        let rect = CGRectMake(margin, margin, alertController.view.bounds.size.width - margin * 4.0, 100.0)
-        let textView = UITextView(frame: rect)
-
-        textView.backgroundColor = UIColor.clearColor()
-        textView.font = UIFont(name: "Helvetica", size: 15)
-        textView.text = "Escreva aqui a sua mensagem para este profissional."
-        textView.textColor = UIColor.lightGrayColor()
-        textView.becomeFirstResponder()
-        textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
-        textView.delegate = self
-
-        alertController.view.addSubview(textView)
-
-        let somethingAction = UIAlertAction(title: "Enviar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("something")
-        })
-
-        let cancelAction = UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
-
-        alertController.addAction(somethingAction)
-        alertController.addAction(cancelAction)
-
-        self.presentViewController(alertController, animated: true, completion:{})
-    }*/
+    func updateFavoritesButtonStar() {
+        if(favorites.count > 0) {
+            self.navigationItem.rightBarButtonItem!.title = String.fontAwesomeIconWithName(.Star)
+        } else {
+            self.navigationItem.rightBarButtonItem!.title = String.fontAwesomeIconWithName(.StarO)
+        }
+    }
 
     func loadNextPage() {
         let nextPage = API.sharedInstance.searchData.page + 1
@@ -133,6 +115,9 @@ class MasterViewController: CardExplorerViewController {
         }
 
         self.waiting = true;
+        self.contactButton.enabled = false
+        self.favoriteButton.enabled = false
+        self.nextButton.enabled = false
 
         API.sharedInstance.searchData.page = page
         API.sharedInstance.search().then { paginatedReply in
@@ -140,11 +125,16 @@ class MasterViewController: CardExplorerViewController {
                 self.cardsToExplore.append(professional)
             }
             if(API.sharedInstance.searchData.page == 1) {
-                self.loadMoreCutoff = Int(Double(paginatedReply.meta.per_page) * endPercentage)
+                self.loadMoreCutoff = Int(Double(paginatedReply.meta.perPage) * endPercentage)
             }
             self.waiting = false;
+            self.contactButton.enabled = true
+            self.favoriteButton.enabled = true
+            self.nextButton.enabled = true
+
             self.kolodaView.reloadData()
         }
+
         self.kolodaView.reloadData()
     }
 
@@ -164,40 +154,99 @@ class MasterViewController: CardExplorerViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showFavorites" {
             let controller = segue.destinationViewController as! FavoritesViewController
-            controller.cardsToExplore = self.favorites
+            controller.favorites = self.favorites
             controller.navigationItem.title = "Favoritos"
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
     }
 
     //MARK: - Overrides
+    override func kolodaNumberOfCards(koloda: KolodaView) -> UInt {
+        return self.cardsToExplore.count == 0 ? 0 : UInt(self.cardsToExplore.count) + 1
+    }
+
     override func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+        if(index == UInt(self.cardsToExplore.count)) {
+            let lastCard = NSBundle.mainBundle().loadNibNamed("LastCard", owner: self, options: nil)[0] as? LastCard
+            self.contactButton.enabled = false
+            self.favoriteButton.enabled = false
+
+            return lastCard!
+        }
+
         //if almost done, load the next page
         if(index >= UInt(self.loadMoreCutoff)) {
-            self.loadMoreCutoff += API.sharedInstance.searchData.per_page
+            self.loadMoreCutoff += API.sharedInstance.searchData.perPage
             loadNextPage()
         }
 
-        let professionalCard = super.koloda(koloda, viewForCardAtIndex: index)
-        return professionalCard
+        if(Int(index) > cardsToExplore.count) {
+            koloda.reloadData()
+        }
+
+        let professionalCard = NSBundle.mainBundle().loadNibNamed("ProfessionalCard", owner: self, options: nil)[0] as? ProfessionalCard
+
+        let professionalSelected = cardsToExplore[Int(index)]
+        professionalCard?.fillWithData(professionalSelected)
+
+        var starToUse = String.fontAwesomeIconWithName(.StarO)
+        favorites.forEach { professional in
+            if professionalSelected.string_id == professional.string_id {
+                starToUse = String.fontAwesomeIconWithName(.Star)
+            }
+        }
+
+        let attributed = NSAttributedString(string: starToUse, attributes: [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)])
+        favoriteButton.setAttributedTitle(attributed, forState: .Normal)
+        favoriteButton.setAttributedTitle(attributed, forState: .Disabled)
+
+        return professionalCard!
     }
 }
 
-
-// MARK: Button Actions
+// MARK: - Button Actions
 extension MasterViewController {
     @IBAction func showFavorites(sender: AnyObject) {
         performSegueWithIdentifier("showFavorites", sender: sender)
-        //performSegueWithIdentifier("collectionView", sender: sender)
-        /*let vc = SearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)*/
+    }
+
+    @IBAction func contactProfessional(sender: AnyObject) {
+        let professional = self.cardsToExplore[self.kolodaView.currentCardIndex]
+        let string_id = professional.string_id
+
+        API.sharedInstance.telephoneFor(string_id).then { privateInfo in
+            let alertController = UIAlertController(title: "Contactar este profissional", message: "Entre imediatamante en contacto com este profissional através do número:\n\(privateInfo.phone)", preferredStyle: .Alert)
+
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+
+            let OKAction = UIAlertAction(title: "Telefonar", style: .Default) { (action) in
+                let phone = "tel://\(privateInfo.phone)"
+                let open = NSURL(string: phone)!
+
+                UIApplication.sharedApplication().openURL(open)
+            }
+            alertController.addAction(OKAction)
+
+            let SMSAction = UIAlertAction(title: "Enviar SMS", style: .Default) { (action) in
+                let messageVC = MFMessageComposeViewController()
+                messageVC.body = "";
+                messageVC.recipients = [privateInfo.phone]
+                messageVC.messageComposeDelegate = self;
+
+                self.presentViewController(messageVC, animated: true, completion: nil)
+            }
+            alertController.addAction(SMSAction)
+
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func nextProfessional(sender: AnyObject) {
+        self.kolodaView.swipe(.Left)
     }
 
     @IBAction func markContactAsFavorite(sender: AnyObject) {
-        if(self.kolodaView.currentCardIndex > self.cardsToExplore.count) {
-            return;
-        }
-
         let professionalToAdd = self.cardsToExplore[self.kolodaView.currentCardIndex]
         self.favorites.append(professionalToAdd)
 
@@ -207,54 +256,19 @@ extension MasterViewController {
         self.kolodaView.swipe(.Up)
         cardSwipeActionAnimationDuration = originalCardSwipeActionAnimationDuration
         self.allowedDirections.removeLast()
+
+        self.updateFavoritesButtonStar()
     }
 }
 
-
-//MARK: UITextViewDelegate
-/*extension MasterViewController:UITextViewDelegate {
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-
-        // Combine the textView text and the replacement text to
-        // create the updated text string
-        let currentText:NSString = textView.text
-        let updatedText = currentText.stringByReplacingCharactersInRange(range, withString:text)
-
-        // If updated text view will be empty, add the placeholder
-        // and set the cursor to the beginning of the text view
-        if updatedText.isEmpty {
-
-            textView.text = "Escreva aqui a sua mensagem para este profissional."
-            textView.textColor = UIColor.lightGrayColor()
-
-            textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
-
-            return false
-        }
-
-            // Else if the text view's placeholder is showing and the
-            // length of the replacement string is greater than 0, clear
-            // the text view and set its color to black to prepare for
-            // the user's entry
-        else if textView.textColor == UIColor.lightGrayColor() && !text.isEmpty {
-            textView.text = nil
-            textView.textColor = UIColor.blackColor()
-        }
-
-        return true
+//MARK: - MFMessageComposeViewControllerDelegate
+extension MasterViewController: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
+}
 
-    func textViewDidChangeSelection(textView: UITextView) {
-        if self.view.window != nil {
-            if textView.textColor == UIColor.lightGrayColor() {
-                textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
-            }
-        }
-    }
-
-}*/
-
-//MARK: CLLocationManagerDelegate
+//MARK: - CLLocationManagerDelegate
 extension MasterViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
@@ -271,7 +285,7 @@ extension MasterViewController: CLLocationManagerDelegate {
     }
 }
 
-//MARK: UISearchBarDelegate
+//MARK: - UISearchBarDelegate
 extension MasterViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)

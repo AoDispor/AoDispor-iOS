@@ -16,9 +16,10 @@ class ProfessionalCard: UIScrollView {
     @IBOutlet weak var avatar : UIImageView!
     @IBOutlet weak var location : UILabel!
 
+    var shouldShowFullDescription = true
+
     func fillWithData(professional: Professional) -> Void {
         self.avatar.af_setImageWithURL(NSURL(string: professional.avatarURL)!)
-
         self.name?.text = professional.name
         self.title.attributedText = self.getMutableStringWithHighlightedText(professional.title)
         self.location?.text = professional.location
@@ -58,7 +59,12 @@ extension ProfessionalCard:UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         webView.frame.size.height = 1
         webView.frame.size = webView.sizeThatFits(CGSizeZero)
-        
+
+        if(!shouldShowFullDescription) {
+            print("cenas")
+            return
+        }
+
         let originalWidth = self.frame.width
 
         var contentRect = CGRectZero

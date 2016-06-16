@@ -1,0 +1,6 @@
+framework module Pods_Ao_DisporTests {
+  umbrella header "Pods-Ao DisporTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

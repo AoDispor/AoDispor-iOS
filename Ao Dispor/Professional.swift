@@ -10,14 +10,12 @@ import Foundation
 import Arrow
 import thenPromise
 import ws
-import CoreSpotlight
-import MobileCoreServices
 
 class API {
     static let sharedInstance = API()
 
-    //let ws = WS("https://api.aodispor.pt")
-    let ws = WS("http://dev.api.aodispor.pt")
+    let ws = WS("https://api.aodispor.pt")
+    //let ws = WS("http://dev.api.aodispor.pt")
     var searchData = SearchData()
     var waiting = false
 
@@ -41,7 +39,7 @@ struct SearchData {
     var lon:Double = Double.NaN
     var location:String = ""
     var page:Int = 0
-    var per_page:Int = 64
+    var perPage:Int = 64
 
     func serialize() -> [String: AnyObject] {
         var ret = [String:AnyObject]()
@@ -112,9 +110,9 @@ extension PaginatedReply:ArrowParsable {
 struct PaginatedReplyMeta {
     var total:Int = 0
     var count:Int = 0
-    var per_page:Int = 0
+    var perPage:Int = 0
     var current_page:Int = 0
-    var total_pages:Int = 0
+    var totalPages:Int = 0
     var links:PaginationLinks = PaginationLinks()
 }
 
@@ -122,9 +120,9 @@ extension PaginatedReplyMeta:ArrowParsable {
     mutating func deserialize(json: JSON) {
         total <-- json["total"]
         count <-- json["count"]
-        per_page <-- json["per_page"]
+        perPage <-- json["per_page"]
         current_page <-- json["current_page"]
-        total_pages <-- json["total_pages"]
+        totalPages <-- json["total_pages"]
         links <-- json["links"]
     }
 }

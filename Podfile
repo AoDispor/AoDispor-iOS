@@ -14,6 +14,7 @@ target 'Ao Dispor' do
   pod 'ws', :git => 'https://github.com/DjinnGA/ws.git'
   pod 'FontAwesome.swift'
   pod 'PermissionScope'
+  pod 'DZNEmptyDataSet'
   # pod 'FLEX', '~> 2.0', :configurations => ['Debug']
   
   target 'Ao DisporTests' do

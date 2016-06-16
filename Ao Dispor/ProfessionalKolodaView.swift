@@ -8,7 +8,6 @@
 
 import UIKit
 import Koloda
-import Pods_Ao_Dispor
 
 let defaultBottomOffset:CGFloat = 0
 let defaultTopOffset:CGFloat = 0
@@ -19,17 +18,6 @@ let backgroundCardHorizontalMarginMultiplier:CGFloat = 0.25
 let backgroundCardScalePercent:CGFloat = 1.5
 
 class ProfessionalKolodaView: KolodaView {
-
-    /*override func frameForCardAtIndex(index: UInt) -> CGRect {
-        let topOffset:CGFloat = defaultTopOffset
-        let xOffset:CGFloat = defaultHorizontalOffset
-        let width = CGRectGetWidth(self.frame) - 2 * defaultHorizontalOffset
-        let height = width * defaultHeightRatio
-        let yOffset:CGFloat = topOffset
-        let frame = CGRect(x: xOffset, y: yOffset, width: width, height: height)
-        return frame
-    }*/
-
     override func frameForCardAtIndex(index: UInt) -> CGRect {
         let topOffset:CGFloat = defaultTopOffset
         let xOffset:CGFloat = defaultHorizontalOffset

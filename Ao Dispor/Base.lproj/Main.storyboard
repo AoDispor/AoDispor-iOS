@@ -2,12 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RMx-3f-FxP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="FontAwesome.otf">
-            <string>FontAwesome</string>
-            <string>FontAwesome</string>
+        <mutableArray key="YanoneKaffeesatz-Regular.otf">
+            <string>YanoneKaffeesatz-Regular</string>
+            <string>YanoneKaffeesatz-Regular</string>
+            <string>YanoneKaffeesatz-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -15,7 +18,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -39,14 +42,14 @@
                         <viewControllerLayoutGuide type="bottom" id="VSO-t5-sm3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kDa-Rb-e6n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znE-fB-rRJ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="De quem precisa?" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVi-BP-L3r">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <color key="barTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
@@ -54,48 +57,41 @@
                                         </connections>
                                     </searchBar>
                                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Dqw-4J-MyM" userLabel="Koloda View" customClass="ProfessionalKolodaView" customModule="Ao_Dispor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="371"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="470"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-it-fs2" userLabel="Button bar">
-                                        <rect key="frame" x="0.0" y="415" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="514" width="375" height="45"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-lW-8rq">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="15"/>
-                                                <state key="normal" title="Favorito">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghO-AR-Pbm">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Contactar"/>
                                                 <connections>
-                                                    <action selector="markContactAsFavorite:" destination="KBv-lS-DqA" eventType="touchUpInside" id="CHc-DU-3KC"/>
+                                                    <action selector="contactProfessional:" destination="KBv-lS-DqA" eventType="touchUpInside" id="C8E-jF-d2B"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwb-WR-62H">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Telefonar">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="callProfessional:" destination="KBv-lS-DqA" eventType="touchUpInside" id="vCE-CN-P55"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-iT-893" userLabel="Contactar">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olI-uy-50J">
+                                                <rect key="frame" x="150" y="0.0" width="75" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="SMS">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                                <state key="normal" title="Guardar"/>
                                                 <connections>
-                                                    <action selector="contactProfessional:" destination="KBv-lS-DqA" eventType="touchUpInside" id="4dg-OQ-SeU"/>
+                                                    <action selector="markContactAsFavorite:" destination="KBv-lS-DqA" eventType="touchUpInside" id="2qL-N4-p4d"/>
+                                                </connections>
+                                            </button>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP5-Uf-08C">
+                                                <rect key="frame" x="225" y="0.0" width="150" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Seguinte"/>
+                                                <connections>
+                                                    <action selector="nextProfessional:" destination="KBv-lS-DqA" eventType="touchUpInside" id="WhZ-13-HQj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="olI-uy-50J" firstAttribute="width" secondItem="ghO-AR-Pbm" secondAttribute="width" multiplier="0.5" id="6YQ-qJ-5Bh"/>
                                             <constraint firstAttribute="height" constant="45" id="BjI-tr-vvR"/>
-                                            <constraint firstItem="r0c-iT-893" firstAttribute="width" secondItem="Rwb-WR-62H" secondAttribute="width" id="EgO-O8-qz4"/>
-                                            <constraint firstItem="r0c-iT-893" firstAttribute="width" secondItem="XwZ-lW-8rq" secondAttribute="width" id="ios-X7-baQ"/>
+                                            <constraint firstItem="FP5-Uf-08C" firstAttribute="width" secondItem="ghO-AR-Pbm" secondAttribute="width" id="h0z-gd-Ftp"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -116,14 +112,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eMl-2b-wgP"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="callButton" destination="Rwb-WR-62H" id="4RW-XD-cx5"/>
-                        <outlet property="contactButton" destination="r0c-iT-893" id="JQD-Nw-TmG"/>
-                        <outlet property="favoriteButton" destination="XwZ-lW-8rq" id="Wwf-o5-zUv"/>
-                        <outlet property="kolodaView" destination="Dqw-4J-MyM" id="sbQ-Tt-Wdx"/>
+                        <outlet property="contactButton" destination="ghO-AR-Pbm" id="Uyv-2D-tyr"/>
+                        <outlet property="favoriteButton" destination="olI-uy-50J" id="rCn-vB-iiv"/>
+                        <outlet property="kolodaView" destination="Dqw-4J-MyM" id="hub-WE-l19"/>
+                        <outlet property="nextButton" destination="FP5-Uf-08C" id="Gic-nz-2Fr"/>
                         <outlet property="searchBar" destination="BVi-BP-L3r" id="Ecx-ZU-7zk"/>
-                        <segue destination="x6o-vq-r4l" kind="show" identifier="showFavorites" id="pMM-Kw-XRB"/>
+                        <segue destination="wad-ud-bpD" kind="show" identifier="showFavorites" id="nmv-bx-PT8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQg-JT-jQU" sceneMemberID="firstResponder"/>
@@ -131,88 +126,177 @@
             <point key="canvasLocation" x="476" y="-1302"/>
         </scene>
         <!--Favorites View Controller-->
-        <scene sceneID="G2f-ek-qeL">
+        <scene sceneID="QLq-ka-CHz">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="x6o-vq-r4l" customClass="FavoritesViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController providesPresentationContextTransitionStyle="YES" id="wad-ud-bpD" customClass="FavoritesViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6FI-Kp-hV9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="45S-9M-PYC">
+                            <size key="itemSize" width="150" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoriteCell" id="Prj-tb-7to" customClass="FavoriteViewCell" customModule="Ao_Dispor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qka-lN-oku">
+                                            <rect key="frame" x="5" y="5" width="140" height="140"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="140" id="D3A-OF-KcY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG8-nw-Dkw">
+                                            <rect key="frame" x="13" y="148" width="129" height="21"/>
+                                            <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="23"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZY-lj-QVA">
+                                            <rect key="frame" x="13" y="171" width="129" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="leading" secondItem="Prj-tb-7to" secondAttribute="leadingMargin" constant="5" id="4jk-46-l5b"/>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="width" secondItem="NG8-nw-Dkw" secondAttribute="width" id="ALd-qM-CVE"/>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="top" secondItem="NG8-nw-Dkw" secondAttribute="bottom" constant="2" id="AcU-ik-AqP"/>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="bottom" secondItem="Prj-tb-7to" secondAttribute="bottomMargin" id="AmN-48-2d6"/>
+                                    <constraint firstItem="qka-lN-oku" firstAttribute="top" secondItem="Prj-tb-7to" secondAttribute="topMargin" constant="-3" id="B5o-0l-44p"/>
+                                    <constraint firstItem="NG8-nw-Dkw" firstAttribute="top" secondItem="qka-lN-oku" secondAttribute="bottom" constant="3" id="ORu-rU-ovD"/>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="centerX" secondItem="qka-lN-oku" secondAttribute="centerX" constant="2.5" id="RMJ-qv-F3S"/>
+                                    <constraint firstItem="CZY-lj-QVA" firstAttribute="trailing" secondItem="Prj-tb-7to" secondAttribute="trailingMargin" id="Yie-Mv-1NX"/>
+                                    <constraint firstItem="NG8-nw-Dkw" firstAttribute="leading" secondItem="Prj-tb-7to" secondAttribute="leadingMargin" constant="5" id="cbf-eI-nIQ"/>
+                                    <constraint firstItem="qka-lN-oku" firstAttribute="trailing" secondItem="NG8-nw-Dkw" secondAttribute="trailing" constant="3" id="vQQ-wQ-QKX"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="avatar" destination="qka-lN-oku" id="hHG-Yg-QQA"/>
+                                    <outlet property="name" destination="CZY-lj-QVA" id="3XX-3g-mfa"/>
+                                    <outlet property="title" destination="NG8-nw-Dkw" id="xne-I6-aXx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="wad-ud-bpD" id="5Ae-cG-Z9T"/>
+                            <outlet property="delegate" destination="wad-ud-bpD" id="b2T-3x-1Lo"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="585-Ea-wvX" kind="presentation" identifier="showModalFavorite" id="hRu-KI-i04"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kI-JW-0Hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="-475"/>
+        </scene>
+        <!--Favorite Modal View Controller-->
+        <scene sceneID="iio-S8-foS">
+            <objects>
+                <viewController id="585-Ea-wvX" customClass="FavoriteModalViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tdU-K2-nGV"/>
-                        <viewControllerLayoutGuide type="bottom" id="d3U-Td-bIo"/>
+                        <viewControllerLayoutGuide type="top" id="o1Y-pZ-beu"/>
+                        <viewControllerLayoutGuide type="bottom" id="uq7-HW-3jM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gsJ-N9-c4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <view key="view" contentMode="scaleToFill" id="vkx-UG-UVv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-R2-0Zb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y4F-Pg-vZa">
+                                <rect key="frame" x="15" y="15" width="345" height="637"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-LB-REJ" userLabel="Koloda View" customClass="ProfessionalKolodaView" customModule="Ao_Dispor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXE-j8-Tdc" userLabel="Button bar">
-                                        <rect key="frame" x="0.0" y="415" width="320" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtM-7P-hqW">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="28"/>
+                                        <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="23"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DVN-I5-beR">
+                                        <rect key="frame" x="0.0" y="28" width="345" height="345"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DVN-I5-beR" secondAttribute="height" id="orT-Za-gQw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-bJ-mT8">
+                                        <rect key="frame" x="0.0" y="373" width="345" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 €/h" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="rcL-RJ-MB6" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="394" width="345" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
+                                        <color key="textColor" red="0.36078431370000003" green="0.72156862749999995" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNF-bx-Cdj">
+                                        <rect key="frame" x="0.0" y="424" width="345" height="21"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8a-jc-aHI">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="15"/>
-                                                <state key="normal" title="Favorito">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-20-Tub">
-                                                <rect key="frame" x="107" y="0.0" width="106" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Telefonar">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tt-yl-iwb">
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="21"/>
+                                                <state key="normal" title="Contactar"/>
                                                 <connections>
-                                                    <action selector="callProfessional:" destination="x6o-vq-r4l" eventType="touchUpInside" id="cen-Rh-ybl"/>
+                                                    <action selector="contactProfessional:" destination="585-Ea-wvX" eventType="touchUpInside" id="uqr-3O-s5U"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAI-fE-8wr" userLabel="Contactar">
-                                                <rect key="frame" x="213" y="0.0" width="107" height="45"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="SMS">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="contactProfessional:" destination="x6o-vq-r4l" eventType="touchUpInside" id="0uE-0q-Y4u"/>
-                                                </connections>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqp-F4-M8I">
+                                                <rect key="frame" x="173" y="0.0" width="172" height="21"/>
+                                                <state key="normal" title="Desfavoritar"/>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="bAI-fE-8wr" firstAttribute="width" secondItem="S8a-jc-aHI" secondAttribute="width" id="0G8-Gg-DnZ"/>
-                                            <constraint firstItem="bAI-fE-8wr" firstAttribute="width" secondItem="ZNF-20-Tub" secondAttribute="width" id="CTg-p2-F2F"/>
-                                            <constraint firstAttribute="height" constant="45" id="CtI-4P-VeQ"/>
+                                            <constraint firstAttribute="height" constant="21" id="4ab-qs-cEb"/>
+                                            <constraint firstItem="8Tt-yl-iwb" firstAttribute="width" secondItem="Iqp-F4-M8I" secondAttribute="width" id="bNa-w8-Iam"/>
                                         </constraints>
                                     </stackView>
+                                    <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgN-nh-gnc">
+                                        <rect key="frame" x="0.0" y="445" width="345" height="192"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                        <dataDetectorType key="dataDetectorTypes"/>
+                                    </webView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="dcL-R2-0Zb" secondAttribute="bottom" id="ZGq-sH-89y"/>
-                            <constraint firstItem="tdU-K2-nGV" firstAttribute="bottom" secondItem="dcL-R2-0Zb" secondAttribute="top" id="cfn-L6-qn3"/>
-                            <constraint firstItem="dcL-R2-0Zb" firstAttribute="leading" secondItem="gsJ-N9-c4Z" secondAttribute="leading" id="iJF-kN-vzi"/>
-                            <constraint firstItem="dcL-R2-0Zb" firstAttribute="width" secondItem="gsJ-N9-c4Z" secondAttribute="width" id="xFd-wg-yFE"/>
+                            <constraint firstItem="Y4F-Pg-vZa" firstAttribute="height" secondItem="vkx-UG-UVv" secondAttribute="height" constant="-30" id="EgW-QW-vqs"/>
+                            <constraint firstItem="Y4F-Pg-vZa" firstAttribute="leading" secondItem="vkx-UG-UVv" secondAttribute="leading" constant="15" id="Khk-h7-li6"/>
+                            <constraint firstItem="Y4F-Pg-vZa" firstAttribute="width" secondItem="vkx-UG-UVv" secondAttribute="width" constant="-30" id="Sg6-Ga-Bit"/>
+                            <constraint firstItem="Y4F-Pg-vZa" firstAttribute="top" secondItem="vkx-UG-UVv" secondAttribute="top" constant="15" id="r0s-ZG-gyo"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="bxu-Qt-Ltj"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="callButton" destination="ZNF-20-Tub" id="X1y-nx-I5o"/>
-                        <outlet property="contactButton" destination="bAI-fE-8wr" id="Kxt-Kt-tVs"/>
-                        <outlet property="favoriteButton" destination="S8a-jc-aHI" id="qGf-l6-J5e"/>
-                        <outlet property="kolodaView" destination="fP7-LB-REJ" id="qvN-80-OEh"/>
-                        <outlet property="view" destination="gsJ-N9-c4Z" id="hea-h0-4BL"/>
+                        <outlet property="avatar" destination="DVN-I5-beR" id="IW3-SS-KFe"/>
+                        <outlet property="contactButton" destination="8Tt-yl-iwb" id="P9k-RY-JzW"/>
+                        <outlet property="name" destination="mIw-bJ-mT8" id="Rlv-M8-ZXz"/>
+                        <outlet property="profileDescription" destination="kgN-nh-gnc" id="4do-Ld-GHo"/>
+                        <outlet property="rate" destination="rcL-RJ-MB6" id="wRU-hS-wqZ"/>
+                        <outlet property="titleLabel" destination="CtM-7P-hqW" id="iZk-pY-e5k"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Un9-Ng-KsT" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7N-gA-QAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="-548"/>
+            <point key="canvasLocation" x="474.5" y="376.5"/>
         </scene>
     </scenes>
 </document>
