@@ -13,6 +13,7 @@
 		0D45FD3E1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD3A1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf */; };
 		0D45FD451D12C5EC00E34FD8 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD431D12C5EC00E34FD8 /* en.lproj */; };
 		0D45FD461D12C5EC00E34FD8 /* pt-PT.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D45FD441D12C5EC00E34FD8 /* pt-PT.lproj */; };
+		0D67599A1D13136000C18C62 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6759991D13136000C18C62 /* API.swift */; };
 		0D6AE3961CFF81FC00C7A793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3951CFF81FC00C7A793 /* AppDelegate.swift */; };
 		0D6AE3981CFF81FC00C7A793 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */; };
 		0D6AE39D1CFF81FC00C7A793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6AE39B1CFF81FC00C7A793 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		0D6AE3DC1CFF845A00C7A793 /* ProfessionalKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3DB1CFF845A00C7A793 /* ProfessionalKolodaView.swift */; };
 		0D6AE3DF1CFF84A600C7A793 /* ProfessionalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6AE3DD1CFF84A600C7A793 /* ProfessionalCard.swift */; };
 		0D6AE3E01CFF84A600C7A793 /* ProfessionalCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6AE3DE1CFF84A600C7A793 /* ProfessionalCard.xib */; };
+		0D722C831D1719F400EBC0A8 /* ProfessionalCardNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D722C821D1719F400EBC0A8 /* ProfessionalCardNew.xib */; };
 		0D761A711D0F093E005AF870 /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D761A701D0F093E005AF870 /* FavoriteViewCell.swift */; };
 		0D761A741D0F5AD5005AF870 /* FavoriteModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D761A731D0F5AD5005AF870 /* FavoriteModalViewController.swift */; };
 		0D79C4C81D106738000C5851 /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79C4C71D106738000C5851 /* LastCard.swift */; };
@@ -62,6 +64,7 @@
 		0D45FD3A1D12BE9E00E34FD8 /* YanoneKaffeesatz-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Thin.otf"; path = "Ao Dispor/Resources/YanoneKaffeesatz-Thin.otf"; sourceTree = "<group>"; };
 		0D45FD431D12C5EC00E34FD8 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en.lproj; path = "Ao Dispor/en.lproj"; sourceTree = "<group>"; };
 		0D45FD441D12C5EC00E34FD8 /* pt-PT.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pt-PT.lproj"; path = "Ao Dispor/pt-PT.lproj"; sourceTree = "<group>"; };
+		0D6759991D13136000C18C62 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0D6AE3921CFF81FC00C7A793 /* Ao Dispor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ao Dispor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6AE3951CFF81FC00C7A793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		0D6AE3DB1CFF845A00C7A793 /* ProfessionalKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalKolodaView.swift; sourceTree = "<group>"; };
 		0D6AE3DD1CFF84A600C7A793 /* ProfessionalCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalCard.swift; sourceTree = "<group>"; };
 		0D6AE3DE1CFF84A600C7A793 /* ProfessionalCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfessionalCard.xib; sourceTree = "<group>"; };
+		0D722C821D1719F400EBC0A8 /* ProfessionalCardNew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfessionalCardNew.xib; sourceTree = "<group>"; };
 		0D761A701D0F093E005AF870 /* FavoriteViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
 		0D761A731D0F5AD5005AF870 /* FavoriteModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModalViewController.swift; sourceTree = "<group>"; };
 		0D79C4C71D106738000C5851 /* LastCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastCard.swift; sourceTree = "<group>"; };
@@ -154,15 +158,18 @@
 			isa = PBXGroup;
 			children = (
 				0D6AE3951CFF81FC00C7A793 /* AppDelegate.swift */,
-				0DBB19C11D008006002F25A3 /* CardExplorer */,
+				0DB312211D08A4590000B367 /* SearchViewController.swift */,
+				0DBB19BF1D007ECC002F25A3 /* CardExplorerViewController.swift */,
+				0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */,
+				0D6AE3DB1CFF845A00C7A793 /* ProfessionalKolodaView.swift */,
 				0D6AE3D91CFF845400C7A793 /* Professional.swift */,
+				0D6759991D13136000C18C62 /* API.swift */,
 				0DBB19BD1D007EA1002F25A3 /* FavoritesViewController.swift */,
 				0D761A731D0F5AD5005AF870 /* FavoriteModalViewController.swift */,
 				0DBB84351D11EC5E005F90D0 /* FavoritePresentationViewController.swift */,
 				0D761A721D0F0C52005AF870 /* Views */,
 				0D6AE39B1CFF81FC00C7A793 /* Main.storyboard */,
 				0D6AE3A01CFF81FC00C7A793 /* LaunchScreen.storyboard */,
-				0DBB19BF1D007ECC002F25A3 /* CardExplorerViewController.swift */,
 				0D6AE3D71CFF844700C7A793 /* Resources+Extensions.swift */,
 			);
 			path = "Ao Dispor";
@@ -208,19 +215,10 @@
 				0D79C4C91D106753000C5851 /* LastCard.xib */,
 				0D6AE3DD1CFF84A600C7A793 /* ProfessionalCard.swift */,
 				0D6AE3DE1CFF84A600C7A793 /* ProfessionalCard.xib */,
+				0D722C821D1719F400EBC0A8 /* ProfessionalCardNew.xib */,
 				0D761A701D0F093E005AF870 /* FavoriteViewCell.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		0DBB19C11D008006002F25A3 /* CardExplorer */ = {
-			isa = PBXGroup;
-			children = (
-				0D6AE3971CFF81FC00C7A793 /* MasterViewController.swift */,
-				0D6AE3DB1CFF845A00C7A793 /* ProfessionalKolodaView.swift */,
-				0DB312211D08A4590000B367 /* SearchViewController.swift */,
-			);
-			name = CardExplorer;
 			sourceTree = "<group>";
 		};
 		C587D62D4598CDD001E5CAB2 /* Frameworks */ = {
@@ -368,6 +366,7 @@
 				0D45FD3B1D12BE9E00E34FD8 /* DancingScript-Regular.otf in Resources */,
 				0D45FD461D12C5EC00E34FD8 /* pt-PT.lproj in Resources */,
 				0D6AE3E01CFF84A600C7A793 /* ProfessionalCard.xib in Resources */,
+				0D722C831D1719F400EBC0A8 /* ProfessionalCardNew.xib in Resources */,
 				0D45FD451D12C5EC00E34FD8 /* en.lproj in Resources */,
 				0D45FD3C1D12BE9E00E34FD8 /* profileDescription.html in Resources */,
 			);
@@ -523,6 +522,7 @@
 				0D6AE3961CFF81FC00C7A793 /* AppDelegate.swift in Sources */,
 				0DBB19BE1D007EA1002F25A3 /* FavoritesViewController.swift in Sources */,
 				0D6AE3DF1CFF84A600C7A793 /* ProfessionalCard.swift in Sources */,
+				0D67599A1D13136000C18C62 /* API.swift in Sources */,
 				0D761A711D0F093E005AF870 /* FavoriteViewCell.swift in Sources */,
 				0DBB84361D11EC5E005F90D0 /* FavoritePresentationViewController.swift in Sources */,
 				0D79C4C81D106738000C5851 /* LastCard.swift in Sources */,
@@ -605,6 +605,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -624,6 +625,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -650,6 +652,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -675,6 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 17;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -682,6 +686,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -692,6 +697,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 17;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -699,6 +705,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

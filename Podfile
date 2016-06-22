@@ -6,17 +6,26 @@ target 'Ao Dispor' do
   use_frameworks!
 
   # Pods for Ao Dispor
-  pod 'Koloda'
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'Arrow'
-  pod 'thenPromise'
-  pod 'ws', :git => 'https://github.com/DjinnGA/ws.git'
-  pod 'FontAwesome.swift'
+  #pod 'Alamofire'
+  #pod 'Arrow'
+  #pod 'thenPromise'
+  #pod 'ws', :git => 'https://github.com/DjinnGA/ws.git'
+
   pod 'PermissionScope'
+  pod 'SwiftLocation'
+
+  pod 'Pulsator'
+  pod 'Moya'
+  pod 'Moya-ObjectMapper'
+
+  pod 'Pantry', :git => 'https://github.com/nickoneill/Pantry.git'
+  pod 'HanekeSwift'
+
+  pod 'Font-Awesome-Swift'
+  pod 'Koloda'
+
   pod 'DZNEmptyDataSet'
-  # pod 'FLEX', '~> 2.0', :configurations => ['Debug']
-  
+
   target 'Ao DisporTests' do
     inherit! :search_paths
     # Pods for testing

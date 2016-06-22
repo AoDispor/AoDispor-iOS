@@ -7,144 +7,130 @@
 //
 
 import Foundation
-import Arrow
-import thenPromise
-import ws
+import ObjectMapper
+import Pantry
 
-class API {
-    static let sharedInstance = API()
+class Professional: Mappable, Storable, Equatable {
+    var name:String?
+    var title:String?
+    var rate:String?
+    var currency:String?
+    var avatar:String?
+    var avatarURL:String? {
+        get {
+            return avatar?.stringByReplacingOccurrencesOfString("regular", withString: "original")
+        }
+    }
+    var description:String?
+    var type:String?
+    var string_id:String?
+    var location:String?
 
-    let ws = WS("https://api.aodispor.pt")
-    //let ws = WS("http://dev.api.aodispor.pt")
-    var searchData = SearchData()
-    var waiting = false
+    // MARK: JSON
+    required init?(_ map: Map) { }
 
-    init() {
-        ws.logLevels = .Calls
+    func mapping(map: Map) {
+        name <- map["full_name"]
+        title <- map["title"]
+        rate <- map["rate"]
+        currency <- map["currency"]
+        avatar <- map["avatar_url"]
+        description <- map["description"]
+        type <- map["type"]
+        string_id <- map["string_id"]
+        location <- map["location"]
     }
 
-    func search() -> Promise<PaginatedReply> {
-        return ws.get("/profiles/search", params: searchData.serialize())
+    required init(warehouse: Warehouseable) {
+        self.name = warehouse.get("name") ?? "default"
+        self.title = warehouse.get("title") ?? "default"
+        self.rate = warehouse.get("rate") ?? "default"
+        self.currency = warehouse.get("currency") ?? "default"
+        self.avatar = warehouse.get("avatarURL") ?? "default"
+        self.description = warehouse.get("description") ?? "default"
+        self.type = warehouse.get("type") ?? "default"
+        self.string_id = warehouse.get("string_id") ?? "default"
+        self.location = warehouse.get("location") ?? "default"
     }
 
-    func telephoneFor(string_id:String) -> Promise<PrivateInfo> {
-        return ws.get("/profiles/profile/phone/\(string_id)")
-    }
-}
-
-struct SearchData {
-    var query:String = ""
-    //var avatar:Bool = true
-    var lat:Double = Double.NaN
-    var lon:Double = Double.NaN
-    var location:String = ""
-    var page:Int = 0
-    var perPage:Int = 64
-
-    func serialize() -> [String: AnyObject] {
+    func toDictionary() -> [String : AnyObject] {
         var ret = [String:AnyObject]()
-
-        if(!query.isEmpty) {
-            ret["query"] = self.query
-        }
-
-        if(lat.isFinite && lon.isFinite && !lat.isNaN && !lon.isNaN) {
-            ret["lat"] = self.lat
-            ret["lon"] = self.lon
-        } else if(!location.isEmpty) {
-            ret["location"] = self.location
-        }
-
-        /*if(avatar) {
-            ret["avatar"] = true
-        }*/
-
-        if(page == 0) {
-            ret["page"] = self.page + 1
-        } else {
-            ret["page"] = self.page
-        }
-        
+        ret["name"] = self.name
+        ret["title"] = self.title
+        ret["rate"] = self.rate
+        ret["currency"] = self.currency
+        ret["avatarURL"] = self.avatarURL
+        ret["description"] = self.description
+        ret["type"] = self.type
+        ret["string_id"] = self.string_id
+        ret["location"] = self.location
         return ret
     }
 }
 
-struct Professional {
-    var name:String = ""
-    var title:String = ""
-    var rate:String = ""
-    var currency:String = ""
-    var avatarURL:String = ""
-    var description:String = ""
-    var type:String = ""
-    var string_id:String = ""
-    var location:String = ""
+func ==(lhs: Professional, rhs: Professional) -> Bool {
+    return lhs.string_id == rhs.string_id
 }
 
-extension Professional:ArrowParsable {
-    mutating func deserialize(json: JSON) {
-        name <-- json["full_name"]
-        rate <-- json["rate"]
-        currency <-- json["currency"]
-        title <-- json["title"]
-        description <-- json["description"]
-        avatarURL <-- json["avatar_url"]
-        type <-- json["type"]
-        string_id <-- json["string_id"]
-        location <-- json["location"]
+struct PaginatedReply:Mappable {
+    var professionals:[Professional]?
+    var meta:PaginatedReplyMeta?
+
+    // MARK: JSON
+    init?(_ map: Map) { }
+
+    mutating func mapping(map: Map) {
+        professionals <- map["data"]
+        meta <- map["meta.pagination"]
     }
 }
 
-struct PaginatedReply {
-    var data:[Professional] = []
-    var meta:PaginatedReplyMeta = PaginatedReplyMeta()
-}
+struct PaginatedReplyMeta:Mappable {
+    var total:Int?
+    var count:Int?
+    var perPage:Int?
+    var currentPage:Int?
+    var totalPages:Int?
+    var links:PaginationLinks?
 
-extension PaginatedReply:ArrowParsable {
-    mutating func deserialize(json: JSON) {
-        data <-- json["data"]
-        meta <-- json["meta"]?["pagination"]
+    // MARK: JSON
+    init?(_ map: Map) { }
+
+    mutating func mapping(map: Map) {
+        total <- map["total"]
+        count <- map["count"]
+        perPage <- map["per_page"]
+        currentPage <- map["current_page"]
+        totalPages <- map["total_pages"]
+        links <- map["links"]
+    }
+
+    func hasMorePages() -> Bool {
+        return currentPage < totalPages
     }
 }
 
-struct PaginatedReplyMeta {
-    var total:Int = 0
-    var count:Int = 0
-    var perPage:Int = 0
-    var current_page:Int = 0
-    var totalPages:Int = 0
-    var links:PaginationLinks = PaginationLinks()
-}
+struct PaginationLinks:Mappable {
+    var next:String?
+    var previous:String?
 
-extension PaginatedReplyMeta:ArrowParsable {
-    mutating func deserialize(json: JSON) {
-        total <-- json["total"]
-        count <-- json["count"]
-        perPage <-- json["per_page"]
-        current_page <-- json["current_page"]
-        totalPages <-- json["total_pages"]
-        links <-- json["links"]
+    // MARK: JSON
+    init?(_ map: Map) { }
+
+    mutating func mapping(map: Map) {
+        next <- map["next"]
+        previous <- map["previous"]
     }
 }
 
-struct PaginationLinks {
-    var next:String = ""
-    var previous:String = ""
-}
+struct PrivateInfo:Mappable {
+    var phone:String?
 
-extension PaginationLinks:ArrowParsable {
-    mutating func deserialize(json: JSON) {
-        next <-- json["next"]
-        previous <-- json["previous"]
+    // MARK: JSON
+    init?(_ map: Map) { }
+
+    mutating func mapping(map: Map) {
+        phone <- map["data.phone"]
     }
-}
 
-struct PrivateInfo {
-    var phone:String = ""
-}
-
-extension PrivateInfo:ArrowParsable {
-    mutating func deserialize(json: JSON) {
-        phone <-- json["data"]?["phone"]
-    }
 }

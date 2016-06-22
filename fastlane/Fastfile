@@ -17,9 +17,8 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
     cocoapods
-    
   end
 
   desc "Runs all the tests"
@@ -27,15 +26,35 @@ platform :ios do
     scan
   end
 
+  lane :test_slack do
+    #increment_build_number
+    version     = get_version_number(xcodeproj: "Ao Dispor.xcodeproj")
+    build       = get_build_number(xcodeproj: "Ao Dispor.xcodeproj")
+    slack(
+      default_payloads: [],
+      use_webhook_configured_username_and_icon: true,
+      message: "Nova compilação submetida para o Test Flight. Versão: *#{version}* (#{build})"
+    )
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    increment_build_number
     # match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "Ao Dispor") # Build your app - more options available
-    pilot
+    pilot(skip_waiting_for_build_processing: true)
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
+
+    version     = get_version_number(xcodeproj: "../Ao Dispor.xcodeproj")
+    build       = get_build_number(xcodeproj: "../Ao Dispor.xcodeproj")
+    slack(
+      default_payloads: [],
+      use_webhook_configured_username_and_icon: true,
+      message: "Nova compilação submetida para o Test Flight. Versão: *#{version}* (#{build})"
+    )
   end
 
   desc "Deploy a new version to the App Store"

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MessageUI
 
 extension UIColor {
     //cores do aodispor
@@ -41,6 +42,31 @@ class MarginLabel:UILabel {
         let insets = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
         super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }
+}
+
+extension String {
+    var URLEscapedString: String {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+    }
+    var UTF8EncodedData: NSData {
+        return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    }
+}
+
+extension Int {
+    var f: CGFloat { return CGFloat(self) }
+}
+
+extension Float {
+    var f: CGFloat { return CGFloat(self) }
+}
+
+extension Double {
+    var f: CGFloat { return CGFloat(self) }
+}
+
+extension CGFloat {
+    var swf: Float { return Float(self) }
 }
 
 extension UIView {

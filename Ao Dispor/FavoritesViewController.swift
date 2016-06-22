@@ -9,9 +9,12 @@
 import UIKit
 import DZNEmptyDataSet
 
+protocol DismissedViewControllerDelegate {
+    func viewControllerWasDismissed()
+}
+
 class FavoritesViewController:UICollectionViewController {
-    var favorites:Array<Professional> = []
-    var selected = Professional()
+    var selected:Professional?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +22,20 @@ class FavoritesViewController:UICollectionViewController {
         self.collectionView!.emptyDataSetSource = self;
         self.collectionView!.emptyDataSetDelegate = self;
 
-        self.collectionView!.backgroundColor = UIColor.clearColor()
-        self.view.setImageViewAsBackground("Background")
+        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        //self.collectionView!.backgroundColor = UIColor.clearColor()
+        //self.view.setImageViewAsBackground("Background")
 
         self.navigationItem.title = NSLocalizedString("Favoritos", comment:"")
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        dispatch_async(dispatch_get_main_queue(), {
+            self.collectionView?.reloadData()
+            self.collectionView?.reloadEmptyDataSet()
+        });
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -30,31 +43,46 @@ class FavoritesViewController:UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favorites.count
+        return Favorites.numberOfFavorites()
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("favoriteCell", forIndexPath: indexPath) as! FavoriteViewCell
-        let favorite = favorites[indexPath.row]
+        let favorite = Favorites.favoriteAtIndex(indexPath.row)
 
         cell.fillWithData(favorite)
+
+        let shadowPath = UIBezierPath(rect: cell.bounds)
+        cell.layer.shadowPath = shadowPath.CGPath
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSizeMake(5.0, 5.0)
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowOpacity = 0.5
+
+        cell.layer.cornerRadius = 10
+
+        cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.blackColor().CGColor
 
         return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selected = favorites[indexPath.row]
+        self.selected = Favorites.favoriteAtIndex(indexPath.row)
         self.performSegueWithIdentifier("showModalFavorite", sender: self)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let modalViewController = segue.destinationViewController as! FavoriteModalViewController
         modalViewController.transitioningDelegate = self
+        modalViewController.delegate = self
         modalViewController.modalPresentationStyle = .Custom
         modalViewController.professional = self.selected
     }
 }
 
+//MARK: - DZNEmptyDataSetSource
 extension FavoritesViewController:DZNEmptyDataSetSource {
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         let attributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
@@ -68,12 +96,10 @@ extension FavoritesViewController:DZNEmptyDataSetSource {
     }
 }
 
+//MARK: - DZNEmptyDataSetDelegate
 extension FavoritesViewController:DZNEmptyDataSetDelegate {
     func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
-        if (self.favorites.count == 0) {
-            return true
-        }
-        return false
+        return Favorites.numberOfFavorites() == 0
     }
 
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
@@ -81,8 +107,16 @@ extension FavoritesViewController:DZNEmptyDataSetDelegate {
     }
 }
 
+//MARK: - UIViewControllerTransitioningDelegate
 extension FavoritesViewController:UIViewControllerTransitioningDelegate {
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return FavoritePresentationViewController(presentedViewController: presented, presentingViewController: self)
+    }
+}
+
+//MARK: - DismissedViewControllerDelegate
+extension FavoritesViewController:DismissedViewControllerDelegate {
+    func viewControllerWasDismissed() {
+        self.collectionView?.reloadData()
     }
 }

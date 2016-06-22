@@ -105,7 +105,7 @@
                 <outlet property="avatar" destination="pRg-u5-m2a" id="dKs-e2-oD5"/>
                 <outlet property="location" destination="cEI-gr-JPV" id="c0R-3w-PCF"/>
                 <outlet property="name" destination="tXJ-AQ-lcx" id="2Jl-iF-Xa8"/>
-                <outlet property="profileDescription" destination="Npd-Kn-lrf" id="qJs-Um-FC6"/>
+                <outlet property="profileDescription" destination="Npd-Kn-lrf" id="2jt-st-sPl"/>
                 <outlet property="rate" destination="jiP-gW-1JS" id="35n-7Z-ya8"/>
                 <outlet property="title" destination="1fx-jt-TTQ" id="ad5-xR-8J9"/>
             </connections>

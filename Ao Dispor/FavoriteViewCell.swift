@@ -14,8 +14,8 @@ class FavoriteViewCell:UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
 
     func fillWithData(professional: Professional) -> Void {
-        self.avatar.af_setImageWithURL(NSURL(string: professional.avatarURL)!)
+        self.avatar.hnk_setImageFromURL(NSURL(string: professional.avatarURL!)!)
         self.name?.text = professional.name
-        self.title?.text = professional.title.stringByReplacingOccurrencesOfString("<highlight>", withString: "").stringByReplacingOccurrencesOfString("</highlight>", withString: "")
+        self.title?.text = professional.title!.stringByReplacingOccurrencesOfString("<highlight>", withString: "").stringByReplacingOccurrencesOfString("</highlight>", withString: "")
     }
 }

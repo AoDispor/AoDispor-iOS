@@ -1,52 +1,65 @@
 PODS:
   - Alamofire (3.4.0)
-  - AlamofireImage (2.4.0):
-    - Alamofire (~> 3.3)
-  - Arrow (2.0.0)
   - DZNEmptyDataSet (1.8.1)
-  - FontAwesome.swift (0.7.3)
+  - Font-Awesome-Swift (1.4.7)
+  - HanekeSwift (0.10.1)
   - Koloda (3.1.1):
     - pop (~> 1.0)
+  - Moya (6.5.0):
+    - Moya/Core (= 6.5.0)
+  - Moya-ObjectMapper (1.2.1):
+    - Moya-ObjectMapper/Core (= 1.2.1)
+  - Moya-ObjectMapper/Core (1.2.1):
+    - Moya (~> 6.4)
+    - ObjectMapper (~> 1.2)
+  - Moya/Core (6.5.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 2.0)
+  - ObjectMapper (1.3.0)
+  - Pantry (0.2.1)
   - PermissionScope (1.0.2)
   - pop (1.0.9)
-  - thenPromise (1.3.0)
-  - ws (1.0.0):
-    - Alamofire (~> 3.3)
-    - Arrow (~> 2.0)
-    - thenPromise (~> 1.3)
+  - Pulsator (0.1.1)
+  - Result (2.0.0)
+  - SwiftLocation (0.9.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage
-  - Arrow
   - DZNEmptyDataSet
-  - FontAwesome.swift
+  - Font-Awesome-Swift
+  - HanekeSwift
   - Koloda
+  - Moya
+  - Moya-ObjectMapper
+  - Pantry (from `https://github.com/nickoneill/Pantry.git`)
   - PermissionScope
-  - thenPromise
-  - ws (from `https://github.com/DjinnGA/ws.git`)
+  - Pulsator
+  - SwiftLocation
 
 EXTERNAL SOURCES:
-  ws:
-    :git: https://github.com/DjinnGA/ws.git
+  Pantry:
+    :git: https://github.com/nickoneill/Pantry.git
 
 CHECKOUT OPTIONS:
-  ws:
-    :commit: c8b1d44ba244619a757310b3d2b9e40389e82a94
-    :git: https://github.com/DjinnGA/ws.git
+  Pantry:
+    :commit: 31bb78e2df60fd33b46046e9b87f2e51fce11890
+    :git: https://github.com/nickoneill/Pantry.git
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
-  Arrow: 806707ba453f402b0f2affe55e4b15c882d5fa45
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  FontAwesome.swift: f694fe0f667d6d3390b5919cdb0556a27b75d427
+  Font-Awesome-Swift: 0131fd0f683ac024ce9abf1fdbc9fb482150ce49
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
+  Moya: f7a4044719381cc6299f9ad3e0ef05f426f0557b
+  Moya-ObjectMapper: 0adee6d1e81560ecd69da18f87260777fc439b34
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
+  Pantry: 433931c8f545dd3426ca7d09a4edd5afa89c6e01
   PermissionScope: 860828c5516d349b6f49e5491799cfef33c5ccc7
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  thenPromise: a272022349ddbc5cb55c77a1412001dbfffb02f4
-  ws: faecc29f80da5e9ae788a91ccdba5d3a07231fb6
+  Pulsator: 9486579ab8eeb0585aedefdc2c688ab589497d9a
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  SwiftLocation: f18e71300a89f2a81001c9615b7694150e6b84de
 
-PODFILE CHECKSUM: c045bd0bbdddfa5247427e3f174c47b1bf7ca093
+PODFILE CHECKSUM: 269e0ab2071c35ef4486426da7cbb61d9fff6893
 
 COCOAPODS: 1.0.1

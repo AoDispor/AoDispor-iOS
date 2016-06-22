@@ -64,14 +64,13 @@ class FavoritePresentationViewController: UIPresentationController {
         var presentedViewFrame = CGRectZero
         let containerBounds = containerView!.bounds
 
-        let contentContainer = presentedViewController
+        let width = CGRectGetWidth(containerBounds) - 2 * defaultHorizontalOffset
+        let height = width * defaultHeightRatio + 50
 
-        presentedViewFrame.size = sizeForChildContentContainer(contentContainer, withParentContainerSize: containerBounds.size) //CGSizeMake(428.0, presentedView().frame.size.height) //
-        presentedViewFrame.origin.x = containerBounds.size.width * 0.1
-        presentedViewFrame.origin.y = containerBounds.size.height * 0.1
+        presentedViewFrame.size = CGSize(width: width, height: height)
+        presentedViewFrame.origin.x = defaultHorizontalOffset
+        presentedViewFrame.origin.y = (containerBounds.size.height - height)/2
 
         return presentedViewFrame
     }
-
-    //return CGRect(x: 0, y: 0, width: containerView!.bounds.width/2, height: containerView!.bounds.height/2)
 }

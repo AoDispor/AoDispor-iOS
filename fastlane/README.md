@@ -11,6 +11,11 @@ sudo gem install fastlane
 fastlane ios test
 ```
 Runs all the tests
+### ios test_slack
+```
+fastlane ios test_slack
+```
+
 ### ios beta
 ```
 fastlane ios beta

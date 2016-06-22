@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ProfessionalCard: UIScrollView {
+class ProfessionalCard: UIView {
+    var professional:Professional?
+
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var rate : UILabel!
     @IBOutlet weak var name : UILabel!
@@ -16,28 +18,49 @@ class ProfessionalCard: UIScrollView {
     @IBOutlet weak var avatar : UIImageView!
     @IBOutlet weak var location : UILabel!
 
-    var shouldShowFullDescription = true
+    @IBOutlet weak var favoriteButton : UIButton!
+    @IBOutlet weak var contactButton : UIButton!
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.CGPath
+        layer.masksToBounds = false
+        layer.shadowOffset = CGSizeMake(5.0, 5.0)
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOpacity = 0.5
+
+        layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.blackColor().CGColor
+
+        //self.showsVerticalScrollIndicator = false
+    }
 
     func fillWithData(professional: Professional) -> Void {
-        self.avatar.af_setImageWithURL(NSURL(string: professional.avatarURL)!)
+        self.professional = professional
+
+        self.avatar.hnk_setImageFromURL(NSURL(string: professional.avatarURL!)!)
         self.name?.text = professional.name
-        self.title.attributedText = self.getMutableStringWithHighlightedText(professional.title)
+        self.title.attributedText = self.getMutableStringWithHighlightedText(professional.title!)
         self.location?.text = professional.location
         self.location?.sizeToFit()
 
         if(professional.type == "S") {
             self.rate?.textColor = UIColor.serviceGreen()
-            self.rate?.text = "\(professional.rate) €"
+            self.rate?.text = "\(professional.rate!) €"
         } else if (professional.type == "H") {
             self.rate?.textColor = UIColor.perHourBlue()
-            self.rate?.text = "\(professional.rate) €/h"
+            self.rate?.text = "\(professional.rate!) €/h"
         }
 
         do {
             let url = NSBundle.mainBundle().pathForResource("profileDescription", ofType:"html")
             let templateHTML = try String(contentsOfFile: url!)
-            let finalHTML = templateHTML.stringByReplacingOccurrencesOfString("{{text}}", withString: professional.description)
+            let finalHTML = templateHTML.stringByReplacingOccurrencesOfString("{{text}}", withString: professional.description!)
             self.profileDescription?.loadHTMLString(finalHTML, baseURL: nil)
+            self.profileDescription?.dataDetectorTypes = .None
         } catch {
             print(error)
         }
@@ -55,14 +78,10 @@ class ProfessionalCard: UIScrollView {
     }
 }
 
-extension ProfessionalCard:UIWebViewDelegate {
+/*extension ProfessionalCard:UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
-        webView.frame.size.height = 1
+        /*webView.frame.size.height = 1
         webView.frame.size = webView.sizeThatFits(CGSizeZero)
-
-        if(!shouldShowFullDescription) {
-            return
-        }
 
         let originalWidth = self.frame.width
 
@@ -71,8 +90,8 @@ extension ProfessionalCard:UIWebViewDelegate {
             contentRect = CGRectUnion(contentRect, view.frame)
         }
         contentRect = CGRectUnion(contentRect, profileDescription.frame)
-        contentRect.size.width = originalWidth
+        contentRect.size.width = originalWidth*/
 
-        self.contentSize = contentRect.size
+        //self.contentSize = contentRect.size
     }
-}
+}*/
