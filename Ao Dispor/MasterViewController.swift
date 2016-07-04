@@ -10,6 +10,7 @@ import UIKit
 import Koloda
 import Font_Awesome_Swift
 import MessageUI
+import Crashlytics
 
 class MasterViewController: CardExplorerViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -45,12 +46,6 @@ class MasterViewController: CardExplorerViewController {
         let rightButton = UIBarButtonItem(title: NSLocalizedString("Favoritos", comment:""), style: .Done, target: self, action: #selector(MasterViewController.showFavorites))
         rightButton.FAIcon = .FAStarO
         self.navigationItem.rightBarButtonItem = rightButton
-        
-        contactButton.setTitle(NSLocalizedString("Contactar", comment: ""), forState: .Normal)
-        nextButton.setTitle(NSLocalizedString("Seguinte", comment: ""), forState: .Normal)
-
-        favoriteButton.setFAIcon(.FAStarO, forState: .Normal)
-        favoriteButton.setFATitleColor(UIColor.lightGrayColor(), forState: .Disabled)
 
         self.updateFavoritesButtonStar()
     }
@@ -103,10 +98,9 @@ extension MasterViewController {
 
     @IBAction func contactProfessional(sender: AnyObject) {
         let professional = self.cardsToExplore[self.kolodaView.currentCardIndex]
-        let string_id = professional.string_id
 
-        API.sharedInstance.privateInfoFor(string_id!)
-        API.sharedInstance.delegate = self
+        let contactAlertViewController = ContactAlertViewController(professional: professional, viewController: self)
+        contactAlertViewController.showContactAlertViewController()
     }
 
     @IBAction func nextProfessional(sender: AnyObject) {
@@ -116,7 +110,7 @@ extension MasterViewController {
     @IBAction func markContactAsFavorite(sender: AnyObject) {
         let professionalToAdd = self.cardsToExplore[self.kolodaView.currentCardIndex]
         if !Favorites.appendOrRemove(professionalToAdd) {
-            favoriteButton.setFAIcon(.FAStarO, forState: .Normal)
+            //favoriteButton.setFAIcon(.FAStarO, forState: .Normal)
             self.updateFavoritesButtonStar()
             return
         }
@@ -141,39 +135,15 @@ extension MasterViewController {
         }
     }
 
-    override func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        let professional = cardsToExplore[Int(index)]
-        let professionalCard = super.koloda(koloda, viewForCardAtIndex: index) as? ProfessionalCard
-
-        self.favoriteButton = professionalCard?.favoriteButton
-
-        favoriteButton.setFAIcon(.FAStarO, forState: .Normal)
-        favoriteButton.addTarget(self, action: #selector(MasterViewController.markContactAsFavorite), forControlEvents: .TouchUpInside)
-        professionalCard!.contactButton.addTarget(self, action: #selector(MasterViewController.contactProfessional), forControlEvents: .TouchUpInside)
-
-        if Favorites.isFavorite(professional) {
-            favoriteButton.setFAIcon(.FAStar, forState: .Normal)
-        }
-
-        return professionalCard!
-    }
-
-    override func koloda(koloda: KolodaView, didShowCardAtIndex index: UInt) {
-        //TODO mudar a estrela consoante seja favorito ou não
-        let professional = cardsToExplore[Int(index)]
-        if Favorites.isFavorite(professional) {
-            favoriteButton.setFAIcon(.FAStar, forState: .Normal)
-            return
-        }
-        favoriteButton.setFAIcon(.FAStarO, forState: .Normal)
-    }
-
     override func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         let professional = self.cardsToExplore[Int(index)]
-        let string_id = professional.string_id
-
-        API.sharedInstance.privateInfoFor(string_id!)
+        let string_id = professional.string_id!
+        /*let contactAlertViewController = ContactAlertViewController(string_id: string_id!, viewController: self)
+        contactAlertViewController.showContactAlertViewController()*/
         API.sharedInstance.delegate = self
+        API.sharedInstance.privateInfoFor(string_id)
+        Answers.logCustomEventWithName("Action Sheet de contacto", customAttributes: ["string_id": professional.string_id!
+            ])
     }
 }
 
@@ -182,8 +152,9 @@ extension MasterViewController:APIReplyDelegate {
     func returnPrivateInfo(privateInfo: PrivateInfo) {
         //let string = NSLocalizedString("Entre imediatamante em contacto com este profissional através do número:", comment: "")
         //let alertController = UIAlertController(title: NSLocalizedString("Contactar este profissional", comment:""), message: "\(string)\n\(privateInfo.phone!)", preferredStyle: .ActionSheet)
+        let professional = self.cardsToExplore[self.kolodaView.currentCardIndex]
 
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: professional.name, message: nil, preferredStyle: .ActionSheet)
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment:""), style: .Cancel, handler: nil)
         alertController.addAction(cancelAction)
@@ -191,17 +162,19 @@ extension MasterViewController:APIReplyDelegate {
         let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .Default) { (action) in
             let phone = "tel://\(privateInfo.phone!)"
             let open = NSURL(string: phone)!
-
+            Answers.logCustomEventWithName("Telefonema", customAttributes: ["string_id": professional.string_id!
+                ])
             UIApplication.sharedApplication().openURL(open)
         }
         alertController.addAction(OKAction)
 
         let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .Default) { (action) in
             let messageVC = MFMessageComposeViewController()
-            messageVC.body = "";
+            messageVC.body = "Vi o seu perfil no AoDispor.pt e gostaria de contratar os seus serviços. Podemos falar?"
             messageVC.recipients = [privateInfo.phone!]
             messageVC.messageComposeDelegate = self;
-
+            Answers.logCustomEventWithName("Envio de SMS", customAttributes: ["string_id": professional.string_id!
+                ])
             self.presentViewController(messageVC, animated: true, completion: nil)
         }
         alertController.addAction(SMSAction)
@@ -213,7 +186,16 @@ extension MasterViewController:APIReplyDelegate {
         }
         let FavoriteAction = UIAlertAction(title: favoriteActionLabel, style: .Default) { (action) in
             let professionalToAdd = self.cardsToExplore[self.kolodaView.currentCardIndex]
-            Favorites.appendOrRemove(professionalToAdd)
+            let result = Favorites.appendOrRemove(professionalToAdd)
+
+            if result {
+                Answers.logCustomEventWithName("Adicionar aos Favoritos", customAttributes: ["string_id": professional.string_id!
+                    ])
+            } else {
+                Answers.logCustomEventWithName("Removido dos Favoritos", customAttributes: ["string_id": professional.string_id!
+                    ])
+            }
+
             self.updateFavoritesButtonStar()
 
         }

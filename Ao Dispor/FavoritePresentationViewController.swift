@@ -65,7 +65,7 @@ class FavoritePresentationViewController: UIPresentationController {
         let containerBounds = containerView!.bounds
 
         let width = CGRectGetWidth(containerBounds) - 2 * defaultHorizontalOffset
-        let height = width * defaultHeightRatio + 50
+        let height = width * defaultHeightRatio + 10
 
         presentedViewFrame.size = CGSize(width: width, height: height)
         presentedViewFrame.origin.x = defaultHorizontalOffset

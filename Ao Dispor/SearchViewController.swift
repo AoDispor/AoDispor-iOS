@@ -11,11 +11,13 @@ import Pulsator
 import CoreLocation
 import PermissionScope
 import SwiftLocation
+import Crashlytics
 
 enum Action {
     case NextPage
     case ResetSearch
     case Search(query: String)
+    case GetProfile(string_id: String)
 }
 
 private let radarAnimationDuration = Int64(2) //2 segundos
@@ -35,7 +37,6 @@ class SearchViewController:UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         let loadingText = UILabel()
         loadingText.text = NSLocalizedString("Estamos a procurar profissionais à sua volta", comment: "")
@@ -64,6 +65,14 @@ class SearchViewController:UIViewController {
 
         pulsator.start()
 
+        switch SearchViewController.action {
+            case .GetProfile(let string_id):
+                self.getProfile(string_id)
+                return
+            default:
+                break
+        }
+
         pscope.show({ (finished, results) in
             switch results.first!.status {
             case .Unknown:
@@ -89,10 +98,15 @@ extension SearchViewController {
         switch SearchViewController.action {
         case .NextPage:
             self.loadNextPage()
+            Answers.logSearchWithQuery(API.sharedInstance.searchData.query, customAttributes: ["page" :API.sharedInstance.searchData.page])
         case .ResetSearch:
             self.resetSearch()
+            Answers.logSearchWithQuery(nil, customAttributes: nil)
         case .Search(let query):
             self.searchFor(query)
+            Answers.logSearchWithQuery(query, customAttributes: ["page" : 0])
+        case .GetProfile(let string_id):
+            self.getProfile(string_id)
         }
     }
     func loadNextPage() {
@@ -115,6 +129,11 @@ extension SearchViewController {
         API.sharedInstance.searchData.query = query
         API.sharedInstance.searchData.page = 0
         self.loadNextPage()
+    }
+
+    func getProfile(string_id:String) {
+        API.sharedInstance.delegate = self
+        API.sharedInstance.profileFor(string_id)
     }
 }
 
@@ -145,6 +164,12 @@ extension SearchViewController {
 
 //MARK: - SearchReplyDelegate
 extension SearchViewController:APIReplyDelegate {
+    func returnProfessional(professional: Professional) {
+        self.professionals = [professional]
+        self.meta = PaginatedReplyMeta()
+        self.performSegueWithIdentifier("showCardExplorer", sender: self)
+    }
+
     func returnProfessionals(professionals: [Professional], meta: PaginatedReplyMeta) {
         // FIXME isto devia chamar o segue
         self.professionals = professionals
@@ -152,7 +177,6 @@ extension SearchViewController:APIReplyDelegate {
 
         // FIXME guardei o timestamp de quando o VC apareceu e agora vou ver se vale a pena dormir ou não
         let elapsedTime = CFAbsoluteTimeGetCurrent() - appearedAt!
-        print(elapsedTime)
         if elapsedTime > 2 {
             self.performSegueWithIdentifier("showCardExplorer", sender: self)
             return

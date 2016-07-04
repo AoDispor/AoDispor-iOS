@@ -24,15 +24,21 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktk-pr-MFR">
                             <rect key="frame" x="0.0" y="0.0" width="580" height="30"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ytf-pT-OBo">
-                                    <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="253" text="Location" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-yn-NWc" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="505" height="30"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
+                                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="248" text="999 €/h" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2B-VV-6xB" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
-                                    <rect key="frame" x="49" y="0.0" width="531" height="30"/>
+                                    <rect key="frame" x="505" y="0.0" width="75" height="30"/>
                                     <accessibility key="accessibilityConfiguration">
                                         <accessibilityTraits key="traits" button="YES" staticText="YES" notEnabled="YES"/>
                                     </accessibility>
@@ -46,10 +52,10 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="YiS-Kp-PTC">
-                            <rect key="frame" x="0.0" y="30" width="580" height="550"/>
+                            <rect key="frame" x="0.0" y="30" width="580" height="580"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-8H-qn3">
-                                    <rect key="frame" x="20" y="5" width="540" height="540"/>
+                                    <rect key="frame" x="5" y="5" width="570" height="570"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dFu-8H-qn3" secondAttribute="height" id="MxC-IC-8sE"/>
                                     </constraints>
@@ -62,57 +68,20 @@
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="dFu-8H-qn3" secondAttribute="trailing" constant="20" id="9hI-8w-2KU"/>
+                                <constraint firstAttribute="trailing" secondItem="dFu-8H-qn3" secondAttribute="trailing" constant="5" id="9hI-8w-2KU"/>
                                 <constraint firstItem="dFu-8H-qn3" firstAttribute="top" secondItem="YiS-Kp-PTC" secondAttribute="top" constant="5" id="Uc7-JT-xKu"/>
-                                <constraint firstItem="dFu-8H-qn3" firstAttribute="leading" secondItem="YiS-Kp-PTC" secondAttribute="leading" constant="20" id="lvy-Nf-FC0"/>
+                                <constraint firstItem="dFu-8H-qn3" firstAttribute="leading" secondItem="YiS-Kp-PTC" secondAttribute="leading" constant="5" id="lvy-Nf-FC0"/>
                                 <constraint firstAttribute="bottom" secondItem="dFu-8H-qn3" secondAttribute="bottom" constant="5" id="pPz-AO-ykK"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-HB-1cH">
-                            <rect key="frame" x="0.0" y="580" width="580" height="28"/>
-                            <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="23"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" misplaced="YES" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-HB-1cH">
+                            <rect key="frame" x="0.0" y="610" width="580" height="42"/>
+                            <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="253" text="Location" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-yn-NWc" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="608" width="580" height="21"/>
-                            <color key="backgroundColor" red="0.36078431370000003" green="0.72156862749999995" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <accessibility key="accessibilityConfiguration">
-                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                            </accessibility>
-                            <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-kX-5Sk">
-                            <rect key="frame" x="0.0" y="629" width="580" height="0.0"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-PF-yrg">
-                                    <rect key="frame" x="0.0" y="0.0" width="290" height="0.0"/>
-                                    <state key="normal" title="Contactar"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJk-nY-Oda">
-                                    <rect key="frame" x="290" y="0.0" width="290" height="0.0"/>
-                                    <state key="normal" title="Desfavoritar"/>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="lhL-ev-P1m"/>
-                                <constraint firstItem="pIb-PF-yrg" firstAttribute="width" secondItem="yJk-nY-Oda" secondAttribute="width" id="ygj-Po-6UW"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="lhL-ev-P1m"/>
-                                </mask>
-                            </variation>
-                        </stackView>
-                        <webView contentMode="scaleToFill" verticalHuggingPriority="240" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-IQ-tco">
-                            <rect key="frame" x="0.0" y="629" width="580" height="159"/>
+                        <webView contentMode="scaleToFill" verticalHuggingPriority="240" verticalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-IQ-tco">
+                            <rect key="frame" x="0.0" y="652" width="580" height="136"/>
                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                         </webView>
                     </subviews>
@@ -133,10 +102,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="avatar" destination="dFu-8H-qn3" id="rGM-PH-2SM"/>
-                <outlet property="contactButton" destination="pIb-PF-yrg" id="kGd-sd-scv"/>
-                <outlet property="favoriteButton" destination="yJk-nY-Oda" id="NsN-c0-FlJ"/>
                 <outlet property="location" destination="2pO-yn-NWc" id="pqS-p6-0Bg"/>
-                <outlet property="name" destination="Ytf-pT-OBo" id="fNN-Nx-cwP"/>
                 <outlet property="profileDescription" destination="Fas-IQ-tco" id="4Hx-av-77J"/>
                 <outlet property="rate" destination="D2B-VV-6xB" id="ASc-24-Q83"/>
                 <outlet property="title" destination="oT8-HB-1cH" id="49I-mn-iO1"/>

@@ -14,7 +14,6 @@
             <string>YanoneKaffeesatz-Regular</string>
             <string>YanoneKaffeesatz-Regular</string>
             <string>YanoneKaffeesatz-Regular</string>
-            <string>YanoneKaffeesatz-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -250,7 +249,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7A-C7-bPr">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iue-fN-XY1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iue-fN-XY1">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,46 +282,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="bDy-lw-zSy" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="413" width="355" height="21"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.72156862749999995" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6o-rK-L3y">
-                                        <rect key="frame" x="0.0" y="434" width="355" height="21"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5X-he-KKs">
-                                                <rect key="frame" x="0.0" y="0.0" width="178" height="21"/>
-                                                <state key="normal" title="Contactar"/>
-                                                <connections>
-                                                    <action selector="contactProfessional:" destination="585-Ea-wvX" eventType="touchUpInside" id="S8g-ng-Mpu"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TB4-Jw-dkX">
-                                                <rect key="frame" x="178" y="0.0" width="177" height="21"/>
-                                                <state key="normal" title="Desfavoritar"/>
-                                                <connections>
-                                                    <action selector="unfavorite:" destination="585-Ea-wvX" eventType="touchUpInside" id="fF4-Bm-xtf"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="N5X-he-KKs" firstAttribute="width" secondItem="TB4-Jw-dkX" secondAttribute="width" id="bdp-2R-fMS"/>
-                                            <constraint firstAttribute="height" constant="21" id="vxp-P5-OkE"/>
-                                        </constraints>
-                                    </stackView>
                                     <webView contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="u6k-En-iWh">
-                                        <rect key="frame" x="0.0" y="455" width="355" height="192"/>
+                                        <rect key="frame" x="0.0" y="413" width="355" height="234"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                     </webView>
                                 </subviews>
@@ -342,9 +303,6 @@
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="avatar" destination="VOD-eV-w3Y" id="J0f-MK-R1x"/>
-                            <outlet property="contactButton" destination="N5X-he-KKs" id="EI3-f4-BLX"/>
-                            <outlet property="favoriteButton" destination="TB4-Jw-dkX" id="Vh8-hP-Ik2"/>
-                            <outlet property="location" destination="bDy-lw-zSy" id="ggj-nw-OaR"/>
                             <outlet property="name" destination="Iue-fN-XY1" id="EnX-iS-9HY"/>
                             <outlet property="profileDescription" destination="u6k-En-iWh" id="jsd-xc-AJJ"/>
                             <outlet property="rate" destination="NLH-9w-2CR" id="f3d-mF-fGm"/>
@@ -354,12 +312,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="avatar" destination="VOD-eV-w3Y" id="Qgk-df-q9K"/>
-                        <outlet property="contactButton" destination="N5X-he-KKs" id="9UP-xk-x4a"/>
-                        <outlet property="name" destination="Iue-fN-XY1" id="vuT-LP-A2G"/>
+                        <outlet property="location" destination="Iue-fN-XY1" id="WP9-tE-ORv"/>
                         <outlet property="profileDescription" destination="u6k-En-iWh" id="Lp2-4W-Ll2"/>
                         <outlet property="rate" destination="NLH-9w-2CR" id="40L-KF-FYJ"/>
                         <outlet property="titleLabel" destination="49o-yM-vAR" id="0VF-lk-hWx"/>
-                        <outlet property="unfavoriteButton" destination="TB4-Jw-dkX" id="Wmq-3e-ZGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7N-gA-QAx" userLabel="First Responder" sceneMemberID="firstResponder"/>

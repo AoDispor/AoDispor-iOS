@@ -10,10 +10,28 @@ import Foundation
 import Moya
 import Moya_ObjectMapper
 import Pantry
+import CoreSpotlight
 
 enum APIService {
     case Search(searchData: SearchData)
     case TelephoneFor(string_id: String)
+    // FIXME Isto não devia fazer um pedido à rede!
+    case ProfileFor(string_id: String)
+}
+
+let endpointClosure = { (target: APIService) -> Endpoint<APIService> in
+    let url = target.baseURL.URLByAppendingPathComponent(target.path).absoluteString
+    let endpoint: Endpoint<APIService> = Endpoint<APIService>(URL: url, sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
+
+    let date = NSDate()
+    var formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyyMMdd"
+    formatter.timeZone = NSTimeZone(abbreviation: "UTC")
+    let utcString = formatter.stringFromDate(date)
+    let token = "4bsHGsYeva6eud8VsLiKEVVQYQEgmfCafwtuNrhuFYFcPjxWnT\(utcString)"
+
+    //FIXME codificar o token
+    return endpoint.endpointByAddingHTTPHeaderFields(["API-Authorization": token])
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -30,11 +48,13 @@ extension APIService: TargetType {
             return "/profiles/search"
         case .TelephoneFor(let string_id):
             return "/profiles/profile/phone/\(string_id)"
+        case .ProfileFor(let string_id):
+            return "/profiles/profile/profile/\(string_id)"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .Search, .TelephoneFor:
+        case .Search, .TelephoneFor, .ProfileFor:
             return .GET
         }
     }
@@ -43,6 +63,8 @@ extension APIService: TargetType {
         case .Search(let searchData):
             return searchData.serialize()
         case .TelephoneFor(let string_id):
+            return ["string_id": string_id]
+        case .ProfileFor(let string_id):
             return ["string_id": string_id]
         }
     }
@@ -53,6 +75,8 @@ extension APIService: TargetType {
             return "A".UTF8EncodedData
         case .TelephoneFor(let string_id):
             return "{\"string_id\":\"\(string_id)\"}".UTF8EncodedData
+        case .ProfileFor(let string_id):
+            return "{\"string_id\":\"\(string_id)\"}".UTF8EncodedData
         }
     }
 }
@@ -60,17 +84,19 @@ extension APIService: TargetType {
 protocol APIReplyDelegate:class {
     func returnProfessionals(professionals:[Professional], meta:PaginatedReplyMeta)
     func returnPrivateInfo(privateInfo:PrivateInfo)
+    func returnProfessional(professional:Professional)
 }
 
 extension APIReplyDelegate {
     func returnProfessionals(professionals:[Professional], meta:PaginatedReplyMeta) {}
     func returnPrivateInfo(privateInfo:PrivateInfo) {}
+    func returnProfessional(professional:Professional) {}
 }
 
 class API {
     static let sharedInstance = API()
 
-    let provider = MoyaProvider<APIService>()
+    let provider = MoyaProvider<APIService>(endpointClosure: endpointClosure)
     var searchData = SearchData()
     var delegate:APIReplyDelegate?
 
@@ -79,8 +105,8 @@ class API {
             switch result {
             case let .Success(response):
                 do {
-                    if let paginatedReply = try response.mapObject() as? PaginatedReply {
-                        self.delegate?.returnProfessionals(paginatedReply.professionals!, meta: paginatedReply.meta!)
+                    if let paginatedReply:PaginatedReply? = try response.mapObject(PaginatedReply) {
+                        self.delegate?.returnProfessionals(paginatedReply!.professionals!, meta: paginatedReply!.meta!)
                     }
                 } catch {
                     // TODO: fazer alguma cena de jeito quando não consegue parsar a resposta...
@@ -98,7 +124,8 @@ class API {
             switch result {
             case let .Success(response):
                 do {
-                    if let privateInfo = try response.mapObject() as? PrivateInfo {
+                    if let privateInfo:PrivateInfo = try response.mapObject(PrivateInfo)
+                    {
                         self.delegate?.returnPrivateInfo(privateInfo)
                     }
                 } catch {
@@ -111,7 +138,48 @@ class API {
             }
         }
     }
+
+    func profileFor(string_id: String) {
+        provider.request(.ProfileFor(string_id: string_id)) { result in
+            switch result {
+            case let .Success(response):
+                do {
+                    if let paginatedReply:PaginatedReply? = try response.mapObject(PaginatedReply) {
+                        self.delegate?.returnProfessional(paginatedReply!.professionals!.first!)
+                    }
+                } catch {
+                    // TODO: fazer alguma cena de jeito quando não consegue parsar a resposta...
+                    print(".TelephoneFor: Could not parse PaginatedReply")
+                }
+            case let .Failure(error):
+                // TODO: handle the error ==  best. comment. ever.
+                print(".TelephoneFor: \(error)")
+            }
+        }
+    }
 }
+
+class LoadAllAndIndex:APIReplyDelegate {
+    var searchData = SearchData()
+    let api = API()
+
+    init() {
+        self.searchData.perPage = 1000
+        self.api.searchData = self.searchData
+        self.api.delegate = self
+    }
+
+    func returnProfessionals(professionals: [Professional], meta: PaginatedReplyMeta) {
+        let profilesToIndex = Professional.searchableItems(professionals)
+        Indexer.index(profilesToIndex)
+    }
+
+    static func getAllProfessionals() {
+        let ob = LoadAllAndIndex()
+        ob.api.search()
+    }
+}
+
 
 struct SearchData {
     var query:String = ""
@@ -140,6 +208,8 @@ struct SearchData {
         } else {
             ret["page"] = self.page
         }
+
+        ret["page_size"] = self.perPage
 
         return ret
     }

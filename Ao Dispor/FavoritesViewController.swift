@@ -23,9 +23,7 @@ class FavoritesViewController:UICollectionViewController {
         self.collectionView!.emptyDataSetDelegate = self;
 
         self.collectionView!.backgroundColor = UIColor.whiteColor()
-        //self.collectionView!.backgroundColor = UIColor.clearColor()
-        //self.view.setImageViewAsBackground("Background")
-
+        
         self.navigationItem.title = NSLocalizedString("Favoritos", comment:"")
     }
 

@@ -38,8 +38,13 @@ extension UIColor {
 }
 
 class MarginLabel:UILabel {
+    var insetTop: CGFloat = 0
+    var insetLeft: CGFloat = 5
+    var insetBottom: CGFloat = 0
+    var insetRight: CGFloat = 5
+
     override func drawTextInRect(rect: CGRect) {
-        let insets = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
+        let insets = UIEdgeInsets.init(top: insetTop, left: insetLeft, bottom: insetBottom, right: insetRight)
         super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }
 }
@@ -50,6 +55,13 @@ extension String {
     }
     var UTF8EncodedData: NSData {
         return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    }
+
+    var encodedSHA256: String {
+        let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH))
+        CC_SHA256(self.asData().bytes, CC_LONG(self.asData().length), UnsafeMutablePointer(res!.mutableBytes))
+        let nsString = NSString(data: res!, encoding: NSUTF8StringEncoding)
+        return "\(nsString)"
     }
 }
 
@@ -81,5 +93,40 @@ extension UIView {
 
         self.addSubview(imageViewBackground)
         self.sendSubviewToBack(imageViewBackground)
+    }
+}
+
+extension UIImage {
+    func cropToBounds(width: Double, height: Double) -> UIImage {
+        let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
+        let contextSize: CGSize = contextImage.size
+
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = 0.0
+        var cgwidth: CGFloat = CGFloat(width)
+        var cgheight: CGFloat = CGFloat(height)
+
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
+        }
+
+        let rect: CGRect = CGRectMake(posX, posY, cgwidth, cgheight)
+
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage!, rect)!
+
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let croppedImage: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
+        
+        return croppedImage
     }
 }

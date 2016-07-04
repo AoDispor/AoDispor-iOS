@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Haneke
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
@@ -25,12 +27,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISearchBar.appearance().backgroundImage = UIImage()
         UISearchBar.appearance().searchBarStyle = .Minimal
 
+        Fabric.sharedSDK().debug = true
+        Fabric.with([Crashlytics.self])
+
+        LoadAllAndIndex.getAllProfessionals()
+
         return true
     }
 
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-
+        //TODO acções do 3D touch
     }
+
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let string_id = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                Answers.logCustomEventWithName("Acesso pelo Spotlight", customAttributes: ["string_id": string_id])
+                SearchViewController.action = .GetProfile(string_id: string_id)
+                let vc = self.window?.rootViewController as! UINavigationController
+                vc.popToRootViewControllerAnimated(true)
+            }
+        }
+        
+        return true
+    }
+
+    
+    /*func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        let string_id = url.resourceSpecifier.stringByReplacingOccurrencesOfString("//", withString: "")
+
+        let contactAlertViewController = ContactAlertViewController(string_id: string_id, viewController: self.window!.rootViewController!)
+        contactAlertViewController.showContactAlertViewController()
+
+        return true
+    }*/
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -55,3 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
+extension AppDelegate:APIReplyDelegate {
+    func returnProfessional(professional: Professional) {
+        self.window?.rootViewController?.navigationController
+    }
+}

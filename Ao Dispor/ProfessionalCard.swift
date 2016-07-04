@@ -18,9 +18,6 @@ class ProfessionalCard: UIView {
     @IBOutlet weak var avatar : UIImageView!
     @IBOutlet weak var location : UILabel!
 
-    @IBOutlet weak var favoriteButton : UIButton!
-    @IBOutlet weak var contactButton : UIButton!
-
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -34,8 +31,6 @@ class ProfessionalCard: UIView {
         layer.cornerRadius = 10
         layer.borderWidth = 1
         layer.borderColor = UIColor.blackColor().CGColor
-
-        //self.showsVerticalScrollIndicator = false
     }
 
     func fillWithData(professional: Professional) -> Void {
@@ -77,21 +72,3 @@ class ProfessionalCard: UIView {
         return hightlightedString
     }
 }
-
-/*extension ProfessionalCard:UIWebViewDelegate {
-    func webViewDidFinishLoad(webView: UIWebView) {
-        /*webView.frame.size.height = 1
-        webView.frame.size = webView.sizeThatFits(CGSizeZero)
-
-        let originalWidth = self.frame.width
-
-        var contentRect = CGRectZero
-        self.subviews.forEach { view in
-            contentRect = CGRectUnion(contentRect, view.frame)
-        }
-        contentRect = CGRectUnion(contentRect, profileDescription.frame)
-        contentRect.size.width = originalWidth*/
-
-        //self.contentSize = contentRect.size
-    }
-}*/

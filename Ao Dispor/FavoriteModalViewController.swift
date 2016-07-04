@@ -15,14 +15,11 @@ class FavoriteModalViewController: UIViewController {
     var professional:Professional?
     var delegate:DismissedViewControllerDelegate?
 
-    @IBOutlet weak var name : UILabel!
+    @IBOutlet weak var location : UILabel!
     @IBOutlet weak var avatar : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var rate : UILabel!
     @IBOutlet weak var profileDescription : UIWebView!
-
-    @IBOutlet weak var contactButton: UIButton!
-    @IBOutlet weak var unfavoriteButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +36,15 @@ class FavoriteModalViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.blackColor().CGColor
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(FavoriteModalViewController.contactProfessional))
+        self.view.addGestureRecognizer(tapRecognizer)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.contactButton.setTitle(NSLocalizedString("Contactar", comment: ""), forState: .Normal)
-        unfavoriteButton.setFAIcon(.FAStar, forState: .Normal)
-
-        self.name?.text = professional?.name
+        self.location?.text = professional?.location
         self.titleLabel.attributedText = self.getMutableStringWithHighlightedText((professional?.title)!)
 
         if(professional?.type == "S") {
@@ -93,51 +90,11 @@ class FavoriteModalViewController: UIViewController {
 //MARK: - Actions
 extension FavoriteModalViewController {
     @IBAction func contactProfessional(sender: AnyObject) {
-        let string_id = professional!.string_id
-
-        API.sharedInstance.privateInfoFor(string_id!)
-        API.sharedInstance.delegate = self
-    }
-
-    @IBAction func unfavorite(sender: AnyObject) {
-        Favorites.appendOrRemove(professional!)
-        if Favorites.isFavorite(professional!) {
-            unfavoriteButton.setFAIcon(.FAStar, forState: .Normal)
-            return
-        }
-        unfavoriteButton.setFAIcon(.FAStarO, forState: .Normal)
+        let contactAlertViewController = ContactAlertViewController(professional: self.professional!, viewController: self)
+        contactAlertViewController.showContactAlertViewController()
     }
 }
 
-//MARK: - APIReplyDelegate
-extension FavoriteModalViewController:APIReplyDelegate {
-    func returnPrivateInfo(privateInfo: PrivateInfo) {
-        let string = NSLocalizedString("Entre imediatamante em contacto com este profissional através do número:", comment: "")
-        let alertController = UIAlertController(title: NSLocalizedString("Contactar este profissional", comment:""), message: "\(string)\n\(privateInfo.phone!)", preferredStyle: .Alert)
-
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment:""), style: .Cancel, handler: nil)
-        alertController.addAction(cancelAction)
-
-        let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .Default) { (action) in
-            let phone = "tel://\(privateInfo.phone!)"
-            let open = NSURL(string: phone)!
-
-            UIApplication.sharedApplication().openURL(open)
-        }
-        alertController.addAction(OKAction)
-
-        let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .Default) { (action) in
-            let messageVC = MFMessageComposeViewController()
-            messageVC.body = "";
-            messageVC.recipients = [privateInfo.phone!]
-            messageVC.messageComposeDelegate = self;
-
-            self.presentViewController(messageVC, animated: true, completion: nil)
-        }
-        alertController.addAction(SMSAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-}
 
 //MARK: - UIWebViewDelegate
 extension FavoriteModalViewController:UIWebViewDelegate {
@@ -147,9 +104,17 @@ extension FavoriteModalViewController:UIWebViewDelegate {
     }
 }
 
-//MARK: - MFMessageComposeViewControllerDelegate
-extension FavoriteModalViewController: MFMessageComposeViewControllerDelegate {
-    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+
+//MARK: - UIViewControllerTransitioningDelegate
+extension FavoriteModalViewController:UIViewControllerTransitioningDelegate {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return FavoritePresentationViewController(presentedViewController: presented, presentingViewController: self)
+    }
+}
+
+//MARK: - DismissedViewControllerDelegate
+extension FavoriteModalViewController:DismissedViewControllerDelegate {
+    func viewControllerWasDismissed() {
+        return
     }
 }

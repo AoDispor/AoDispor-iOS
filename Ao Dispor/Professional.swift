@@ -9,6 +9,9 @@
 import Foundation
 import ObjectMapper
 import Pantry
+import CoreSpotlight
+import MobileCoreServices
+import Haneke
 
 class Professional: Mappable, Storable, Equatable {
     var name:String?
@@ -16,15 +19,22 @@ class Professional: Mappable, Storable, Equatable {
     var rate:String?
     var currency:String?
     var avatar:String?
+    var description:String?
+    var type:String?
+    var string_id:String?
+    var location:String?
+    var phone:String?
+
     var avatarURL:String? {
         get {
             return avatar?.stringByReplacingOccurrencesOfString("regular", withString: "original")
         }
     }
-    var description:String?
-    var type:String?
-    var string_id:String?
-    var location:String?
+    var cleanTitle:String? {
+        get {
+            return title?.stringByReplacingOccurrencesOfString("<highlight>", withString: "").stringByReplacingOccurrencesOfString("</highlight>", withString: "")
+        }
+    }
 
     // MARK: JSON
     required init?(_ map: Map) { }
@@ -39,6 +49,7 @@ class Professional: Mappable, Storable, Equatable {
         type <- map["type"]
         string_id <- map["string_id"]
         location <- map["location"]
+        phone <- map["phone"]
     }
 
     required init(warehouse: Warehouseable) {
@@ -51,6 +62,7 @@ class Professional: Mappable, Storable, Equatable {
         self.type = warehouse.get("type") ?? "default"
         self.string_id = warehouse.get("string_id") ?? "default"
         self.location = warehouse.get("location") ?? "default"
+        self.phone = warehouse.get("phone") ?? "default"
     }
 
     func toDictionary() -> [String : AnyObject] {
@@ -64,7 +76,53 @@ class Professional: Mappable, Storable, Equatable {
         ret["type"] = self.type
         ret["string_id"] = self.string_id
         ret["location"] = self.location
+        ret["phone"] = self.phone
         return ret
+    }
+
+    // MARK: Spotlight
+    static let domainIdentifier = "pt.aodispor.Ao-Dispor.professional"
+
+    static func searchableItems(professionals:[Professional]) -> [CSSearchableItem] {
+        var searchableItems = [CSSearchableItem]()
+        professionals.forEach { (professional) in
+            searchableItems.append(professional.searchableItem)
+        }
+        return searchableItems
+    }
+
+    var userActivityUserInfo: [NSObject: AnyObject] {
+        return ["id": string_id!]
+    }
+
+    var userActivity: NSUserActivity {
+        let activity = NSUserActivity(activityType: Professional.domainIdentifier)
+        activity.title = self.name
+        activity.userInfo = userActivityUserInfo
+        activity.contentAttributeSet = attributeSet
+        var keywords = self.cleanTitle!.componentsSeparatedByString(" ")
+        keywords.append(self.location!)
+        keywords.append("Ao Dispor")
+        activity.keywords = Set(keywords)
+        return activity
+    }
+
+    var attributeSet: CSSearchableItemAttributeSet {
+        let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeContact as String)
+        attributeSet.title = self.cleanTitle
+        attributeSet.contentDescription = "\(self.location!)"
+        if self.phone != nil {
+            attributeSet.phoneNumbers = [self.phone!]
+            attributeSet.supportsPhoneCall = true
+        }
+        Shared.imageCache.fetch(URL: NSURL(string:  self.avatarURL!)!).onSuccess { image in
+            attributeSet.thumbnailData = UIImageJPEGRepresentation(image, 0.9)
+        }
+        return attributeSet
+    }
+
+    var searchableItem: CSSearchableItem {
+        return CSSearchableItem(uniqueIdentifier: self.string_id, domainIdentifier: Professional.domainIdentifier, attributeSet: self.attributeSet)
     }
 }
 
@@ -93,6 +151,8 @@ struct PaginatedReplyMeta:Mappable {
     var totalPages:Int?
     var links:PaginationLinks?
 
+    init() {}
+
     // MARK: JSON
     init?(_ map: Map) { }
 
@@ -106,6 +166,9 @@ struct PaginatedReplyMeta:Mappable {
     }
 
     func hasMorePages() -> Bool {
+        if currentPage == nil {
+            return false
+        }
         return currentPage < totalPages
     }
 }

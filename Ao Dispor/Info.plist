@@ -16,8 +16,41 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>pt.aodispor.profile</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ad-profile</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>pt.aodispor.contact-scheme</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ad-contact</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>17</string>
+	<string>21</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>f5c949b3aa130e0cf5d2b66d9692b7a268ca5753</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -35,6 +68,25 @@
 		<string>YanoneKaffeesatz-Thin.otf</string>
 		<string>DancingScript-Regular.otf</string>
 		<string>DancingScriptOT.otf</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeFavorite</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Favoritos</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).favoritos</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeSearch</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Procurar</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).procurar</string>
+		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -59,24 +111,5 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-    <key>UIApplicationShortcutItems</key>
-    <array>
-        <dict>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeFavorite</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Favoritos</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>$(PRODUCT_BUNDLE_IDENTIFIER).favoritos</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeSearch</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Procurar</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>$(PRODUCT_BUNDLE_IDENTIFIER).procurar</string>
-        </dict>
-    </array>
 </dict>
 </plist>
