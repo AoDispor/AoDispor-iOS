@@ -4,7 +4,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
-  - Font-Awesome-Swift (1.4.7)
+  - Font-Awesome-Swift (1.4.8)
   - HanekeSwift (0.10.1)
   - Koloda (3.1.1):
     - pop (~> 1.0)
@@ -46,7 +46,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Pantry:
-    :commit: 31bb78e2df60fd33b46046e9b87f2e51fce11890
+    :commit: f5d525a0371e98975a3ea45d558c148f783fa803
     :git: https://github.com/nickoneill/Pantry.git
 
 SPEC CHECKSUMS:
@@ -54,7 +54,7 @@ SPEC CHECKSUMS:
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  Font-Awesome-Swift: 0131fd0f683ac024ce9abf1fdbc9fb482150ce49
+  Font-Awesome-Swift: 354c9440b0e4d692e31171c84091f3510e8f9468
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
   Moya: f7a4044719381cc6299f9ad3e0ef05f426f0557b
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   Result: 6e722d4a66b1408680dbfcdf51c0b1c4b706316a
   SwiftLocation: f18e71300a89f2a81001c9615b7694150e6b84de
 
-PODFILE CHECKSUM: e06d3f09290909974e9e70e28a511bf335541669
+PODFILE CHECKSUM: 37c8cb7d996f1bb5ed94aaeeff44e3a10f11be53
 
 COCOAPODS: 1.0.1
