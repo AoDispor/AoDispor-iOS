@@ -56,9 +56,6 @@ class FavoritesViewController:UICollectionViewController {
         cell.layer.shadowOffset = CGSizeMake(5.0, 5.0)
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowOpacity = 0.5
-
-        cell.layer.cornerRadius = 10
-
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.blackColor().CGColor
