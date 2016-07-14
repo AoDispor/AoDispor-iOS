@@ -400,7 +400,7 @@ public class KolodaView: UIView, DraggableCardDelegate {
     }
     
     public func revertAction() {
-        if currentCardIndex > 1 && !animating {
+        if currentCardIndex > 0 && !animating {
             
             if countOfCards - currentCardIndex >= countOfVisibleCards {
                 if let lastCard = visibleCards.last {
@@ -408,7 +408,7 @@ public class KolodaView: UIView, DraggableCardDelegate {
                     visibleCards.removeLast()
                 }
             }
-            currentCardIndex -= 2
+            currentCardIndex -= 1
             
             if dataSource != nil {
                 let firstCardView = createCardAtIndex(UInt(currentCardIndex), frame: frameForTopCard())
