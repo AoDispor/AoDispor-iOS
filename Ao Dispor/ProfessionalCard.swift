@@ -36,6 +36,8 @@ class ProfessionalCard: UIView {
     func fillWithData(professional: Professional) -> Void {
         self.professional = professional
 
+        self.avatar.contentMode = .ScaleAspectFill
+        self.avatar.clipsToBounds = true
         self.avatar.hnk_setImageFromURL(NSURL(string: professional.avatarURL!)!)
         self.title.attributedText = self.getMutableStringWithHighlightedText(professional.title!)
         self.name?.text = professional.name
