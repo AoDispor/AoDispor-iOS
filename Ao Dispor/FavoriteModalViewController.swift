@@ -60,6 +60,12 @@ class FavoriteModalViewController: UIViewController {
             let templateHTML = try String(contentsOfFile: url!)
             let finalHTML = templateHTML.stringByReplacingOccurrencesOfString("{{text}}", withString: (professional?.description)!)
             self.profileDescription?.loadHTMLString(finalHTML, baseURL: nil)
+
+            let tapCatcher = UITapGestureRecognizer(target: self, action: #selector(CardExplorerViewController.recognizeTap))
+            tapCatcher.numberOfTapsRequired = 1
+            tapCatcher.numberOfTouchesRequired = 1
+            tapCatcher.delegate = self
+            self.profileDescription?.addGestureRecognizer(tapCatcher)
         } catch {
             print(error)
         }
@@ -84,6 +90,10 @@ class FavoriteModalViewController: UIViewController {
         hightlightedString.mutableString.replaceOccurrencesOfString("</highlight>", withString: "", options: [], range: NSMakeRange(0, hightlightedString.mutableString.length))
 
         return hightlightedString
+    }
+
+    func recognizeTap() {
+        self.contactProfessional(self)
     }
 }
 
@@ -116,5 +126,12 @@ extension FavoriteModalViewController:UIViewControllerTransitioningDelegate {
 extension FavoriteModalViewController:DismissedViewControllerDelegate {
     func viewControllerWasDismissed() {
         return
+    }
+}
+
+//MARK: - UIGestureRecognizerDelegate
+extension FavoriteModalViewController:UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

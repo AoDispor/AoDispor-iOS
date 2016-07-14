@@ -11,7 +11,7 @@ import UIKit
 
 extension KolodaView {
     
-    func createCardAtIndex(index: UInt, frame: CGRect? = nil) -> DraggableCardView {
+    public func createCardAtIndex(index: UInt, frame: CGRect? = nil) -> DraggableCardView {
         let cardView = generateCard(frame ?? frameForTopCard())
         configureCard(cardView, atIndex: index)
         

@@ -47,6 +47,10 @@ class MasterViewController: CardExplorerViewController {
         rightButton.FAIcon = .FAStarO
         self.navigationItem.rightBarButtonItem = rightButton
 
+        let leftButton = UIBarButtonItem(title: NSLocalizedString("Anterior", comment:""), style: .Done, target: self, action: #selector(CardExplorerViewController.getPreviousCard))
+        leftButton.FAIcon = .FAUndo
+        self.navigationItem.leftBarButtonItem = leftButton
+
         self.updateFavoritesButtonStar()
     }
 
@@ -137,13 +141,12 @@ extension MasterViewController {
 
     override func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         let professional = self.cardsToExplore[Int(index)]
-        let string_id = professional.string_id!
-        /*let contactAlertViewController = ContactAlertViewController(string_id: string_id!, viewController: self)
-        contactAlertViewController.showContactAlertViewController()*/
-        API.sharedInstance.delegate = self
-        API.sharedInstance.privateInfoFor(string_id)
-        Answers.logCustomEventWithName("Action Sheet de contacto", customAttributes: ["string_id": professional.string_id!
-            ])
+        // FIXME isto é feio.
+        //API.sharedInstance.delegate = self
+        //API.sharedInstance.privateInfoFor(string_id)
+        let privateInfo = PrivateInfo(phone: professional.phone!)
+        self.returnPrivateInfo(privateInfo)
+        Answers.logCustomEventWithName("Action Sheet de contacto", customAttributes: ["string_id": professional.string_id!])
     }
 }
 

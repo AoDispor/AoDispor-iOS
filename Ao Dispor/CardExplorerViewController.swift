@@ -36,6 +36,52 @@ class CardExplorerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func getPreviousCard(sender: AnyObject) {
+        if self.kolodaView.currentCardIndex == 0 {
+            return
+        }
+
+        var baseIndex = UInt(self.kolodaView.currentCardIndex - 1)
+
+        self.kolodaView.clear()
+        self.kolodaView.currentCardIndex = Int(baseIndex)
+        
+        var cardsToAppear = [DraggableCardView]()
+
+        // buscar e adicionar à view a carta a aparecer
+        let firstCard = self.kolodaView.createCardAtIndex(baseIndex, frame: self.kolodaView.frameForCardAtIndex(1000))
+        cardsToAppear.append(firstCard)
+        // a carta que está em primeiro plano
+        baseIndex += 1
+        let secondCard = self.kolodaView.createCardAtIndex(baseIndex, frame: self.kolodaView.frameForCardAtIndex(0))
+        cardsToAppear.append(secondCard)
+        // a segunda
+        baseIndex += 2
+        let thirdCard = self.kolodaView.createCardAtIndex(baseIndex, frame: self.kolodaView.frameForCardAtIndex(1))
+        cardsToAppear.append(thirdCard)
+        // a terceira
+        baseIndex += 3
+        let fourthCard = self.kolodaView.createCardAtIndex(baseIndex, frame: self.kolodaView.frameForCardAtIndex(2))
+        cardsToAppear.append(fourthCard)
+
+        cardsToAppear.reverse().forEach { (card) in
+            self.kolodaView.addSubview(card)
+        }
+
+        UIView.animateWithDuration(cardSwipeActionAnimationDuration, animations: {
+            firstCard.frame = self.kolodaView.frameForCardAtIndex(0)
+            secondCard.frame = self.kolodaView.frameForCardAtIndex(1)
+            thirdCard.frame = self.kolodaView.frameForCardAtIndex(2)
+            fourthCard.frame = self.kolodaView.frameForCardAtIndex(3)
+            }, completion: { completed in
+                firstCard.removeFromSuperview()
+                secondCard.removeFromSuperview()
+                thirdCard.removeFromSuperview()
+                fourthCard.removeFromSuperview()
+                self.kolodaView.reloadData()
+        })
+    }
 }
 
 //MARK: - KolodaViewDataSource
@@ -54,7 +100,7 @@ extension CardExplorerViewController: KolodaViewDataSource {
     }
 
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        //TODO mostrar cartões vazios no fim
+        // TODO mostrar cartões vazios no fim
 
         // como os indices começam no zero, o último é igual ao count
         if(index == UInt(self.cardsToExplore.count)) {
@@ -66,8 +112,18 @@ extension CardExplorerViewController: KolodaViewDataSource {
         let professional = cardsToExplore[Int(index)]
         
         professionalCard?.fillWithData(professional)
-        
+
+        let tapCatcher = UITapGestureRecognizer(target: self, action: #selector(CardExplorerViewController.recognizeTap))
+        tapCatcher.numberOfTapsRequired = 1
+        tapCatcher.numberOfTouchesRequired = 1
+        tapCatcher.delegate = self
+        professionalCard?.profileDescription?.addGestureRecognizer(tapCatcher)
+
         return professionalCard!
+    }
+
+    func recognizeTap() {
+        self.kolodaView.delegate?.koloda(kolodaView, didSelectCardAtIndex: UInt(self.kolodaView.currentCardIndex))
     }
 }
 
@@ -81,14 +137,17 @@ extension CardExplorerViewController: KolodaViewDelegate {
         return koloda.resetCurrentCardIndex()
     }
 
-    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
-        // TODO era fixe dar para voltar para trás de uma forma mais fixe...
-        if(direction == .Right) {
-            koloda.revertAction()
-        }
+    func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {
+        return false
     }
-
-    func koloda(koloda: KolodaView, didShowCardAtIndex index: UInt) {}
 
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {}
 }
+
+//MARK: - UIGestureRecognizerDelegate
+extension CardExplorerViewController:UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+

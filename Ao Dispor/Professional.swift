@@ -189,6 +189,10 @@ struct PaginationLinks:Mappable {
 struct PrivateInfo:Mappable {
     var phone:String?
 
+    init(phone: String) {
+        self.phone = phone
+    }
+
     // MARK: JSON
     init?(_ map: Map) { }
 

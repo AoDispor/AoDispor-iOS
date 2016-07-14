@@ -52,10 +52,10 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="YiS-Kp-PTC">
-                            <rect key="frame" x="0.0" y="30" width="580" height="580"/>
+                            <rect key="frame" x="0.0" y="30" width="580" height="490"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-8H-qn3">
-                                    <rect key="frame" x="5" y="5" width="570" height="570"/>
+                                    <rect key="frame" x="50" y="5" width="480" height="480"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dFu-8H-qn3" secondAttribute="height" id="MxC-IC-8sE"/>
                                     </constraints>
@@ -68,20 +68,20 @@
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="dFu-8H-qn3" secondAttribute="trailing" constant="5" id="9hI-8w-2KU"/>
+                                <constraint firstItem="dFu-8H-qn3" firstAttribute="trailing" secondItem="YiS-Kp-PTC" secondAttribute="trailing" constant="-50" id="9hI-8w-2KU"/>
                                 <constraint firstItem="dFu-8H-qn3" firstAttribute="top" secondItem="YiS-Kp-PTC" secondAttribute="top" constant="5" id="Uc7-JT-xKu"/>
-                                <constraint firstItem="dFu-8H-qn3" firstAttribute="leading" secondItem="YiS-Kp-PTC" secondAttribute="leading" constant="5" id="lvy-Nf-FC0"/>
-                                <constraint firstAttribute="bottom" secondItem="dFu-8H-qn3" secondAttribute="bottom" constant="5" id="pPz-AO-ykK"/>
+                                <constraint firstItem="dFu-8H-qn3" firstAttribute="leading" secondItem="YiS-Kp-PTC" secondAttribute="leading" constant="50" id="lvy-Nf-FC0"/>
+                                <constraint firstItem="dFu-8H-qn3" firstAttribute="bottom" secondItem="YiS-Kp-PTC" secondAttribute="bottom" constant="-5" id="pPz-AO-ykK"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" misplaced="YES" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-HB-1cH">
-                            <rect key="frame" x="0.0" y="610" width="580" height="42"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-HB-1cH">
+                            <rect key="frame" x="0.0" y="520" width="580" height="44"/>
                             <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <webView contentMode="scaleToFill" verticalHuggingPriority="240" verticalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-IQ-tco">
-                            <rect key="frame" x="0.0" y="652" width="580" height="136"/>
+                        <webView contentMode="scaleToFill" verticalHuggingPriority="240" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-IQ-tco">
+                            <rect key="frame" x="0.0" y="564" width="580" height="224"/>
                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                         </webView>
                     </subviews>

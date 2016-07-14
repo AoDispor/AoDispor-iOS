@@ -79,7 +79,7 @@ public class KolodaView: UIView, DraggableCardDelegate {
     
     public weak var delegate: KolodaViewDelegate?
     
-    private(set) public var currentCardIndex = 0
+    public var currentCardIndex = 0
     private(set) public var countOfCards = 0
     
     public var countOfVisibleCards = defaultCountOfVisibleCards
@@ -306,7 +306,7 @@ public class KolodaView: UIView, DraggableCardDelegate {
     }
     
     //MARK: Private
-    private func clear() {
+    public func clear() {
         currentCardIndex = 0
         
         for card in visibleCards {

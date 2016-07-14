@@ -37,8 +37,8 @@ class ProfessionalCard: UIView {
         self.professional = professional
 
         self.avatar.hnk_setImageFromURL(NSURL(string: professional.avatarURL!)!)
-        self.name?.text = professional.name
         self.title.attributedText = self.getMutableStringWithHighlightedText(professional.title!)
+        self.name?.text = professional.name
         self.location?.text = professional.location
         self.location?.sizeToFit()
 
