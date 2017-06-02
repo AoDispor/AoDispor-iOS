@@ -172,7 +172,6 @@
 				0DD63AE61ECA1BEA00AF4DC7 /* Main.storyboard */,
 				0DD63AEB1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard */,
 				0D6DFDF11ED5E8AF00879229 /* profileDescription.html */,
-				0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */,
 				0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */,
 				0DD63AEE1ECA1BEA00AF4DC7 /* Info.plist */,
 				0D424EE51ECC9EA000244490 /* Configuracoes.plist */,
@@ -208,10 +207,11 @@
 				0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */,
 				0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */,
 				0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */,
-				0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */,
 				0D6DFDE31ED5CB0400879229 /* Cartões */,
 				0D424EED1ECCADFD00244490 /* Modelos */,
 				0D424EE11ECC99B000244490 /* AoDisporAPI.swift */,
+				0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */,
+				0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */,
 				0D6DFDE61ED5CBD300879229 /* Recursos */,
 			);
 			path = "Ao Dispor";

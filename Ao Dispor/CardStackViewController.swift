@@ -54,6 +54,17 @@ class CardStackViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.configurarBarraDeNavegação()
+        self.configurarVistaDoRadar()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Configurações visuais
+    private func configurarBarraDeNavegação() {
         let titleView = UILabel()
         titleView.text = "Ao Dispor"
         titleView.font = UIFont(name: "DancingScriptOT", size: 36)
@@ -74,7 +85,9 @@ class CardStackViewController: UIViewController {
 
         self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.navigationBar.barTintColor = UIColor.titleBlue()
+    }
 
+    private func configurarVistaDoRadar() {
         loadingText.text = NSLocalizedString("Estamos a procurar profissionais à sua volta", comment: "")
         loadingText.sizeToFit()
         loadingText.numberOfLines = 2
@@ -92,11 +105,7 @@ class CardStackViewController: UIViewController {
         pulsatorView.layer.addSublayer(pulsator)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // MARK: - Pesquisa e afins
     func procurarPor(_ parâmetros: [String:String]) {
         // Esconder os cartões
         kolodaView.isHidden = true
@@ -127,6 +136,8 @@ class CardStackViewController: UIViewController {
     }
 
     func fazerReset() {
+        self.searchBar!.text = ""
+        self.pesquisouPor = ""
         self.procurarPor(["query":""])
     }
 
@@ -181,22 +192,26 @@ extension CardStackViewController: KolodaViewDataSource {
 
 
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        // se tiver multiplas páginas (ou nenhuma), mostra só o número de cartões (carrega mais quando chega ao fim)
-        if profissionais.isEmpty || (self.página?.temMaisPáginas)! {
-            return profissionais.count
+        if profissionais.isEmpty {
+            return 1 // para mostrar a carta de "ups, não há aqui nada"
         }
+
+        if (self.página?.temMaisPáginas)! {
+            return profissionais.count // se tiver multiplas páginas mostra só o número de cartões (carrega mais quando chega ao fim)
+        }
+
         // tendo cartões e só uma página, retorna o numero de cartões mais 1 (para mostrar o final)
         return profissionais.count + 1
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        if profissionais.isEmpty && index == 0 {
+            return CartãoTextoImagem.criarCartão(texto: "", subtexto: "Parece que não existem resultados.", imagem: UIImage(named: "Fim de Busca")!)
+        }
+
         // como os indices começam no zero, o último é igual ao count
-        if index == self.profissionais.count {
-            let últimoCartão = Bundle.main.loadNibNamed("CartãoTextoImagem", owner: self, options: nil)![0] as? CartãoTextoImagem
-            últimoCartão?.texto?.text = "É tudo"
-            últimoCartão?.subtexto?.text = "Parece que chegamos ao final dos resultados do que procurou."
-            últimoCartão?.imagem?.image = UIImage(named: "Fim de Busca")
-            return últimoCartão!
+        if !profissionais.isEmpty && index == self.profissionais.count {
+            return CartãoTextoImagem.criarCartão(texto: "É tudo", subtexto: "Parece que chegamos ao final dos resultados do que procurou.", imagem: UIImage(named: "Fim de Busca")!)
         }
 
         let cartãoProfissional = Bundle.main.loadNibNamed("CartãoProfissional", owner: self, options: nil)![0] as? CartãoProfissional
@@ -223,11 +238,18 @@ extension CardStackViewController: UIGestureRecognizerDelegate {
 
 //MARK: - KolodaViewDelegate
 extension CardStackViewController: KolodaViewDelegate {
+    func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
+        // TODO: Era fixe isto permitir a animação quando a pilha estivesse no fim
+        //return koloda.currentCardIndex == self.profissionais.count ? true : false
+        return true
+    }
+
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         if (self.página?.temMaisPáginas)! {
             procurarPor(["query": pesquisouPor,
                          "page": (self.página?.páginaSeguinte.description)!])
         }
+        self.kolodaView.resetCurrentCardIndex()
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -249,7 +271,7 @@ extension CardStackViewController: KolodaViewDelegate {
 
         let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .default) { (action) in
             let messageVC = MFMessageComposeViewController()
-            messageVC.body = "Vi o seu perfil no AoDispor.pt e gostaria de contratar os seus serviços. Podemos falar?"
+            messageVC.body = NSLocalizedString("Vi o seu perfil no AoDispor.pt e gostaria de contratar os seus serviços. Podemos falar?", comment: "")
             messageVC.recipients = [profissional.telefone]
             messageVC.messageComposeDelegate = self;
             Answers.logCustomEvent(withName: "Envio de SMS", customAttributes: ["string_id": profissional.stringId

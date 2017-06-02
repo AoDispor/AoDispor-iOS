@@ -15,25 +15,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NTK-xs-7b0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="20" y="20" width="335" height="627"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eG-ps-Bmq">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eG-ps-Bmq" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Pdy-nn-rtv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Parece que chegamos ao final dos resultados do que procurou." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-oN-DB7">
-                            <rect key="frame" x="0.0" y="171" width="375" height="64"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TextView" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-oN-DB7">
+                            <rect key="frame" x="0.0" y="50" width="335" height="64"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="64" id="o2n-eA-GQD"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wn4-2M-hgY"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8a-Mg-Yk7">
-                            <rect key="frame" x="0.0" y="235" width="375" height="432"/>
+                            <rect key="frame" x="0.0" y="114" width="335" height="513"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -46,10 +50,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="NTK-xs-7b0" secondAttribute="bottom" id="K0z-JF-xJj"/>
-                <constraint firstItem="NTK-xs-7b0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TjT-PF-maI"/>
-                <constraint firstItem="NTK-xs-7b0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cOe-Ot-Zqx"/>
-                <constraint firstItem="NTK-xs-7b0" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="rOL-K8-PDc"/>
+                <constraint firstItem="NTK-xs-7b0" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-20" id="K0z-JF-xJj"/>
+                <constraint firstItem="NTK-xs-7b0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="TjT-PF-maI"/>
+                <constraint firstItem="NTK-xs-7b0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cOe-Ot-Zqx"/>
+                <constraint firstItem="NTK-xs-7b0" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-40" id="mWN-hh-bRI"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

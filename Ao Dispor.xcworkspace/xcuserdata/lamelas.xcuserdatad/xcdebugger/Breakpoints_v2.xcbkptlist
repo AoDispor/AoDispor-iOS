@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ao Dispor/CardStackViewController.swift"
-            timestampString = "518046831.078721"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "koloda(_:didSelectCardAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/Koloda/Pod/Classes/KolodaView/KolodaView.swift"
             timestampString = "517859238.783803"
             startingColumnNumber = "9223372036854775807"
@@ -58,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ao Dispor/CardStackViewController.swift"
-            timestampString = "518030160.064076"
+            timestampString = "518111081.514671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "procurarPor(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ao Dispor/CardStackViewController.swift"
-            timestampString = "518030160.064076"
+            timestampString = "518111081.514671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "noFimDaPesquisa()"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,31 +70,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ao Dispor/CardStackViewController.swift"
-            timestampString = "518030160.064076"
+            timestampString = "518111081.514671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "escondeRadarMostraCartas()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ao_Dispor.CardStackViewController.escondeRadarMostraCartas () -&gt; ()"
+                  moduleName = "Ao Dispor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lamelas/Trabalho/Ao%20Dispor%20iOS/Ao%20Dispor/Ao%20Dispor/CardStackViewController.swift"
+                  timestampString = "518109318.936462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "198">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ao_Dispor.CardStackViewController.(escondeRadarMostraCartas () -&gt; ()).(closure #1)"
+                  moduleName = "Ao Dispor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lamelas/Trabalho/Ao%20Dispor%20iOS/Ao%20Dispor/Ao%20Dispor/CardStackViewController.swift"
+                  timestampString = "518109318.939061"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ao Dispor/CardStackViewController.swift"
-            timestampString = "518030160.064076"
+            timestampString = "518111081.514671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "kolodaNumberOfCards(_:)"
             landmarkType = "7">
          </BreakpointContent>
