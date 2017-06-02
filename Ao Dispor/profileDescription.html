@@ -1,0 +1,43 @@
+<html>
+<head>
+    <!-- Disable auto-linking of phone numbers. -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Enables the web application runs in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Sets the style of the status bar for a web application. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Sets the initial scale and turns off user scaling. -->
+    <meta name="viewport" content="width=device-width"/>
+
+    <style type="text/css">
+    * {
+        /* Safari displays a callout containing information when you touch and hold a touch target such as a link. This property allows you to disable that callout. */
+        -webkit-touch-callout: none;
+
+        /* Disable user selection/copy of UIWebView content. */
+        -webkit-user-select: none;
+
+        /* Specifies a size adjustment for displaying text content in Safari on iPhone. */
+        -webkit-text-size-adjust: none;
+
+        word-break: normal;
+
+    }
+
+    /* Native buttons/controls: http://css-infos.net/property/-webkit-appearance */
+    button, input[type=submit] {
+        -webkit-appearance: button;
+    }
+
+    highlight {
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    {{text}}
+</body>
+</html>

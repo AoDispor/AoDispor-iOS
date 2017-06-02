@@ -7,13 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D424EE21ECC99B000244490 /* AoDisporAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EE11ECC99B000244490 /* AoDisporAPI.swift */; };
+		0D424EE41ECC9B8600244490 /* Siesta+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */; };
+		0D424EE61ECC9EA000244490 /* Configuracoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D424EE51ECC9EA000244490 /* Configuracoes.plist */; };
+		0D424EEF1ECCAE1300244490 /* Utilizador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EEE1ECCAE1300244490 /* Utilizador.swift */; };
+		0D424EF11ECCBB2E00244490 /* CódigoPostal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EF01ECCBB2E00244490 /* CódigoPostal.swift */; };
+		0D54C9981EDF488B0031B467 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */; };
+		0D54C99A1EDF4C870031B467 /* Quartel General do Ao Dispor.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */; };
+		0D6DFDE21ED5CB0000879229 /* CartãoProfissional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE11ED5CB0000879229 /* CartãoProfissional.swift */; };
+		0D6DFDE51ED5CBA800879229 /* DancingScript-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE41ED5CBA800879229 /* DancingScript-Regular.otf */; };
+		0D6DFDE81ED5E14D00879229 /* KolodaViewCartas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */; };
+		0D6DFDEA1ED5E18700879229 /* CartãoProfissional.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE91ED5E18700879229 /* CartãoProfissional.xib */; };
+		0D6DFDEC1ED5E22900879229 /* Recursos+Extensões.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */; };
+		0D6DFDEF1ED5E61200879229 /* YanoneKaffeesatz-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDED1ED5E5FE00879229 /* YanoneKaffeesatz-Regular.otf */; };
+		0D6DFDF01ED5E61200879229 /* YanoneKaffeesatz-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDEE1ED5E5FE00879229 /* YanoneKaffeesatz-Thin.otf */; };
+		0D6DFDF21ED5E8AF00879229 /* profileDescription.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDF11ED5E8AF00879229 /* profileDescription.html */; };
+		0D6DFDF61ED5F78C00879229 /* Paginação.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDF51ED5F78C00879229 /* Paginação.swift */; };
+		0DB20EBB1ED484B3008FA92C /* Profissional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB20EBA1ED484B3008FA92C /* Profissional.swift */; };
 		0DD63AE31ECA1BEA00AF4DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */; };
-		0DD63AE51ECA1BEA00AF4DC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AE41ECA1BEA00AF4DC7 /* ViewController.swift */; };
+		0DD63AE51ECA1BEA00AF4DC7 /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */; };
 		0DD63AE81ECA1BEA00AF4DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AE61ECA1BEA00AF4DC7 /* Main.storyboard */; };
 		0DD63AEA1ECA1BEA00AF4DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */; };
 		0DD63AED1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AEB1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard */; };
 		0DD63AF81ECA1BEA00AF4DC7 /* Ao_DisporTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AF71ECA1BEA00AF4DC7 /* Ao_DisporTests.swift */; };
 		0DD63B031ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */; };
+		0DD9C1571EE06A8E0013CA99 /* CartãoTextoImagem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */; };
+		0DD9C1591EE08FE60013CA99 /* CartãoTextoImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */; };
+		0DD9C15B1EE0C2570013CA99 /* Cartão.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C15A1EE0C2570013CA99 /* Cartão.swift */; };
+		8AEFC2ADDF79B9DB2D315A84 /* Pods_Ao_Dispor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4F5B32FF8DAC2912A0A160 /* Pods_Ao_Dispor.framework */; };
+		926433D57BBC278A3C107A56 /* Pods_Ao_DisporUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9DC3C34560751E4F2ECC85 /* Pods_Ao_DisporUITests.framework */; };
+		CFE9D59852C90FA3EF88159D /* Pods_Ao_DisporTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E8961913031813F0779D58 /* Pods_Ao_DisporTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +57,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F7737A1E53934726F47202 /* Pods-Ao Dispor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao Dispor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor.debug.xcconfig"; sourceTree = "<group>"; };
+		0D424EE11ECC99B000244490 /* AoDisporAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AoDisporAPI.swift; sourceTree = "<group>"; };
+		0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Siesta+SwiftyJSON.swift"; sourceTree = "<group>"; };
+		0D424EE51ECC9EA000244490 /* Configuracoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuracoes.plist; sourceTree = "<group>"; };
+		0D424EEE1ECCAE1300244490 /* Utilizador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilizador.swift; path = "Ao Dispor/Utilizador.swift"; sourceTree = "<group>"; };
+		0D424EF01ECCBB2E00244490 /* CódigoPostal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CódigoPostal.swift"; path = "Ao Dispor/CódigoPostal.swift"; sourceTree = "<group>"; };
+		0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Quartel General do Ao Dispor.gpx"; sourceTree = "<group>"; };
+		0D6DFDE11ED5CB0000879229 /* CartãoProfissional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoProfissional.swift"; sourceTree = "<group>"; };
+		0D6DFDE41ED5CBA800879229 /* DancingScript-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.otf"; sourceTree = "<group>"; };
+		0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaViewCartas.swift; sourceTree = "<group>"; };
+		0D6DFDE91ED5E18700879229 /* CartãoProfissional.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CartãoProfissional.xib"; sourceTree = "<group>"; };
+		0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recursos+Extensões.swift"; sourceTree = "<group>"; };
+		0D6DFDED1ED5E5FE00879229 /* YanoneKaffeesatz-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Regular.otf"; sourceTree = "<group>"; };
+		0D6DFDEE1ED5E5FE00879229 /* YanoneKaffeesatz-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Thin.otf"; sourceTree = "<group>"; };
+		0D6DFDF11ED5E8AF00879229 /* profileDescription.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = profileDescription.html; sourceTree = "<group>"; };
+		0D6DFDF51ED5F78C00879229 /* Paginação.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Paginação.swift"; path = "Ao Dispor/Paginação.swift"; sourceTree = "<group>"; };
+		0D723B031EE014E400857BD1 /* Ao Dispor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ao Dispor.entitlements"; sourceTree = "<group>"; };
+		0DB20EBA1ED484B3008FA92C /* Profissional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profissional.swift; path = "Ao Dispor/Profissional.swift"; sourceTree = "<group>"; };
 		0DD63ADF1ECA1BEA00AF4DC7 /* Ao Dispor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ao Dispor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DD63AE41ECA1BEA00AF4DC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackViewController.swift; sourceTree = "<group>"; };
 		0DD63AE71ECA1BEA00AF4DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD63AEC1ECA1BEA00AF4DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +89,17 @@
 		0DD63AFE1ECA1BEA00AF4DC7 /* Ao DisporUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ao DisporUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ao_DisporUITests.swift; sourceTree = "<group>"; };
 		0DD63B041ECA1BEA00AF4DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CartãoTextoImagem.xib"; sourceTree = "<group>"; };
+		0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoTextoImagem.swift"; sourceTree = "<group>"; };
+		0DD9C15A1EE0C2570013CA99 /* Cartão.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cartão.swift"; sourceTree = "<group>"; };
+		18E8961913031813F0779D58 /* Pods_Ao_DisporTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7A27DCED87404432D671D1 /* Pods-Ao DisporTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F9DC3C34560751E4F2ECC85 /* Pods_Ao_DisporUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		664EDC4C85F5845A5CD96C6A /* Pods-Ao DisporTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests.debug.xcconfig"; sourceTree = "<group>"; };
+		697CFCCBEB458CF610848DC2 /* Pods-Ao DisporUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C4F5B32FF8DAC2912A0A160 /* Pods_Ao_Dispor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_Dispor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1F85143D86AF6ADF182C9F /* Pods-Ao DisporUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BF1892840C57C0999C7255B0 /* Pods-Ao Dispor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao Dispor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEFC2ADDF79B9DB2D315A84 /* Pods_Ao_Dispor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE9D59852C90FA3EF88159D /* Pods_Ao_DisporTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +123,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926433D57BBC278A3C107A56 /* Pods_Ao_DisporUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D424EED1ECCADFD00244490 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				0D424EEE1ECCAE1300244490 /* Utilizador.swift */,
+				0D424EF01ECCBB2E00244490 /* CódigoPostal.swift */,
+				0DB20EBA1ED484B3008FA92C /* Profissional.swift */,
+				0D6DFDF51ED5F78C00879229 /* Paginação.swift */,
+			);
+			name = Modelos;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0D45E4081EDDCEF30071A212 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0D6DFDED1ED5E5FE00879229 /* YanoneKaffeesatz-Regular.otf */,
+				0D6DFDEE1ED5E5FE00879229 /* YanoneKaffeesatz-Thin.otf */,
+				0D6DFDE41ED5CBA800879229 /* DancingScript-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		0D6DFDE31ED5CB0400879229 /* Cartões */ = {
+			isa = PBXGroup;
+			children = (
+				0DD9C15A1EE0C2570013CA99 /* Cartão.swift */,
+				0D6DFDE11ED5CB0000879229 /* CartãoProfissional.swift */,
+				0D6DFDE91ED5E18700879229 /* CartãoProfissional.xib */,
+				0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */,
+				0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */,
+			);
+			name = "Cartões";
+			sourceTree = "<group>";
+		};
+		0D6DFDE61ED5CBD300879229 /* Recursos */ = {
+			isa = PBXGroup;
+			children = (
+				0D45E4081EDDCEF30071A212 /* Fonts */,
+				0D723B031EE014E400857BD1 /* Ao Dispor.entitlements */,
+				0DD63AE61ECA1BEA00AF4DC7 /* Main.storyboard */,
+				0DD63AEB1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard */,
+				0D6DFDF11ED5E8AF00879229 /* profileDescription.html */,
+				0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */,
+				0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */,
+				0DD63AEE1ECA1BEA00AF4DC7 /* Info.plist */,
+				0D424EE51ECC9EA000244490 /* Configuracoes.plist */,
+			);
+			name = Recursos;
+			sourceTree = "<group>";
+		};
 		0DD63AD61ECA1BEA00AF4DC7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +187,8 @@
 				0DD63AF61ECA1BEA00AF4DC7 /* Ao DisporTests */,
 				0DD63B011ECA1BEA00AF4DC7 /* Ao DisporUITests */,
 				0DD63AE01ECA1BEA00AF4DC7 /* Products */,
+				437E7E99459578F872F44EF7 /* Pods */,
+				1E7EA87C363144EC3D547E84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +206,13 @@
 			isa = PBXGroup;
 			children = (
 				0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */,
-				0DD63AE41ECA1BEA00AF4DC7 /* ViewController.swift */,
-				0DD63AE61ECA1BEA00AF4DC7 /* Main.storyboard */,
-				0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */,
-				0DD63AEB1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard */,
-				0DD63AEE1ECA1BEA00AF4DC7 /* Info.plist */,
+				0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */,
+				0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */,
+				0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */,
+				0D6DFDE31ED5CB0400879229 /* Cartões */,
+				0D424EED1ECCADFD00244490 /* Modelos */,
+				0D424EE11ECC99B000244490 /* AoDisporAPI.swift */,
+				0D6DFDE61ED5CBD300879229 /* Recursos */,
 			);
 			path = "Ao Dispor";
 			sourceTree = "<group>";
@@ -119,10 +229,35 @@
 		0DD63B011ECA1BEA00AF4DC7 /* Ao DisporUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */,
+				0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */,
 				0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */,
 				0DD63B041ECA1BEA00AF4DC7 /* Info.plist */,
 			);
 			path = "Ao DisporUITests";
+			sourceTree = "<group>";
+		};
+		1E7EA87C363144EC3D547E84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C4F5B32FF8DAC2912A0A160 /* Pods_Ao_Dispor.framework */,
+				18E8961913031813F0779D58 /* Pods_Ao_DisporTests.framework */,
+				4F9DC3C34560751E4F2ECC85 /* Pods_Ao_DisporUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		437E7E99459578F872F44EF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01F7737A1E53934726F47202 /* Pods-Ao Dispor.debug.xcconfig */,
+				BF1892840C57C0999C7255B0 /* Pods-Ao Dispor.release.xcconfig */,
+				664EDC4C85F5845A5CD96C6A /* Pods-Ao DisporTests.debug.xcconfig */,
+				2C7A27DCED87404432D671D1 /* Pods-Ao DisporTests.release.xcconfig */,
+				697CFCCBEB458CF610848DC2 /* Pods-Ao DisporUITests.debug.xcconfig */,
+				AC1F85143D86AF6ADF182C9F /* Pods-Ao DisporUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +267,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DD63B071ECA1BEA00AF4DC7 /* Build configuration list for PBXNativeTarget "Ao Dispor" */;
 			buildPhases = (
+				DE6088294EE0509AD513F1AE /* [CP] Check Pods Manifest.lock */,
 				0DD63ADB1ECA1BEA00AF4DC7 /* Sources */,
 				0DD63ADC1ECA1BEA00AF4DC7 /* Frameworks */,
 				0DD63ADD1ECA1BEA00AF4DC7 /* Resources */,
+				643B0A2739945969396E489C /* [CP] Embed Pods Frameworks */,
+				BB83BED738871D486F368AF1 /* [CP] Copy Pods Resources */,
+				0DE2993D1ECA1E2D0083FEC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DD63B0A1ECA1BEA00AF4DC7 /* Build configuration list for PBXNativeTarget "Ao DisporTests" */;
 			buildPhases = (
+				D04AFE9F4DB1A76A5FCA7641 /* [CP] Check Pods Manifest.lock */,
 				0DD63AEF1ECA1BEA00AF4DC7 /* Sources */,
 				0DD63AF01ECA1BEA00AF4DC7 /* Frameworks */,
 				0DD63AF11ECA1BEA00AF4DC7 /* Resources */,
+				CEB4C0CB59EE0B324BC49EF4 /* [CP] Embed Pods Frameworks */,
+				6262DFBA0FCBD8EBA0C1EEA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DD63B0D1ECA1BEA00AF4DC7 /* Build configuration list for PBXNativeTarget "Ao DisporUITests" */;
 			buildPhases = (
+				5B091F0FD57376D551D7A8A1 /* [CP] Check Pods Manifest.lock */,
 				0DD63AFA1ECA1BEA00AF4DC7 /* Sources */,
 				0DD63AFB1ECA1BEA00AF4DC7 /* Frameworks */,
 				0DD63AFC1ECA1BEA00AF4DC7 /* Resources */,
+				8559C75A0388309625F81249 /* [CP] Embed Pods Frameworks */,
+				1177BAB9444D2AAC5C8AE871 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +340,14 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6JZ2JQ2YB8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					0DD63AF21ECA1BEA00AF4DC7 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -235,9 +388,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6DFDEF1ED5E61200879229 /* YanoneKaffeesatz-Regular.otf in Resources */,
+				0D6DFDF01ED5E61200879229 /* YanoneKaffeesatz-Thin.otf in Resources */,
+				0D6DFDF21ED5E8AF00879229 /* profileDescription.html in Resources */,
+				0D6DFDE51ED5CBA800879229 /* DancingScript-Regular.otf in Resources */,
 				0DD63AED1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard in Resources */,
+				0D424EE61ECC9EA000244490 /* Configuracoes.plist in Resources */,
+				0DD9C1571EE06A8E0013CA99 /* CartãoTextoImagem.xib in Resources */,
 				0DD63AEA1ECA1BEA00AF4DC7 /* Assets.xcassets in Resources */,
 				0DD63AE81ECA1BEA00AF4DC7 /* Main.storyboard in Resources */,
+				0D6DFDEA1ED5E18700879229 /* CartãoProfissional.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,18 +412,181 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D54C99A1EDF4C870031B467 /* Quartel General do Ao Dispor.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DE2993D1ECA1E2D0083FEC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f5c949b3aa130e0cf5d2b66d9692b7a268ca5753 2a5778ef05c0353fd9aa8adc5cfef741796e60123e69f1c6d23e50c7e3765d3a";
+		};
+		1177BAB9444D2AAC5C8AE871 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B091F0FD57376D551D7A8A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6262DFBA0FCBD8EBA0C1EEA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		643B0A2739945969396E489C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8559C75A0388309625F81249 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporUITests/Pods-Ao DisporUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB83BED738871D486F368AF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB4C0CB59EE0B324BC49EF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D04AFE9F4DB1A76A5FCA7641 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE6088294EE0509AD513F1AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DD63ADB1ECA1BEA00AF4DC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD63AE51ECA1BEA00AF4DC7 /* ViewController.swift in Sources */,
+				0DD9C1591EE08FE60013CA99 /* CartãoTextoImagem.swift in Sources */,
+				0DD63AE51ECA1BEA00AF4DC7 /* CardStackViewController.swift in Sources */,
+				0D424EF11ECCBB2E00244490 /* CódigoPostal.swift in Sources */,
+				0D6DFDF61ED5F78C00879229 /* Paginação.swift in Sources */,
+				0DD9C15B1EE0C2570013CA99 /* Cartão.swift in Sources */,
+				0D6DFDEC1ED5E22900879229 /* Recursos+Extensões.swift in Sources */,
+				0D6DFDE81ED5E14D00879229 /* KolodaViewCartas.swift in Sources */,
+				0D6DFDE21ED5CB0000879229 /* CartãoProfissional.swift in Sources */,
 				0DD63AE31ECA1BEA00AF4DC7 /* AppDelegate.swift in Sources */,
+				0D424EEF1ECCAE1300244490 /* Utilizador.swift in Sources */,
+				0D424EE41ECC9B8600244490 /* Siesta+SwiftyJSON.swift in Sources */,
+				0D424EE21ECC99B000244490 /* AoDisporAPI.swift in Sources */,
+				0DB20EBB1ED484B3008FA92C /* Profissional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD63B031ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift in Sources */,
+				0D54C9981EDF488B0031B467 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,12 +737,16 @@
 		};
 		0DD63B081ECA1BEA00AF4DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F7737A1E53934726F47202 /* Pods-Ao Dispor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Ao Dispor/Ao Dispor.entitlements";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
+				PRODUCT_BUNDLE_IDENTIFIER = pt.aodispor.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -426,12 +754,16 @@
 		};
 		0DD63B091ECA1BEA00AF4DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF1892840C57C0999C7255B0 /* Pods-Ao Dispor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Ao Dispor/Ao Dispor.entitlements";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
+				PRODUCT_BUNDLE_IDENTIFIER = pt.aodispor.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -439,6 +771,7 @@
 		};
 		0DD63B0B1ECA1BEA00AF4DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 664EDC4C85F5845A5CD96C6A /* Pods-Ao DisporTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +787,7 @@
 		};
 		0DD63B0C1ECA1BEA00AF4DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7A27DCED87404432D671D1 /* Pods-Ao DisporTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +803,7 @@
 		};
 		0DD63B0E1ECA1BEA00AF4DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 697CFCCBEB458CF610848DC2 /* Pods-Ao DisporUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
@@ -483,6 +818,7 @@
 		};
 		0DD63B0F1ECA1BEA00AF4DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1F85143D86AF6ADF182C9F /* Pods-Ao DisporUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
@@ -514,6 +850,7 @@
 				0DD63B091ECA1BEA00AF4DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DD63B0A1ECA1BEA00AF4DC7 /* Build configuration list for PBXNativeTarget "Ao DisporTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +859,7 @@
 				0DD63B0C1ECA1BEA00AF4DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DD63B0D1ECA1BEA00AF4DC7 /* Build configuration list for PBXNativeTarget "Ao DisporUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +868,7 @@
 				0DD63B0F1ECA1BEA00AF4DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

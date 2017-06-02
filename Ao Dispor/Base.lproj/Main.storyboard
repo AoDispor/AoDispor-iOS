@@ -1,26 +1,84 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FEX-YX-rgD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="KEa-0p-4M5">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="FEX-YX-rgD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YDH-1I-m5e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sU3-3z-FpG" kind="relationship" relationship="rootViewController" id="DUK-RJ-EXL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqU-om-16W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1009" y="-13"/>
+        </scene>
+        <!--Card Stack View Controller-->
+        <scene sceneID="1xd-N1-zeJ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sU3-3z-FpG" customClass="CardStackViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Vaq-Vv-65H"/>
+                        <viewControllerLayoutGuide type="bottom" id="HH8-1u-bTf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="QuG-si-XU6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0KP-Nc-DI4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="De quem precisa?" translatesAutoresizingMaskIntoConstraints="NO" id="cfb-BF-gxQ" userLabel="Barra de Pesquisa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                        <color key="barTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="sU3-3z-FpG" id="Yxr-nx-gI0"/>
+                                        </connections>
+                                    </searchBar>
+                                    <view clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TqI-Th-ptI" userLabel="Koloda View" customClass="KolodaViewCartas" customModule="Ao_Dispor">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cb-bi-Gwx">
+                                        <rect key="frame" x="0.0" y="475" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vaq-Vv-65H" firstAttribute="bottom" secondItem="0KP-Nc-DI4" secondAttribute="top" id="0jv-Tj-78g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0KP-Nc-DI4" secondAttribute="bottom" id="Sp0-n3-CMK"/>
+                            <constraint firstItem="0KP-Nc-DI4" firstAttribute="width" secondItem="QuG-si-XU6" secondAttribute="width" id="c0T-or-tOc"/>
+                            <constraint firstItem="0KP-Nc-DI4" firstAttribute="leading" secondItem="QuG-si-XU6" secondAttribute="leading" id="rTN-RJ-bS6"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FxD-yF-myy"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="kolodaView" destination="TqI-Th-ptI" id="vDl-zT-T6M"/>
+                        <outlet property="pulsatorView" destination="6Cb-bi-Gwx" id="YVZ-w1-4zz"/>
+                        <outlet property="searchBar" destination="cfb-BF-gxQ" id="eBO-5U-hQf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ie-4i-AaQ" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-150" y="-13"/>
         </scene>
     </scenes>
 </document>
