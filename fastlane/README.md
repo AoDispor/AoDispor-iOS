@@ -30,6 +30,11 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios icone
+```
+fastlane ios icone
+```
+Gerar o Appicon.xcassets a partir do original.
 ### ios test
 ```
 fastlane ios test

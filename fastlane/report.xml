@@ -5,37 +5,27 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: update_fastlane" time="11.830854">
+      <testcase classname="fastlane.lanes" name="0: update_fastlane" time="2.968763">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: Verifying required fastlane version" time="0.001307">
+      <testcase classname="fastlane.lanes" name="1: Verifying required fastlane version" time="0.001568">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: default_platform" time="0.0011">
+      <testcase classname="fastlane.lanes" name="2: default_platform" time="0.00129">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: cocoapods" time="4.949114">
+      <testcase classname="fastlane.lanes" name="3: cocoapods" time="3.18875">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: increment_build_number" time="4.66072">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="5: gym" time="139.816572">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="6: pilot" time="742.096321">
+      <testcase classname="fastlane.lanes" name="4: appicon" time="2.616079">
         
       </testcase>
     
