@@ -26,7 +26,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Si9-8S-SlA">
                             <rect key="frame" x="0.0" y="0.0" width="580" height="0.0"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="253" text="Localização" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="4ZS-Tt-A6z" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="253" text="Localização" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ZS-Tt-A6z" customClass="MarginLabel" customModule="Ao_Dispor" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="505" height="0.0"/>
                                     <accessibility key="accessibilityConfiguration">
                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>

@@ -1,6 +1,6 @@
 //
-//  Ao_DisporUITests.swift
-//  Ao DisporUITests
+//  AoDisporUITests.swift
+//  AoDisporUITests
 //
 //  Created by André Lamelas on 15/05/17.
 //  Copyright © 2017 aodispor.pt. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Ao_DisporUITests: XCTestCase {
+class AoDisporUITests: XCTestCase {
 
     let app = XCUIApplication()
 
@@ -21,12 +21,12 @@ class Ao_DisporUITests: XCTestCase {
         setupSnapshot(app)
         app.launch()
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -37,5 +37,5 @@ class Ao_DisporUITests: XCTestCase {
         snapshot("1-A Pesquisar")
         app.typeText("\r")
     }
-    
+
 }

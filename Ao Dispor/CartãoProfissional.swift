@@ -10,29 +10,29 @@ import UIKit
 import Siesta
 import SwiftRichString
 
-class CartãoProfissional:Cartão {
-    var profissional:Profissional?
+class CartãoProfissional: Cartão {
+    var profissional: Profissional?
 
-    @IBOutlet weak var profissão : UILabel!
-    @IBOutlet weak var preço : UILabel!
-    @IBOutlet weak var descriçãoDoPerfil : UIWebView! {
+    @IBOutlet weak var profissão: UILabel!
+    @IBOutlet weak var preço: UILabel!
+    @IBOutlet weak var descriçãoDoPerfil: UIWebView! {
         didSet {
             self.descriçãoDoPerfil?.dataDetectorTypes = []
         }
     }
-    @IBOutlet weak var avatar : RemoteImageView! {
+    @IBOutlet weak var avatar: RemoteImageView! {
         didSet {
             self.avatar.contentMode = .scaleAspectFill
             self.avatar.clipsToBounds = true
         }
     }
-    @IBOutlet weak var localidade : UILabel! {
+    @IBOutlet weak var localidade: UILabel! {
         didSet {
             self.localidade?.sizeToFit()
         }
     }
 
-    func fillWithData(profissional: Profissional) -> Void {
+    func preencherComDados(profissional: Profissional) {
         self.profissional = profissional
 
         self.avatar.imageURL = profissional.endereçoDoAvatar
@@ -54,14 +54,12 @@ class CartãoProfissional:Cartão {
             + profissional.distânciaArredondadaComUnidade.set(style: distância)
         self.localidade?.sizeToFit()
 
-        if(profissional.tipoDePreço == "S") {
-            self.preço?.textColor = UIColor.serviceGreen()
+        if profissional.tipoDePreço == "S" {
+            self.preço?.textColor = UIColor.serviceGreen
             self.preço?.text = "\(profissional.preço) €"
-        } else if (profissional.tipoDePreço == "H") {
-            self.preço?.textColor = UIColor.perHourBlue()
+        } else if profissional.tipoDePreço == "H" {
+            self.preço?.textColor = UIColor.perHourBlue
             self.preço?.text = "\(profissional.preço) €/h"
         }
     }
-
 }
-

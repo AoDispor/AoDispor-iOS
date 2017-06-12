@@ -1,4 +1,3 @@
-
 //
 //  CardStackViewController.swift
 //  Ao Dispor
@@ -24,16 +23,13 @@ class CardStackViewController: UIViewController {
 
     var página: Página?
 
-    var profissionais:[Profissional] {
-        get {
-            return página == nil ? [] : página!.profissionais
-        }
-
+    var profissionais: [Profissional] {
+        return página == nil ? [] : página!.profissionais
     }
 
     var pesquisouPor: String = ""
 
-    fileprivate var pesquisaFoiComeçada : CFAbsoluteTime?
+    fileprivate var pesquisaFoiComeçada: CFAbsoluteTime?
     fileprivate let duraçãoDaAnimaçãoDoRadar = 2.0 //2 segundos
 
     fileprivate let pulsator = Pulsator()
@@ -47,8 +43,6 @@ class CardStackViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.placeholder = NSLocalizedString("De quem precisa?", comment: "")
-
-        self.fazerReset()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +50,8 @@ class CardStackViewController: UIViewController {
 
         self.configurarBarraDeNavegação()
         self.configurarVistaDoRadar()
+
+        self.fazerReset()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,13 +74,18 @@ class CardStackViewController: UIViewController {
         titleView.isUserInteractionEnabled = true
         titleView.addGestureRecognizer(recognizer)
 
-        let leftButton = UIBarButtonItem(title: NSLocalizedString("Anterior", comment:""), style: .done, target: self, action: #selector(CardStackViewController.cartaAnterior))
-        leftButton.tintColor = UIColor.white
-        leftButton.icon(from: .FontAwesome, code: "undo", ofSize: 20)
-        self.navigationItem.leftBarButtonItem = leftButton
+        let botãoEsquerdo = UIBarButtonItem(title: NSLocalizedString("Anterior", comment:""), style: .done, target: self, action: #selector(CardStackViewController.cartaAnterior))
+        botãoEsquerdo.tintColor = UIColor.white
+        botãoEsquerdo.icon(from: .FontAwesome, code: "undo", ofSize: 20)
+        self.navigationItem.leftBarButtonItem = botãoEsquerdo
+
+        let botãoDireito = UIBarButtonItem(title: NSLocalizedString("O Seu Perfil", comment:""), style: .done, target: self, action: #selector(CardStackViewController.mostraPerfil))
+        botãoDireito.tintColor = UIColor.white
+        botãoDireito.icon(from: .FontAwesome, code: "user", ofSize: 20)
+        self.navigationItem.rightBarButtonItem = botãoDireito
 
         self.navigationController?.navigationBar.barStyle = .default
-        self.navigationController?.navigationBar.barTintColor = UIColor.titleBlue()
+        self.navigationController?.navigationBar.barTintColor = UIColor.titleBlue
     }
 
     private func configurarVistaDoRadar() {
@@ -99,8 +100,8 @@ class CardStackViewController: UIViewController {
         pulsator.numPulse = 6
         pulsator.radius = 320
         pulsator.animationDuration = 6
-        pulsator.backgroundColor = UIColor.titleBlue().cgColor
-        pulsator.position = CGPoint(x: view.frame.width/2,  y: view.frame.height/2)
+        pulsator.backgroundColor = UIColor.titleBlue.cgColor
+        pulsator.position = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
         pulsator.start()
         pulsatorView.layer.addSublayer(pulsator)
     }
@@ -113,32 +114,35 @@ class CardStackViewController: UIViewController {
 
         var parâmetrosLocais = parâmetros
 
-        if(parâmetrosLocais["query"] != nil && !(parâmetrosLocais["query"]?.isEmpty)! ) {
+        if parâmetrosLocais["query"] != nil && !(parâmetrosLocais["query"]?.isEmpty)! {
             pesquisouPor = parâmetrosLocais["query"]!
         } else {
             parâmetrosLocais.removeValue(forKey: "query")
         }
 
         pesquisaFoiComeçada = CFAbsoluteTimeGetCurrent()
-
-        Location.getLocation(accuracy: .block, frequency: .oneShot, success: { (a, location) in
+        Location.getLocation(accuracy: .block, frequency: .oneShot, timeout: 5, cancelOnError: true, success: { (_, location) in
             parâmetrosLocais["lat"] = String(location.coordinate.latitude)
             parâmetrosLocais["lon"] = String(location.coordinate.longitude)
-            AoDisporAPI.procurar(parâmetros: parâmetrosLocais).onSuccess {
-                data in
-                self.página = data.typedContent()! as Página
-                self.noFimDaPesquisa()
-            }
-        }) { (request, last, error) in
+            self.executarPesquisa(parâmetrosLocais)
+        }) { (_, _, error) -> (Void) in
             print("Location monitoring failed due to an error \(error)")
-            self.noFimDaPesquisa()
+            self.executarPesquisa(parâmetrosLocais)
         }
     }
 
     func fazerReset() {
         self.searchBar!.text = ""
         self.pesquisouPor = ""
-        self.procurarPor(["query":""])
+        self.procurarPor(["query": ""])
+    }
+
+    func executarPesquisa(_ parâmetros: [String:String]) {
+        AoDisporAPI.procurar(parâmetros: parâmetros).onSuccess { data in
+            self.página = data.typedContent()! as Página
+        }.onCompletion { _ in
+            self.noFimDaPesquisa()
+        }
     }
 
     func noFimDaPesquisa() {
@@ -161,10 +165,10 @@ class CardStackViewController: UIViewController {
        UIView.animate(withDuration: 0.25, animations: {
             self.pulsatorView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }) { (finished) in
-            if(finished) {
+            if finished {
                 self.kolodaView.isHidden = false
                 self.pulsatorView.isHidden = true
-                UIView.animate(withDuration: 0, animations: { 
+                UIView.animate(withDuration: 0, animations: {
                     self.pulsatorView.transform = CGAffineTransform.identity
                 })
             }
@@ -179,19 +183,26 @@ class CardStackViewController: UIViewController {
         self.kolodaView.revertAction()
     }
 
+    func mostraPerfil() {
+        if AoDisporAPI.estáAutenticado {
+            self.performSegue(withIdentifier: "mostraPerfil", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "pedeNúmeroDeTelefone", sender: self)
+        }
+    }
+
     func recognizeTap() {
         self.kolodaView.delegate?.koloda(kolodaView, didSelectCardAt: self.kolodaView.currentCardIndex)
     }
 }
 
-//MARK: - KolodaViewDataSource
+// MARK: - KolodaViewDataSource
 extension CardStackViewController: KolodaViewDataSource {
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return DragSpeed.default
     }
 
-
-    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         if profissionais.isEmpty {
             return 1 // para mostrar a carta de "ups, não há aqui nada"
         }
@@ -217,7 +228,7 @@ extension CardStackViewController: KolodaViewDataSource {
         let cartãoProfissional = Bundle.main.loadNibNamed("CartãoProfissional", owner: self, options: nil)![0] as? CartãoProfissional
         let profissional = profissionais[Int(index)]
 
-        cartãoProfissional?.fillWithData(profissional: profissional)
+        cartãoProfissional?.preencherComDados(profissional: profissional)
 
         let tapCatcher = UITapGestureRecognizer(target: self, action: #selector(CardStackViewController.recognizeTap))
         tapCatcher.numberOfTapsRequired = 1
@@ -229,14 +240,14 @@ extension CardStackViewController: KolodaViewDataSource {
     }
 }
 
-//MARK: - UIGestureRecognizerDelegate
+// MARK: - UIGestureRecognizerDelegate
 extension CardStackViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-//MARK: - KolodaViewDelegate
+// MARK: - KolodaViewDelegate
 extension CardStackViewController: KolodaViewDelegate {
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
         // TODO: Era fixe isto permitir a animação quando a pilha estivesse no fim
@@ -260,7 +271,7 @@ extension CardStackViewController: KolodaViewDelegate {
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment:""), style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
 
-        let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .default) { (action) in
+        let OKAction = UIAlertAction(title: NSLocalizedString("Telefonar", comment:""), style: .default) { (_) in
             let phone = "tel://\(profissional.telefone)"
             let open = URL(string: phone)!
             Answers.logCustomEvent(withName: "Telefonema", customAttributes: ["string_id": profissional.stringId
@@ -269,42 +280,41 @@ extension CardStackViewController: KolodaViewDelegate {
         }
         alertController.addAction(OKAction)
 
-        let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .default) { (action) in
+        let SMSAction = UIAlertAction(title: NSLocalizedString("Enviar SMS", comment:""), style: .default) { (_) in
             let messageVC = MFMessageComposeViewController()
             messageVC.body = NSLocalizedString("Vi o seu perfil no AoDispor.pt e gostaria de contratar os seus serviços. Podemos falar?", comment: "")
             messageVC.recipients = [profissional.telefone]
-            messageVC.messageComposeDelegate = self;
+            messageVC.messageComposeDelegate = self
             Answers.logCustomEvent(withName: "Envio de SMS", customAttributes: ["string_id": profissional.stringId
                 ])
             self.present(messageVC, animated: true, completion: nil)
         }
         alertController.addAction(SMSAction)
 
-
-        let ShareAction = UIAlertAction(title: NSLocalizedString("Partilhar", comment: ""), style: .default) { (action) in
+        let ShareAction = UIAlertAction(title: NSLocalizedString("Partilhar", comment: ""), style: .default) { (_) in
             let profissionalToShare = profissional
             let url = "http://www.aodispor.pt/\(profissionalToShare.stringId)"
             let profissionalURL = NSURL(string: url)
-            let objectsToShare:[AnyObject] = [profissionalURL!]
+            let objectsToShare: [AnyObject] = [profissionalURL!]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
             self.present(activityVC, animated: true, completion: nil)
         }
         alertController.addAction(ShareAction)
-        
+
         self.present(alertController, animated: true, completion: nil)
     }
 
 }
 
-//MARK: - MFMessageComposeViewControllerDelegate
+// MARK: - MFMessageComposeViewControllerDelegate
 extension CardStackViewController: MFMessageComposeViewControllerDelegate {
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-//MARK: - UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension CardStackViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
@@ -316,7 +326,7 @@ extension CardStackViewController: UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
     }
 
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Cartão:UIView {
+class Cartão: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 

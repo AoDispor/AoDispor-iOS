@@ -8,11 +8,11 @@
 import SwiftyJSON
 
 struct CódigoPostal {
-    var cp4:String
-    var cp3:String
-    var localidade:String
-    var latitude:String
-    var longitude:String
+    var cp4: String
+    var cp3: String
+    var localidade: String
+    var latitude: String
+    var longitude: String
 
     init(json: JSON) {
         cp4 = json["cp4"].stringValue

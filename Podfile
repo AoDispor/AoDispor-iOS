@@ -21,17 +21,17 @@ target 'Ao Dispor' do
 
   pod 'Fabric'
   pod 'Crashlytics'
-  
   pod 'SwiftyJSON'
-
   pod 'Siesta', '~> 1.0'
   pod 'Siesta/UI', '~> 1.0'
-
   pod 'Koloda'
-
+  pod 'SwiftyButton'
   pod 'Pulsator'
-
   pod 'SwiftLocation'
   pod 'SwiftRichString'
   pod 'SwiftIconFont'
+  pod 'PhoneNumberKit', '~> 1.2'
+  pod 'Locksmith'
+  pod 'KMPlaceholderTextView', '~> 1.3.0'
+  pod 'PopupKit'
 end

@@ -1,0 +1,8 @@
+disabled_rules:
+  - identifier_name
+  - todo
+  - line_length
+  - force_cast
+excluded:
+  - Pods
+  - "Ao Dispor/ImageRow"

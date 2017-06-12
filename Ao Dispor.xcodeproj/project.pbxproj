@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2054E41EE5CFA400816FC1 /* PlaceholderUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2054E21EE5CFA400816FC1 /* PlaceholderUITextView.swift */; };
+		0D2054E51EE5CFA400816FC1 /* PlaceholderUITextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2054E31EE5CFA400816FC1 /* PlaceholderUITextView.xib */; };
+		0D2054E71EE5DD9800816FC1 /* CartãoProfissionalEditável.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2054E61EE5DD9800816FC1 /* CartãoProfissionalEditável.xib */; };
+		0D2054EB1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2054EA1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift */; };
 		0D424EE21ECC99B000244490 /* AoDisporAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EE11ECC99B000244490 /* AoDisporAPI.swift */; };
 		0D424EE41ECC9B8600244490 /* Siesta+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */; };
 		0D424EE61ECC9EA000244490 /* Configuracoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D424EE51ECC9EA000244490 /* Configuracoes.plist */; };
@@ -23,17 +27,22 @@
 		0D6DFDF01ED5E61200879229 /* YanoneKaffeesatz-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDEE1ED5E5FE00879229 /* YanoneKaffeesatz-Thin.otf */; };
 		0D6DFDF21ED5E8AF00879229 /* profileDescription.html in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDF11ED5E8AF00879229 /* profileDescription.html */; };
 		0D6DFDF61ED5F78C00879229 /* Paginação.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDF51ED5F78C00879229 /* Paginação.swift */; };
+		0D87BE091EE5546700C7C83D /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87BE081EE5546700C7C83D /* PerfilViewController.swift */; };
+		0D9A52061EE1C28A007B8E41 /* RegistoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9A52051EE1C28A007B8E41 /* RegistoViewController.swift */; };
 		0DB20EBB1ED484B3008FA92C /* Profissional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB20EBA1ED484B3008FA92C /* Profissional.swift */; };
 		0DD63AE31ECA1BEA00AF4DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */; };
 		0DD63AE51ECA1BEA00AF4DC7 /* CardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */; };
 		0DD63AE81ECA1BEA00AF4DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AE61ECA1BEA00AF4DC7 /* Main.storyboard */; };
 		0DD63AEA1ECA1BEA00AF4DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AE91ECA1BEA00AF4DC7 /* Assets.xcassets */; };
 		0DD63AED1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD63AEB1ECA1BEA00AF4DC7 /* LaunchScreen.storyboard */; };
-		0DD63AF81ECA1BEA00AF4DC7 /* Ao_DisporTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AF71ECA1BEA00AF4DC7 /* Ao_DisporTests.swift */; };
-		0DD63B031ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */; };
+		0DD63AF81ECA1BEA00AF4DC7 /* AoDisporTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63AF71ECA1BEA00AF4DC7 /* AoDisporTests.swift */; };
+		0DD63B031ECA1BEA00AF4DC7 /* AoDisporUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD63B021ECA1BEA00AF4DC7 /* AoDisporUITests.swift */; };
 		0DD9C1571EE06A8E0013CA99 /* CartãoTextoImagem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */; };
 		0DD9C1591EE08FE60013CA99 /* CartãoTextoImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */; };
 		0DD9C15B1EE0C2570013CA99 /* Cartão.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C15A1EE0C2570013CA99 /* Cartão.swift */; };
+		0DED72BA1EE74C170094D063 /* BemVindoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72B91EE74C170094D063 /* BemVindoViewController.swift */; };
+		0DED72BC1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72BB1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift */; };
+		0DED72BE1EE74C4B0094D063 /* ValidarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72BD1EE74C4B0094D063 /* ValidarPasswordViewController.swift */; };
 		8AEFC2ADDF79B9DB2D315A84 /* Pods_Ao_Dispor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4F5B32FF8DAC2912A0A160 /* Pods_Ao_Dispor.framework */; };
 		926433D57BBC278A3C107A56 /* Pods_Ao_DisporUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9DC3C34560751E4F2ECC85 /* Pods_Ao_DisporUITests.framework */; };
 		CFE9D59852C90FA3EF88159D /* Pods_Ao_DisporTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E8961913031813F0779D58 /* Pods_Ao_DisporTests.framework */; };
@@ -58,6 +67,10 @@
 
 /* Begin PBXFileReference section */
 		01F7737A1E53934726F47202 /* Pods-Ao Dispor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao Dispor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ao Dispor/Pods-Ao Dispor.debug.xcconfig"; sourceTree = "<group>"; };
+		0D2054E21EE5CFA400816FC1 /* PlaceholderUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderUITextView.swift; sourceTree = "<group>"; };
+		0D2054E31EE5CFA400816FC1 /* PlaceholderUITextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderUITextView.xib; sourceTree = "<group>"; };
+		0D2054E61EE5DD9800816FC1 /* CartãoProfissionalEditável.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CartãoProfissionalEditável.xib"; sourceTree = "<group>"; };
+		0D2054EA1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoProfissionalEditável.swift"; sourceTree = "<group>"; };
 		0D424EE11ECC99B000244490 /* AoDisporAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AoDisporAPI.swift; sourceTree = "<group>"; };
 		0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Siesta+SwiftyJSON.swift"; sourceTree = "<group>"; };
 		0D424EE51ECC9EA000244490 /* Configuracoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuracoes.plist; sourceTree = "<group>"; };
@@ -75,6 +88,8 @@
 		0D6DFDF11ED5E8AF00879229 /* profileDescription.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = profileDescription.html; sourceTree = "<group>"; };
 		0D6DFDF51ED5F78C00879229 /* Paginação.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Paginação.swift"; path = "Ao Dispor/Paginação.swift"; sourceTree = "<group>"; };
 		0D723B031EE014E400857BD1 /* Ao Dispor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ao Dispor.entitlements"; sourceTree = "<group>"; };
+		0D87BE081EE5546700C7C83D /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		0D9A52051EE1C28A007B8E41 /* RegistoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistoViewController.swift; sourceTree = "<group>"; };
 		0DB20EBA1ED484B3008FA92C /* Profissional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profissional.swift; path = "Ao Dispor/Profissional.swift"; sourceTree = "<group>"; };
 		0DD63ADF1ECA1BEA00AF4DC7 /* Ao Dispor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ao Dispor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,14 +99,17 @@
 		0DD63AEC1ECA1BEA00AF4DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DD63AEE1ECA1BEA00AF4DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD63AF31ECA1BEA00AF4DC7 /* Ao DisporTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ao DisporTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DD63AF71ECA1BEA00AF4DC7 /* Ao_DisporTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ao_DisporTests.swift; sourceTree = "<group>"; };
+		0DD63AF71ECA1BEA00AF4DC7 /* AoDisporTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoDisporTests.swift; sourceTree = "<group>"; };
 		0DD63AF91ECA1BEA00AF4DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD63AFE1ECA1BEA00AF4DC7 /* Ao DisporUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ao DisporUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ao_DisporUITests.swift; sourceTree = "<group>"; };
+		0DD63B021ECA1BEA00AF4DC7 /* AoDisporUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoDisporUITests.swift; sourceTree = "<group>"; };
 		0DD63B041ECA1BEA00AF4DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CartãoTextoImagem.xib"; sourceTree = "<group>"; };
 		0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoTextoImagem.swift"; sourceTree = "<group>"; };
 		0DD9C15A1EE0C2570013CA99 /* Cartão.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cartão.swift"; sourceTree = "<group>"; };
+		0DED72B91EE74C170094D063 /* BemVindoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BemVindoViewController.swift; sourceTree = "<group>"; };
+		0DED72BB1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NúmeroDeTelefoneViewController.swift"; sourceTree = "<group>"; };
+		0DED72BD1EE74C4B0094D063 /* ValidarPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidarPasswordViewController.swift; sourceTree = "<group>"; };
 		18E8961913031813F0779D58 /* Pods_Ao_DisporTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7A27DCED87404432D671D1 /* Pods-Ao DisporTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ao DisporTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ao DisporTests/Pods-Ao DisporTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F9DC3C34560751E4F2ECC85 /* Pods_Ao_DisporUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ao_DisporUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +178,8 @@
 				0D6DFDE91ED5E18700879229 /* CartãoProfissional.xib */,
 				0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */,
 				0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */,
+				0D2054EA1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift */,
+				0D2054E61EE5DD9800816FC1 /* CartãoProfissionalEditável.xib */,
 			);
 			name = "Cartões";
 			sourceTree = "<group>";
@@ -205,13 +225,13 @@
 			isa = PBXGroup;
 			children = (
 				0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */,
+				0DED72BF1EE74C750094D063 /* Onboarding */,
 				0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */,
-				0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */,
+				0D87BE081EE5546700C7C83D /* PerfilViewController.swift */,
 				0D6DFDE31ED5CB0400879229 /* Cartões */,
 				0D424EED1ECCADFD00244490 /* Modelos */,
 				0D424EE11ECC99B000244490 /* AoDisporAPI.swift */,
-				0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */,
-				0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */,
+				0DED72C01EE74C9A0094D063 /* Extras */,
 				0D6DFDE61ED5CBD300879229 /* Recursos */,
 			);
 			path = "Ao Dispor";
@@ -220,7 +240,7 @@
 		0DD63AF61ECA1BEA00AF4DC7 /* Ao DisporTests */ = {
 			isa = PBXGroup;
 			children = (
-				0DD63AF71ECA1BEA00AF4DC7 /* Ao_DisporTests.swift */,
+				0DD63AF71ECA1BEA00AF4DC7 /* AoDisporTests.swift */,
 				0DD63AF91ECA1BEA00AF4DC7 /* Info.plist */,
 			);
 			path = "Ao DisporTests";
@@ -231,10 +251,33 @@
 			children = (
 				0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */,
 				0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */,
-				0DD63B021ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift */,
+				0DD63B021ECA1BEA00AF4DC7 /* AoDisporUITests.swift */,
 				0DD63B041ECA1BEA00AF4DC7 /* Info.plist */,
 			);
 			path = "Ao DisporUITests";
+			sourceTree = "<group>";
+		};
+		0DED72BF1EE74C750094D063 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0D9A52051EE1C28A007B8E41 /* RegistoViewController.swift */,
+				0DED72B91EE74C170094D063 /* BemVindoViewController.swift */,
+				0DED72BB1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift */,
+				0DED72BD1EE74C4B0094D063 /* ValidarPasswordViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		0DED72C01EE74C9A0094D063 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				0D6DFDEB1ED5E22900879229 /* Recursos+Extensões.swift */,
+				0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */,
+				0D424EE31ECC9B8600244490 /* Siesta+SwiftyJSON.swift */,
+				0D2054E21EE5CFA400816FC1 /* PlaceholderUITextView.swift */,
+				0D2054E31EE5CFA400816FC1 /* PlaceholderUITextView.xib */,
+			);
+			name = Extras;
 			sourceTree = "<group>";
 		};
 		1E7EA87C363144EC3D547E84 /* Frameworks */ = {
@@ -273,7 +316,8 @@
 				0DD63ADD1ECA1BEA00AF4DC7 /* Resources */,
 				643B0A2739945969396E489C /* [CP] Embed Pods Frameworks */,
 				BB83BED738871D486F368AF1 /* [CP] Copy Pods Resources */,
-				0DE2993D1ECA1E2D0083FEC8 /* ShellScript */,
+				0D9A52071EE48E15007B8E41 /* Swiftlint */,
+				0DE2993D1ECA1E2D0083FEC8 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -344,8 +388,14 @@
 							com.apple.DataProtection = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 0;
 							};
 						};
 					};
@@ -388,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2054E71EE5DD9800816FC1 /* CartãoProfissionalEditável.xib in Resources */,
 				0D6DFDEF1ED5E61200879229 /* YanoneKaffeesatz-Regular.otf in Resources */,
 				0D6DFDF01ED5E61200879229 /* YanoneKaffeesatz-Thin.otf in Resources */,
 				0D6DFDF21ED5E8AF00879229 /* profileDescription.html in Resources */,
@@ -398,6 +449,7 @@
 				0DD63AEA1ECA1BEA00AF4DC7 /* Assets.xcassets in Resources */,
 				0DD63AE81ECA1BEA00AF4DC7 /* Main.storyboard in Resources */,
 				0D6DFDEA1ED5E18700879229 /* CartãoProfissional.xib in Resources */,
+				0D2054E51EE5CFA400816FC1 /* PlaceholderUITextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,13 +471,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DE2993D1ECA1E2D0083FEC8 /* ShellScript */ = {
+		0D9A52071EE48E15007B8E41 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		0DE2993D1ECA1E2D0083FEC8 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,17 +643,24 @@
 			files = (
 				0DD9C1591EE08FE60013CA99 /* CartãoTextoImagem.swift in Sources */,
 				0DD63AE51ECA1BEA00AF4DC7 /* CardStackViewController.swift in Sources */,
+				0D2054EB1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift in Sources */,
+				0D2054E41EE5CFA400816FC1 /* PlaceholderUITextView.swift in Sources */,
 				0D424EF11ECCBB2E00244490 /* CódigoPostal.swift in Sources */,
 				0D6DFDF61ED5F78C00879229 /* Paginação.swift in Sources */,
+				0DED72BA1EE74C170094D063 /* BemVindoViewController.swift in Sources */,
+				0DED72BE1EE74C4B0094D063 /* ValidarPasswordViewController.swift in Sources */,
 				0DD9C15B1EE0C2570013CA99 /* Cartão.swift in Sources */,
 				0D6DFDEC1ED5E22900879229 /* Recursos+Extensões.swift in Sources */,
+				0D9A52061EE1C28A007B8E41 /* RegistoViewController.swift in Sources */,
 				0D6DFDE81ED5E14D00879229 /* KolodaViewCartas.swift in Sources */,
 				0D6DFDE21ED5CB0000879229 /* CartãoProfissional.swift in Sources */,
+				0D87BE091EE5546700C7C83D /* PerfilViewController.swift in Sources */,
 				0DD63AE31ECA1BEA00AF4DC7 /* AppDelegate.swift in Sources */,
 				0D424EEF1ECCAE1300244490 /* Utilizador.swift in Sources */,
 				0D424EE41ECC9B8600244490 /* Siesta+SwiftyJSON.swift in Sources */,
 				0D424EE21ECC99B000244490 /* AoDisporAPI.swift in Sources */,
 				0DB20EBB1ED484B3008FA92C /* Profissional.swift in Sources */,
+				0DED72BC1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD63AF81ECA1BEA00AF4DC7 /* Ao_DisporTests.swift in Sources */,
+				0DD63AF81ECA1BEA00AF4DC7 /* AoDisporTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD63B031ECA1BEA00AF4DC7 /* Ao_DisporUITests.swift in Sources */,
+				0DD63B031ECA1BEA00AF4DC7 /* AoDisporUITests.swift in Sources */,
 				0D54C9981EDF488B0031B467 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,12 +815,41 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Ao Dispor/Ao Dispor.entitlements";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pt.aodispor.ios;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Koloda/Koloda.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PhoneNumberKit/PhoneNumberKit.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Pulsator/Pulsator.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Siesta/Siesta.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftIconFont/SwiftIconFont.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftLocation/SwiftLocation.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftRichString/SwiftRichString.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyButton/SwiftyButton.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/pop/pop.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -758,12 +861,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Ao Dispor/Ao Dispor.entitlements";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6JZ2JQ2YB8;
 				INFOPLIST_FILE = "Ao Dispor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pt.aodispor.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.aodispor.Ao-Dispor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

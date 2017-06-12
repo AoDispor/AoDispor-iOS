@@ -10,7 +10,7 @@ import SwiftyJSON
 import Foundation
 
 struct Página {
-    let profissionais : [Profissional]
+    let profissionais: [Profissional]
     let meta: DadosDePágina
 
     init(json: JSON) {
@@ -19,15 +19,11 @@ struct Página {
     }
 
     var temMaisPáginas: Bool {
-        get {
-            return meta.temMaisPáginas
-        }
+        return meta.temMaisPáginas
     }
 
     var páginaSeguinte: Int {
-        get {
-            return meta.páginaSeguinte
-        }
+        return meta.páginaSeguinte
     }
 }
 
@@ -49,18 +45,14 @@ struct DadosDePágina {
     }
 
     var temMaisPáginas: Bool {
-        get {
-            return self.páginaActual < totalDePáginas
-        }
+        return self.páginaActual < totalDePáginas
     }
 
     var páginaSeguinte: Int {
-        get {
-            if(temMaisPáginas) {
-                return self.páginaActual + 1
-            }
-            return -1
+        if temMaisPáginas {
+            return self.páginaActual + 1
         }
+        return -1
     }
 }
 

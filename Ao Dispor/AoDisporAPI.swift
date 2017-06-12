@@ -9,26 +9,22 @@
 import Siesta
 import SwiftyJSON
 import CoreLocation
+import Locksmith
 
-let AoDisporAPI = _AoDisporAPI()
+let AoDisporAPI = AoDisporAPISiesta()
 
-/*fileprivate class CustomAPI: Service {
-    init(baseURL: String) {
-        super.init(baseURL: baseURL)
-    }
+let NOME_DA_CONTA = "pt.aodispor.ios"
 
-    var perfis: Resource { return resource("/profiles") }
-}*/
+class AoDisporAPISiesta {
 
-class _AoDisporAPI {
-
-    //private let service = Service(baseURL: "https://api.aodispor.pt")
+    #if (arch(i386) || arch(x86_64)) && os(iOS)
     private let service = Service(baseURL: "http://dev.api.aodispor.pt")
-
-    //private let service = CustomAPI(baseURL: "http://dev.api.aodispor.pt")
+    #else
+    private let service = Service(baseURL: "https://api.aodispor.pt")
+    #endif
 
     fileprivate init() {
-        #if DEBUG
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
             // Bare-bones logging of which network calls Siesta makes:
             //LogCategory.enabled = [.network]
 
@@ -40,7 +36,6 @@ class _AoDisporAPI {
             //LogCategory.enabled = LogCategory.detailed
         #endif
 
-        // Global configuration
         service.configure {
             $0.pipeline[.parsing].add(SwiftyJSONTransformer, contentTypes: ["*/json"])
             $0.pipeline[.cleanup].add(ErrorMessageExtractor())
@@ -60,6 +55,10 @@ class _AoDisporAPI {
 
         service.configureTransformer("/users/me") {
             ($0.content as JSON).dictionary?["data"].map(Utilizador.init)
+        }
+
+        service.configureTransformer("/users/me/profile") {
+            ($0.content as JSON).dictionary?["data"].map(Profissional.init)
         }
 
         service.configureTransformer("/profiles") {
@@ -95,12 +94,15 @@ class _AoDisporAPI {
         return service.resource("/users/me").request(.post, json: ["postal_code": "\(cp4)-\(cp3)"])
     }
 
+    func meuPerfil() -> Request {
+        return service.resource("/users/me/profile").request(.get)
+    }
+
     // MARK: Perfis
     func procurar(parâmetros: [String:String]) -> Request {
-//    func procurar(_ query: String, latitude: Double = .nan, longitude: Double = .nan) -> Request {
         var resource = service.resource("/profiles")
 
-        parâmetros.forEach { (chave:String, valor:String) in
+        parâmetros.forEach { (chave: String, valor: String) in
             resource = resource.withParam(chave, valor)
         }
         return resource.request(.get)
@@ -109,7 +111,6 @@ class _AoDisporAPI {
     func perfil(_ string_id: String) -> Request {
         return service.resource("/profiles").child(string_id).request(.get)
     }
-
 
     // MARK: Pedidos
 
@@ -123,27 +124,47 @@ class _AoDisporAPI {
 
     // Header de autenticação da API
     private var apiAuthorizationHeader: String? {
-        get {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyyMMdd"
-            formatter.timeZone = TimeZone(abbreviation: "UTC")
-            let utcString = formatter.string(from: Date())
-            if let unwrappedApiTokenvalue = self.apiTokenValue {
-                return "\(unwrappedApiTokenvalue)\(utcString)"
-            }
-            return nil
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        let utcString = formatter.string(from: Date())
+        if let unwrappedApiTokenvalue = self.apiTokenValue {
+            return "\(unwrappedApiTokenvalue)\(utcString)"
         }
+        return nil
     }
 
     // MARK: Autenticação
-    // NOTE: veio direitinho do exemplo do Siesta
-    func autenticar(telefone: String, password: String) {
-        if let auth = "\(telefone):\(password)".data(using: String.Encoding.utf8) {
-            basicAuthHeader = "Basic \(auth.base64EncodedString())"
+    func autenticar() {
+        let dictionary = Locksmith.loadDataForUserAccount(userAccount: NOME_DA_CONTA)
+        if dictionary == nil {
+            return
         }
+
+        let telefone = dictionary?["telefone"] as! String
+        let password = dictionary?["password"] as! String
+
+        basicAuthHeader = gerarAuthString(telefone: telefone, password: password)
+    }
+
+    func autenticar(telefone: String, password: String) {
+        do {
+            try Locksmith.updateData(data: ["telefone": telefone, "password": password], forUserAccount: NOME_DA_CONTA)
+        } catch {
+            print("Não foi possível gravar os seus dados")
+            return
+        }
+        basicAuthHeader = gerarAuthString(telefone: telefone, password: password)
     }
 
     func sair() {
+        do {
+            try Locksmith.deleteDataForUserAccount(userAccount: NOME_DA_CONTA)
+        } catch {
+            print("Não foi possível apagar os seus dados")
+            return
+        }
+
         basicAuthHeader = nil
     }
 
@@ -151,7 +172,15 @@ class _AoDisporAPI {
         return basicAuthHeader != nil
     }
 
-    private var basicAuthHeader: String? {
+    private func gerarAuthString(telefone:String, password: String) -> String {
+        // NOTE: veio direitinho do exemplo do Siesta
+        if let auth = "\(telefone):\(password)".data(using: String.Encoding.ascii) {
+            return "Basic \(auth.base64EncodedString())"
+        }
+        return ""
+    }
+
+    private var basicAuthHeader: String? = nil {
         didSet {
             service.invalidateConfiguration()
             service.wipeResources()

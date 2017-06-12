@@ -9,5 +9,9 @@
 	</array>
 	<key>com.apple.developer.default-data-protection</key>
 	<string>NSFileProtectionComplete</string>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)pt.aodispor.AoDispor</string>
+	</array>
 </dict>
 </plist>

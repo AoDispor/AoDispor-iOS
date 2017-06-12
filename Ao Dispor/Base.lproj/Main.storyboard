@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FEX-YX-rgD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O9F-dq-PfF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,21 +9,173 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="KEa-0p-4M5">
+        <!--Bem Vindo View Controller-->
+        <scene sceneID="O5l-et-ePy">
             <objects>
-                <navigationController id="FEX-YX-rgD" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YDH-1I-m5e">
+                <viewController storyboardIdentifier="registoVC" id="P97-AT-tw0" customClass="BemVindoViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xgc-h5-5sb"/>
+                        <viewControllerLayoutGuide type="bottom" id="lnT-bl-GzI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bXr-g9-rKb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SlY-98-f7h">
+                                <rect key="frame" x="40" y="64" width="295" height="563"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Bem-vindo ao Ao Dispor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-ZA-sRb">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="72"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feH-Nr-7Ar" customClass="BotãoAoDispor" customModule="Ao_Dispor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="82" width="295" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wor-cK-vcY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="SEGUINTE">
+                                            <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="seguinteWithSender:" destination="P97-AT-tw0" eventType="touchUpInside" id="qh5-x1-ajc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qim-I1-tWa">
+                                        <rect key="frame" x="0.0" y="132" width="295" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Não me inscrever agora.">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nãoMeInscreverAgoraWithSender:" destination="P97-AT-tw0" eventType="touchUpInside" id="EA0-s5-ST3"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" image="Inscrições" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-Dl-uSe">
+                                        <rect key="frame" x="0.0" y="175" width="295" height="388"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SlY-98-f7h" firstAttribute="leading" secondItem="bXr-g9-rKb" secondAttribute="leading" constant="40" id="JZ1-h9-bBC"/>
+                            <constraint firstItem="lnT-bl-GzI" firstAttribute="top" secondItem="SlY-98-f7h" secondAttribute="bottom" constant="40" id="aIn-Rs-BuJ"/>
+                            <constraint firstItem="SlY-98-f7h" firstAttribute="top" secondItem="bXr-g9-rKb" secondAttribute="top" constant="64" id="ara-kS-HAi"/>
+                            <constraint firstAttribute="trailing" secondItem="SlY-98-f7h" secondAttribute="trailing" constant="40" id="ydh-5F-wHH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s0T-U3-x4h"/>
+                    <connections>
+                        <outlet property="nãoRegistar" destination="qim-I1-tWa" id="eqe-Fc-1ZK"/>
+                        <outlet property="seguinte" destination="feH-Nr-7Ar" id="ghf-5X-9gU"/>
+                        <segue destination="CIw-h6-TEz" kind="show" identifier="pedeNúmeroDeTelefone" id="Wc5-ax-sFR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeV-bJ-NoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106" y="-572"/>
+        </scene>
+        <!--Número De Telefone View Controller-->
+        <scene sceneID="y7R-xN-Ona">
+            <objects>
+                <viewController id="CIw-h6-TEz" customClass="NúmeroDeTelefoneViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QCz-f6-Dea"/>
+                        <viewControllerLayoutGuide type="bottom" id="iz1-0S-Jfa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="meH-1V-sK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-7t-7iC">
+                                <rect key="frame" x="36" y="40" width="303" height="607"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Para o podermos inscrever precisamos de lhe enviar uma SMS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8an-gk-EJT">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="72"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jmt-VT-mQl" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                        <rect key="frame" x="0.0" y="82" width="303" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="kZl-z0-0Yh"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk5-cn-DPq" customClass="BotãoAoDispor" customModule="Ao_Dispor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="152" width="303" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ES9-Vq-KtB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="NOVO UTILIZADOR">
+                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registoWithSender:" destination="CIw-h6-TEz" eventType="touchUpInside" id="QbF-k5-Gcc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf0-xf-eNQ">
+                                        <rect key="frame" x="0.0" y="202" width="303" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Não me inscrever agora.">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nãoMeInscreverAgoraWithSender:" destination="CIw-h6-TEz" eventType="touchUpInside" id="7AL-91-YtC"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="orC-Ud-Z8Y">
+                                        <rect key="frame" x="0.0" y="245" width="303" height="362"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Pd-7t-7iC" firstAttribute="top" secondItem="QCz-f6-Dea" secondAttribute="bottom" constant="20" id="5kY-P7-LLJ"/>
+                            <constraint firstItem="iz1-0S-Jfa" firstAttribute="top" secondItem="9Pd-7t-7iC" secondAttribute="bottom" constant="20" id="7yy-O3-7E8"/>
+                            <constraint firstItem="9Pd-7t-7iC" firstAttribute="leading" secondItem="meH-1V-sK1" secondAttribute="leadingMargin" constant="20" id="jfU-hI-quF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Pd-7t-7iC" secondAttribute="trailing" constant="20" id="vWz-r1-HUE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nãoRegistar" destination="Cf0-xf-eNQ" id="f99-jv-08z"/>
+                        <outlet property="novoUtilizador" destination="Wk5-cn-DPq" id="WhC-bn-LiY"/>
+                        <outlet property="telefone" destination="Jmt-VT-mQl" id="OXT-rS-j43"/>
+                        <segue destination="7Us-LM-FTK" kind="show" identifier="mostraValidarTelefone" id="IdH-d9-QvX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVI-eQ-6S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="-573"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Gy-mz-V1O">
+            <objects>
+                <navigationController id="O9F-dq-PfF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J4O-Lf-o3v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sU3-3z-FpG" kind="relationship" relationship="rootViewController" id="DUK-RJ-EXL"/>
+                        <segue destination="sU3-3z-FpG" kind="relationship" relationship="rootViewController" id="aer-UJ-fO3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bqU-om-16W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BcJ-P8-jzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1009" y="-13"/>
+            <point key="canvasLocation" x="-1113" y="157"/>
         </scene>
         <!--Card Stack View Controller-->
         <scene sceneID="1xd-N1-zeJ">
@@ -51,7 +203,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TqI-Th-ptI" userLabel="Koloda View" customClass="KolodaViewCartas" customModule="Ao_Dispor">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cb-bi-Gwx">
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cb-bi-Gwx">
                                         <rect key="frame" x="0.0" y="475" width="375" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -74,11 +226,161 @@
                         <outlet property="kolodaView" destination="TqI-Th-ptI" id="vDl-zT-T6M"/>
                         <outlet property="pulsatorView" destination="6Cb-bi-Gwx" id="YVZ-w1-4zz"/>
                         <outlet property="searchBar" destination="cfb-BF-gxQ" id="eBO-5U-hQf"/>
+                        <segue destination="81T-Xf-RTv" kind="show" identifier="mostraPerfil" id="xVy-fl-13p"/>
+                        <segue destination="CIw-h6-TEz" kind="show" identifier="pedeNúmeroDeTelefone" id="DEI-HT-Eyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ie-4i-AaQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="-13"/>
+            <point key="canvasLocation" x="-106" y="157"/>
+        </scene>
+        <!--Validar Password View Controller-->
+        <scene sceneID="sL4-ja-DGk">
+            <objects>
+                <viewController id="7Us-LM-FTK" customClass="ValidarPasswordViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pNB-Gk-4w5"/>
+                        <viewControllerLayoutGuide type="bottom" id="dIN-fY-CvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="euE-zp-Hcn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-iB-itm">
+                                <rect key="frame" x="36" y="40" width="303" height="607"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Insira o código de 6 algarismos presente na SMS que recebeu." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-Rr-fQn">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-pw-Kei">
+                                        <rect key="frame" x="0.0" y="58" width="303" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cyw-6e-C8b"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHp-Hu-OmS" customClass="BotãoAoDispor" customModule="Ao_Dispor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="303" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Iij-24-s0I"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="VALIDAR">
+                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="validarPasswordWithSender:" destination="7Us-LM-FTK" eventType="touchUpInside" id="dam-Af-IOs"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OS7-nG-Rhc">
+                                        <rect key="frame" x="0.0" y="178" width="303" height="57"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBw-zU-eQ6">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Enviar de Novo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="enviarDeNovoWithSender:" destination="7Us-LM-FTK" eventType="touchUpInside" id="iTa-d5-GOL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpt-va-Lc4">
+                                                <rect key="frame" x="0.0" y="24" width="303" height="33"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Não me inscrever agora.">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nãoMeInscreverAgoraWithSender:" destination="7Us-LM-FTK" eventType="touchUpInside" id="QSF-Hz-oR9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="njb-N3-7ZD"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-6j-dsb">
+                                        <rect key="frame" x="0.0" y="245" width="303" height="362"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="uas-lJ-uQD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Hl-iB-itm" firstAttribute="leading" secondItem="euE-zp-Hcn" secondAttribute="leadingMargin" constant="20" id="9bh-5n-CWO"/>
+                            <constraint firstItem="dIN-fY-CvB" firstAttribute="top" secondItem="7Hl-iB-itm" secondAttribute="bottom" constant="20" id="hyG-W6-5Yh"/>
+                            <constraint firstItem="7Hl-iB-itm" firstAttribute="top" secondItem="pNB-Gk-4w5" secondAttribute="bottom" constant="20" id="sVd-xF-bpQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Hl-iB-itm" secondAttribute="trailing" constant="20" id="uVp-01-h5f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enviarDeNovo" destination="fBw-zU-eQ6" id="toZ-Qs-CCe"/>
+                        <outlet property="nãoRegistar" destination="mpt-va-Lc4" id="Xs0-hQ-n11"/>
+                        <outlet property="password" destination="zDS-pw-Kei" id="jYf-pd-L9X"/>
+                        <outlet property="validar" destination="jHp-Hu-OmS" id="SAh-K0-bw0"/>
+                        <segue destination="81T-Xf-RTv" kind="show" identifier="editarPerfil" id="OFp-Nz-tvU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vz-1L-1E8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="-573"/>
+        </scene>
+        <!--Perfil View Controller-->
+        <scene sceneID="VJw-wE-Boq">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="81T-Xf-RTv" customClass="PerfilViewController" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ce5-B6-qJQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="KCF-wY-acC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTt-SR-2r1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZb-q7-b68">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WZb-q7-b68" firstAttribute="width" secondItem="cTt-SR-2r1" secondAttribute="width" id="1oc-gj-Zr5"/>
+                            <constraint firstAttribute="bottom" secondItem="WZb-q7-b68" secondAttribute="bottom" id="2dc-Ai-TZN"/>
+                            <constraint firstItem="WZb-q7-b68" firstAttribute="leading" secondItem="cTt-SR-2r1" secondAttribute="leading" id="Ni5-Bm-d4k"/>
+                            <constraint firstItem="WZb-q7-b68" firstAttribute="height" secondItem="cTt-SR-2r1" secondAttribute="height" id="gvl-hP-9ZJ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fC6-O6-xOR"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomHeight" destination="2dc-Ai-TZN" id="t6l-MC-kym"/>
+                        <outlet property="outerView" destination="WZb-q7-b68" id="wyN-57-irn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-Wb-lzq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="976"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Inscrições" width="373" height="504"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wc5-ax-sFR"/>
+        <segue reference="OFp-Nz-tvU"/>
+    </inferredMetricsTieBreakers>
 </document>

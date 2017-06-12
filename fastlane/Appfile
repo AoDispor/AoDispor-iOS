@@ -1,4 +1,5 @@
-app_identifier "pt.aodispor.ios" # The bundle identifier of your app
+#app_identifier "pt.aodispor.ios" # The bundle identifier of your app
+app_identifier "pt.aodispor.Ao-Dispor" # The bundle identifier of your app
 apple_id "andre@lamelas.org" # Your Apple email address
 
 team_id "6JZ2JQ2YB8" # Developer Portal Team ID

@@ -11,8 +11,7 @@ import Siesta
 
 /// Add to a reponse pipeline to wrap JSON responses with SwiftyJSON
 let SwiftyJSONTransformer =
-    ResponseContentTransformer(transformErrors: true)
-    { JSON($0.content as AnyObject) }
+    ResponseContentTransformer(transformErrors: true) { JSON($0.content as AnyObject) }
 
 /// Provides a .json convenience accessor to get raw JSON from resources
 extension TypedContentAccessors {
@@ -20,4 +19,3 @@ extension TypedContentAccessors {
         return typedContent(ifNone: JSON.null)
     }
 }
-

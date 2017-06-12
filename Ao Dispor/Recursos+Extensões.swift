@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MessageUI
+import SwiftyButton
 
 extension UIColor {
     //cores do aodispor
@@ -20,24 +21,13 @@ extension UIColor {
      8FBE00 - verde do rate
      */
 
-    static func titleBlue() -> UIColor {
-        return UIColor(red:0.00, green:0.66, blue:0.78, alpha:1.0)
-    }
-
-    static func serviceGreen() -> UIColor {
-        return  UIColor(red:0.56, green:0.75, blue:0.00, alpha:1.0)
-    }
-
-    static func perHourBlue() -> UIColor {
-        return UIColor(red:0.25, green:0.75, blue:0.80, alpha:1.0)
-    }
-
-    static func favoriteYellow() -> UIColor {
-        return UIColor(red:0.96, green:0.93, blue:0.28, alpha:1.0);
-    }
+    static var titleBlue: UIColor { return UIColor(red:0.00, green:0.66, blue:0.78, alpha:1.0) }
+    static var serviceGreen: UIColor { return  UIColor(red:0.56, green:0.75, blue:0.00, alpha:1.0) }
+    static var perHourBlue: UIColor { return UIColor(red:0.25, green:0.75, blue:0.80, alpha:1.0) }
+    static var favoriteYellow: UIColor { return UIColor(red:0.96, green:0.93, blue:0.28, alpha:1.0) }
 }
 
-class MarginLabel:UILabel {
+class MarginLabel: UILabel {
     var insetTop: CGFloat = 0
     var insetLeft: CGFloat = 5
     var insetBottom: CGFloat = 0
@@ -57,26 +47,15 @@ extension String {
         return self.data(using: String.Encoding.utf8)! as NSData
     }
 
-    /*var encodedSHA256: String {
-     let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH))
-     CC_SHA256(self.asData().bytes, CC_LONG(self.asData().length), UnsafeMutablePointer(res!.mutableBytes))
-     let nsString = NSString(data: res!, encoding: NSUTF8StringEncoding)
-     return "\(nsString)"
-     }*/
-
     func getMutableStringWithHighlightedText() -> NSMutableAttributedString {
         let hightlightedString = NSMutableAttributedString(string: self)
 
         let range = (self as NSString).range(of: "<highlight>(.*?)</highlight>", options:.regularExpression)
         hightlightedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellow, range: range)
-        hightlightedString.mutableString.replaceOccurrences(of: "<highlight>", with: "", options: [], range: NSMakeRange(0, hightlightedString.mutableString.length))
-        hightlightedString.mutableString.replaceOccurrences(of: "</highlight>", with: "", options: [], range: NSMakeRange(0, hightlightedString.mutableString.length))
+        hightlightedString.mutableString.replaceOccurrences(of: "<highlight>", with: "", options: [], range: NSRange(location: 0, length: hightlightedString.mutableString.length))
+        hightlightedString.mutableString.replaceOccurrences(of: "</highlight>", with: "", options: [], range: NSRange(location: 0, length: hightlightedString.mutableString.length))
 
         return hightlightedString
-    }
-
-    var base64Encoded: String {
-        return Data(utf8).base64EncodedString()
     }
 }
 
@@ -115,19 +94,19 @@ public typealias PXColor = UIColor
 
 extension PXColor {
 
-    func lighter(amount : CGFloat = 0.25) -> PXColor {
+    func lighter(amount: CGFloat = 0.25) -> PXColor {
         return hueColorWithBrightnessAmount(amount: 1 + amount)
     }
 
-    func darker(amount : CGFloat = 0.25) -> PXColor {
+    func darker(amount: CGFloat = 0.25) -> PXColor {
         return hueColorWithBrightnessAmount(amount: 1 - amount)
     }
 
     private func hueColorWithBrightnessAmount(amount: CGFloat) -> PXColor {
-        var hue         : CGFloat = 0
-        var saturation  : CGFloat = 0
-        var brightness  : CGFloat = 0
-        var alpha       : CGFloat = 0
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
 
         if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
             return PXColor( hue: hue,
@@ -141,7 +120,7 @@ extension PXColor {
 }
 
 extension UIButton {
-    func animateBackgroundToColor(color:UIColor, duration: TimeInterval) {
+    func animateBackgroundToColor(color: UIColor, duration: TimeInterval) {
         let originalBackgroundColor = self.backgroundColor
         self.backgroundColor = color
         UIView.animate(withDuration: duration) {
@@ -184,3 +163,22 @@ extension UIButton {
  return croppedImage
  }
  }*/
+
+class BotãoAoDispor: PressableButton {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        definirEstilo()
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        definirEstilo()
+    }
+
+    func definirEstilo() {
+        self.colors = .init(
+            button: UIColor.white,
+            shadow: UIColor(red:0.87, green:0.87, blue:0.87, alpha:1.0)
+        )
+    }
+}

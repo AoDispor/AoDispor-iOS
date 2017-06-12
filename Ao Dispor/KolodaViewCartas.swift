@@ -9,17 +9,28 @@
 import UIKit
 import Koloda
 
-let defaultTopOffset:CGFloat = 0
-let defaultHorizontalOffset:CGFloat = 20
-let defaultHeightRatio:CGFloat = 1.6
+let defaultTopOffset: CGFloat = 0
+let defaultHorizontalOffset: CGFloat = 20
+let defaultHeightRatio: CGFloat = 1.6
 
 class KolodaViewCartas: KolodaView {
-     override func frameForCard(at index: Int) -> CGRect {
-        let topOffset:CGFloat = defaultTopOffset
-        let xOffset:CGFloat = defaultHorizontalOffset
+
+    static func frameParaCartaZero(para vista: UIView) -> CGRect {
+        let topOffset: CGFloat = defaultTopOffset + 44 + 64
+        let xOffset: CGFloat = defaultHorizontalOffset
+        let width = vista.frame.width - 2 * defaultHorizontalOffset
+        let height = width * defaultHeightRatio
+        let yOffset: CGFloat = topOffset
+
+        return CGRect(x: xOffset, y: yOffset, width: width, height: height)
+    }
+
+    override func frameForCard(at index: Int) -> CGRect {
+        let topOffset: CGFloat = defaultTopOffset
+        let xOffset: CGFloat = defaultHorizontalOffset
         let width = self.frame.width - 2 * defaultHorizontalOffset
         let height = width * defaultHeightRatio
-        let yOffset:CGFloat = topOffset
+        let yOffset: CGFloat = topOffset
 
         switch index {
         case 1000:
@@ -37,4 +48,3 @@ class KolodaViewCartas: KolodaView {
         }
     }
 }
-
