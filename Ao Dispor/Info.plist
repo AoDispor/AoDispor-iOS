@@ -55,6 +55,8 @@
 	<string>Profissionais perto de si</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Aceder às suas fotografias</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Aceder à sua câmara fotográfica.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DancingScript-Regular.otf</string>

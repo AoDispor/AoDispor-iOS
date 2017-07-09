@@ -85,17 +85,35 @@ class AoDisporAPISiesta {
         return service.resource("/users/register").request(.post, json: ["telephone": telefone])
     }
 
-    // MARK: Utilizador
-    func meuUtilizador() -> Request {
-        return service.resource("/users/me").request(.get)
+    // MARK: Resources (Siesta)
+    func meuUtilizadorResource() -> Resource {
+        return service.resource("/users/me")
     }
 
-    func alterarMeuCódigoPostal(cp4: String, cp3: String) -> Request {
-        return service.resource("/users/me").request(.post, json: ["postal_code": "\(cp4)-\(cp3)"])
+    func meuPerfilResource() -> Resource {
+        return service.resource("/users/me/profile")
+    }
+
+    // MARK: Utilizador
+    func meuUtilizador() -> Request {
+        return self.meuUtilizadorResource().request(.get)
     }
 
     func meuPerfil() -> Request {
-        return service.resource("/users/me/profile").request(.get)
+        return self.meuPerfilResource().request(.get)
+    }
+
+    func alterarMeuCódigoPostal(cp4: String, cp3: String) -> Request {
+        return self.meuUtilizadorResource().request(.post, json: ["postal_code": "\(cp4)-\(cp3)"])
+    }
+
+    func actualizarPerfil(parâmetros: [String:String]) -> Request {
+        return self.meuPerfilResource().request(.post, json: parâmetros)
+    }
+
+    func uploadAvatar(imagem: Data) -> Request {
+        return self.meuPerfilResource().child("avatar").request(.put, data: imagem, contentType: "application/octet-stream")
+
     }
 
     // MARK: Perfis
@@ -172,7 +190,7 @@ class AoDisporAPISiesta {
         return basicAuthHeader != nil
     }
 
-    private func gerarAuthString(telefone:String, password: String) -> String {
+    private func gerarAuthString(telefone: String, password: String) -> String {
         // NOTE: veio direitinho do exemplo do Siesta
         if let auth = "\(telefone):\(password)".data(using: String.Encoding.ascii) {
             return "Basic \(auth.base64EncodedString())"

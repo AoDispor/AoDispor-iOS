@@ -13,8 +13,8 @@ import SwiftRichString
 class CartãoProfissionalEditável: Cartão {
     var profissional: Profissional?
 
-    @IBOutlet weak var localidade: UILabel!
-    @IBOutlet weak var preço: UILabel!
+    @IBOutlet weak var localidade: UITextField!
+    @IBOutlet weak var preço: UITextField!
     @IBOutlet weak var avatar: RemoteImageView! {
         didSet {
             self.avatar.contentMode = .scaleAspectFill
@@ -36,11 +36,14 @@ class CartãoProfissionalEditável: Cartão {
     func preencherComDados(profissional: Profissional) {
         self.profissional = profissional
 
-        self.avatar.imageURL = profissional.endereçoDoAvatar
+        if !profissional.endereçoDoAvatar.isEmpty {
+            self.avatar.imageURL = profissional.endereçoDoAvatar
+        }
 
         self.profissão.text = profissional.profissão
         self.nomeCompleto.text = profissional.nomeCompleto
-        self.descrição?.textView.text = profissional.descriçãoHTML
+        self.descrição?.textView.text = profissional.descrição.html2String
+        self.descrição?.hidePlaceholderIfText()
 
         self.localidade?.text = profissional.localidade
 

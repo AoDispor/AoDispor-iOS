@@ -43,6 +43,7 @@ class ValidarPasswordViewController: RegistoViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        AoDisporAPI.perfil = self.profissional!
         if segue.identifier == "editarPerfil" {
             let controller = segue.destination as? PerfilViewController
             controller?.profissional = self.profissional!

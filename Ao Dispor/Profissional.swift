@@ -17,6 +17,7 @@ struct Profissional {
     var unidadeMonetária: String
     var tipoDePreço: String
     var localidade: String
+    let códigoPostal: String?
     var endereçoDoAvatar: String
     var telefone: String
     var distância: Float
@@ -57,6 +58,7 @@ struct Profissional {
         unidadeMonetária = json["currency"].stringValue
         tipoDePreço = json["type"].stringValue
         localidade = json["location"].stringValue
+        códigoPostal = json["postal_code"].string
         endereçoDoAvatar = json["avatar_url"].stringValue
         telefone = json["phone"].stringValue
         distância = json["distance"].floatValue
@@ -64,7 +66,7 @@ struct Profissional {
 }
 
 struct InformaçõesDePreço {
-    var tipo: String?
+    var tipo: String? = "H"
     var valor: Int = 0
     var unidadeMonetária: String = "EUR"
 

@@ -18,6 +18,8 @@
 		0D424EF11ECCBB2E00244490 /* CódigoPostal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D424EF01ECCBB2E00244490 /* CódigoPostal.swift */; };
 		0D54C9981EDF488B0031B467 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */; };
 		0D54C99A1EDF4C870031B467 /* Quartel General do Ao Dispor.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */; };
+		0D60B2E51EEEE631005BFE25 /* SelectorCódigoPostal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60B2E41EEEE631005BFE25 /* SelectorCódigoPostal.swift */; };
+		0D60B2E81EEF0FAC005BFE25 /* PerfilSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60B2E71EEF0FAC005BFE25 /* PerfilSuperViewController.swift */; };
 		0D6DFDE21ED5CB0000879229 /* CartãoProfissional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE11ED5CB0000879229 /* CartãoProfissional.swift */; };
 		0D6DFDE51ED5CBA800879229 /* DancingScript-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE41ED5CBA800879229 /* DancingScript-Regular.otf */; };
 		0D6DFDE81ED5E14D00879229 /* KolodaViewCartas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */; };
@@ -40,6 +42,7 @@
 		0DD9C1571EE06A8E0013CA99 /* CartãoTextoImagem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */; };
 		0DD9C1591EE08FE60013CA99 /* CartãoTextoImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */; };
 		0DD9C15B1EE0C2570013CA99 /* Cartão.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9C15A1EE0C2570013CA99 /* Cartão.swift */; };
+		0DDB0A411EF05E04001E77FA /* EditorPreço.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB0A401EF05E04001E77FA /* EditorPreço.swift */; };
 		0DED72BA1EE74C170094D063 /* BemVindoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72B91EE74C170094D063 /* BemVindoViewController.swift */; };
 		0DED72BC1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72BB1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift */; };
 		0DED72BE1EE74C4B0094D063 /* ValidarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED72BD1EE74C4B0094D063 /* ValidarPasswordViewController.swift */; };
@@ -78,6 +81,8 @@
 		0D424EF01ECCBB2E00244490 /* CódigoPostal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CódigoPostal.swift"; path = "Ao Dispor/CódigoPostal.swift"; sourceTree = "<group>"; };
 		0D54C9971EDF488B0031B467 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0D54C9991EDF4C870031B467 /* Quartel General do Ao Dispor.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Quartel General do Ao Dispor.gpx"; sourceTree = "<group>"; };
+		0D60B2E41EEEE631005BFE25 /* SelectorCódigoPostal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectorCódigoPostal.swift"; sourceTree = "<group>"; };
+		0D60B2E71EEF0FAC005BFE25 /* PerfilSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilSuperViewController.swift; sourceTree = "<group>"; };
 		0D6DFDE11ED5CB0000879229 /* CartãoProfissional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoProfissional.swift"; sourceTree = "<group>"; };
 		0D6DFDE41ED5CBA800879229 /* DancingScript-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.otf"; sourceTree = "<group>"; };
 		0D6DFDE71ED5E14D00879229 /* KolodaViewCartas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaViewCartas.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		0DD9C1561EE06A8E0013CA99 /* CartãoTextoImagem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CartãoTextoImagem.xib"; sourceTree = "<group>"; };
 		0DD9C1581EE08FE60013CA99 /* CartãoTextoImagem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CartãoTextoImagem.swift"; sourceTree = "<group>"; };
 		0DD9C15A1EE0C2570013CA99 /* Cartão.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cartão.swift"; sourceTree = "<group>"; };
+		0DDB0A401EF05E04001E77FA /* EditorPreço.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorPreço.swift"; sourceTree = "<group>"; };
 		0DED72B91EE74C170094D063 /* BemVindoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BemVindoViewController.swift; sourceTree = "<group>"; };
 		0DED72BB1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NúmeroDeTelefoneViewController.swift"; sourceTree = "<group>"; };
 		0DED72BD1EE74C4B0094D063 /* ValidarPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidarPasswordViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +176,17 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		0D60B2E61EEF0DBA005BFE25 /* Editar Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				0D60B2E71EEF0FAC005BFE25 /* PerfilSuperViewController.swift */,
+				0D87BE081EE5546700C7C83D /* PerfilViewController.swift */,
+				0D60B2E41EEEE631005BFE25 /* SelectorCódigoPostal.swift */,
+				0DDB0A401EF05E04001E77FA /* EditorPreço.swift */,
+			);
+			name = "Editar Perfil";
+			sourceTree = "<group>";
+		};
 		0D6DFDE31ED5CB0400879229 /* Cartões */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +244,7 @@
 				0DD63AE21ECA1BEA00AF4DC7 /* AppDelegate.swift */,
 				0DED72BF1EE74C750094D063 /* Onboarding */,
 				0DD63AE41ECA1BEA00AF4DC7 /* CardStackViewController.swift */,
-				0D87BE081EE5546700C7C83D /* PerfilViewController.swift */,
+				0D60B2E61EEF0DBA005BFE25 /* Editar Perfil */,
 				0D6DFDE31ED5CB0400879229 /* Cartões */,
 				0D424EED1ECCADFD00244490 /* Modelos */,
 				0D424EE11ECC99B000244490 /* AoDisporAPI.swift */,
@@ -645,6 +662,7 @@
 				0DD63AE51ECA1BEA00AF4DC7 /* CardStackViewController.swift in Sources */,
 				0D2054EB1EE5DDE200816FC1 /* CartãoProfissionalEditável.swift in Sources */,
 				0D2054E41EE5CFA400816FC1 /* PlaceholderUITextView.swift in Sources */,
+				0D60B2E81EEF0FAC005BFE25 /* PerfilSuperViewController.swift in Sources */,
 				0D424EF11ECCBB2E00244490 /* CódigoPostal.swift in Sources */,
 				0D6DFDF61ED5F78C00879229 /* Paginação.swift in Sources */,
 				0DED72BA1EE74C170094D063 /* BemVindoViewController.swift in Sources */,
@@ -659,7 +677,9 @@
 				0D424EEF1ECCAE1300244490 /* Utilizador.swift in Sources */,
 				0D424EE41ECC9B8600244490 /* Siesta+SwiftyJSON.swift in Sources */,
 				0D424EE21ECC99B000244490 /* AoDisporAPI.swift in Sources */,
+				0D60B2E51EEEE631005BFE25 /* SelectorCódigoPostal.swift in Sources */,
 				0DB20EBB1ED484B3008FA92C /* Profissional.swift in Sources */,
+				0DDB0A411EF05E04001E77FA /* EditorPreço.swift in Sources */,
 				0DED72BC1EE74C340094D063 /* NúmeroDeTelefoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

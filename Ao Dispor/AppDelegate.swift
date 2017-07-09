@@ -32,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !AoDisporAPI.estáAutenticado {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "registoVC")
-            //self.window?.makeKeyAndVisible()
-            //self.window?.rootViewController?.present(viewController, animated: true, completion: nil)
             let navigationController = self.window?.rootViewController as! UINavigationController
             navigationController.pushViewController(viewController, animated: false)
         }

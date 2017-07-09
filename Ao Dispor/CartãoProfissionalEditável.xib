@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,18 +26,18 @@
                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Ahi-8y-qdV">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="A sua localização" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73X-BS-Afa">
-                                    <rect key="frame" x="0.0" y="0.0" width="257.5" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A sua localização" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRS-oL-fit">
+                                    <rect key="frame" x="0.0" y="0.0" width="253.5" height="30"/>
+                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="O seu preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51o-uo-6uv">
-                                    <rect key="frame" x="257.5" y="0.0" width="87.5" height="30"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="O seu preço" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tqn-dc-dBL">
+                                    <rect key="frame" x="253.5" y="0.0" width="91.5" height="30"/>
+                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="8hg-WP-h38"/>
@@ -46,7 +46,7 @@
                         <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="mXJ-Yp-y9b">
                             <rect key="frame" x="0.0" y="30" width="345" height="241"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="57D-rK-q0a">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="57D-rK-q0a" customClass="RemoteImageView" customModule="Siesta">
                                     <rect key="frame" x="57" y="5" width="231" height="231"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="57D-rK-q0a" secondAttribute="height" id="s41-1o-il1"/>
@@ -62,13 +62,13 @@
                                 <constraint firstItem="57D-rK-q0a" firstAttribute="leading" secondItem="mXJ-Yp-y9b" secondAttribute="leading" constant="57" id="jE1-Hk-fPL"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A sua profissão" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qs7-1q-1yj">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="O seu nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBg-px-mpn">
                             <rect key="frame" x="0.0" y="271" width="345" height="44"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="O seu nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBg-px-mpn">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A sua profissão" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qs7-1q-1yj">
                             <rect key="frame" x="0.0" y="315" width="345" height="32"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
@@ -97,8 +97,9 @@
             <connections>
                 <outlet property="avatar" destination="57D-rK-q0a" id="iv4-GB-CgL"/>
                 <outlet property="descrição" destination="8EO-8r-BOG" id="fn2-mG-at7"/>
-                <outlet property="localidade" destination="73X-BS-Afa" id="WrP-pj-ss4"/>
-                <outlet property="preço" destination="51o-uo-6uv" id="UmM-zI-sxN"/>
+                <outlet property="localidade" destination="tRS-oL-fit" id="TIU-aH-gXe"/>
+                <outlet property="nomeCompleto" destination="hBg-px-mpn" id="a39-QD-geQ"/>
+                <outlet property="preço" destination="Tqn-dc-dBL" id="OcL-IW-wE4"/>
                 <outlet property="profissão" destination="qs7-1q-1yj" id="tkT-kh-PYn"/>
             </connections>
         </view>

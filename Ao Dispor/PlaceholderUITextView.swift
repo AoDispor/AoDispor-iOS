@@ -51,6 +51,10 @@ import UIKit
     }
 
     func textViewDidChange(_ textView: UITextView) {
+        self.hidePlaceholderIfText()
+    }
+
+    func hidePlaceholderIfText() {
         if !textView.hasText {
             labelPlaceholder?.isHidden = false
         } else {

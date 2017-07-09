@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O9F-dq-PfF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O9F-dq-PfF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,16 +93,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-7t-7iC">
-                                <rect key="frame" x="36" y="40" width="303" height="607"/>
+                                <rect key="frame" x="36" y="84" width="303" height="563"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Para o podermos inscrever precisamos de lhe enviar uma SMS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8an-gk-EJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="72"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="61"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jmt-VT-mQl" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
-                                        <rect key="frame" x="0.0" y="82" width="303" height="60"/>
+                                        <rect key="frame" x="0.0" y="71" width="303" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="kZl-z0-0Yh"/>
                                         </constraints>
@@ -111,7 +111,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk5-cn-DPq" customClass="BotãoAoDispor" customModule="Ao_Dispor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="303" height="40"/>
+                                        <rect key="frame" x="0.0" y="141" width="303" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ES9-Vq-KtB"/>
@@ -126,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf0-xf-eNQ">
-                                        <rect key="frame" x="0.0" y="202" width="303" height="33"/>
+                                        <rect key="frame" x="0.0" y="191" width="303" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Não me inscrever agora.">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,7 +136,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="orC-Ud-Z8Y">
-                                        <rect key="frame" x="0.0" y="245" width="303" height="362"/>
+                                        <rect key="frame" x="0.0" y="201" width="303" height="362"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -247,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-iB-itm">
-                                <rect key="frame" x="36" y="40" width="303" height="607"/>
+                                <rect key="frame" x="36" y="84" width="303" height="563"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Insira o código de 6 algarismos presente na SMS que recebeu." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-Rr-fQn">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="48"/>
@@ -280,10 +280,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OS7-nG-Rhc">
-                                        <rect key="frame" x="0.0" y="178" width="303" height="57"/>
+                                        <rect key="frame" x="0.0" y="178" width="303" height="13"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBw-zU-eQ6">
-                                                <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="0.0"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="Enviar de Novo">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,7 +293,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpt-va-Lc4">
-                                                <rect key="frame" x="0.0" y="24" width="303" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="13"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="Não me inscrever agora.">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,12 +303,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="njb-N3-7ZD"/>
-                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-6j-dsb">
-                                        <rect key="frame" x="0.0" y="245" width="303" height="362"/>
+                                        <rect key="frame" x="0.0" y="201" width="303" height="362"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -320,8 +317,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Hl-iB-itm" firstAttribute="leading" secondItem="euE-zp-Hcn" secondAttribute="leadingMargin" constant="20" id="9bh-5n-CWO"/>
-                            <constraint firstItem="dIN-fY-CvB" firstAttribute="top" secondItem="7Hl-iB-itm" secondAttribute="bottom" constant="20" id="hyG-W6-5Yh"/>
-                            <constraint firstItem="7Hl-iB-itm" firstAttribute="top" secondItem="pNB-Gk-4w5" secondAttribute="bottom" constant="20" id="sVd-xF-bpQ"/>
+                            <constraint firstItem="7Hl-iB-itm" firstAttribute="top" secondItem="pNB-Gk-4w5" secondAttribute="bottom" constant="20" id="MnU-Pr-PQt"/>
+                            <constraint firstItem="dIN-fY-CvB" firstAttribute="top" secondItem="7Hl-iB-itm" secondAttribute="bottom" constant="20" id="Xgr-w7-aF7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Hl-iB-itm" secondAttribute="trailing" constant="20" id="uVp-01-h5f"/>
                         </constraints>
                     </view>
@@ -369,18 +366,155 @@
                     <connections>
                         <outlet property="bottomHeight" destination="2dc-Ai-TZN" id="t6l-MC-kym"/>
                         <outlet property="outerView" destination="WZb-q7-b68" id="wyN-57-irn"/>
+                        <segue destination="mqN-sN-cQd" kind="show" identifier="mostraSelectorCódigoPostal" id="abn-RF-Bqx"/>
+                        <segue destination="u4X-Nu-9yy" kind="show" identifier="mostraEditorPreço" id="k93-ly-fv9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-Wb-lzq" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="976"/>
         </scene>
+        <!--Selector Código Postal-->
+        <scene sceneID="OKw-av-QpD">
+            <objects>
+                <viewController id="mqN-sN-cQd" customClass="SelectorCódigoPostal" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ye8-SJ-cV6"/>
+                        <viewControllerLayoutGuide type="bottom" id="WIy-4f-8YG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YmW-YX-lVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gS6-fZ-Nyq">
+                                <rect key="frame" x="36" y="74" width="303" height="453"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Insira o seu código postal" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2X-zw-uVx">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0000-000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDs-dl-s9h">
+                                        <rect key="frame" x="0.0" y="30" width="303" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="kKr-w8-abw"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O82-GE-okp">
+                                        <rect key="frame" x="0.0" y="120" width="303" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="waV-vC-3ax"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-8H-PEh">
+                                        <rect key="frame" x="0.0" y="230" width="303" height="223"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="hqw-Yk-Avi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gS6-fZ-Nyq" firstAttribute="top" secondItem="ye8-SJ-cV6" secondAttribute="bottom" constant="10" id="Q0h-dZ-wYU"/>
+                            <constraint firstItem="gS6-fZ-Nyq" firstAttribute="centerX" secondItem="YmW-YX-lVX" secondAttribute="centerX" id="S18-aY-h5j"/>
+                            <constraint firstItem="WIy-4f-8YG" firstAttribute="top" secondItem="gS6-fZ-Nyq" secondAttribute="bottom" constant="140" id="ZM6-HF-cDF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="códigoPostal" destination="jDs-dl-s9h" id="T5o-vs-U20"/>
+                        <outlet property="mensagemInformativa" destination="O82-GE-okp" id="gi2-jj-E9q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyR-Ob-Twf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="1776"/>
+        </scene>
+        <!--Editor Preço-->
+        <scene sceneID="Tph-yc-RZ7">
+            <objects>
+                <viewController id="u4X-Nu-9yy" customClass="EditorPreço" customModule="Ao_Dispor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ndy-bY-KYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="LZH-Tt-lDB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y91-nX-Jgh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-4z-5RI">
+                                <rect key="frame" x="36" y="74" width="303" height="453"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Qual é o seu preço?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-vm-vLM">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000 €" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLs-M9-amv">
+                                        <rect key="frame" x="0.0" y="54" width="303" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="8la-4e-yKX"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="O seu preço é" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIJ-Yx-tEr">
+                                        <rect key="frame" x="0.0" y="144" width="303" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Jn-uM-UKY">
+                                        <rect key="frame" x="0.0" y="198" width="303" height="29"/>
+                                        <segments>
+                                            <segment title="Por Hora"/>
+                                            <segment title="Por Dia"/>
+                                            <segment title="Por Serviço"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="Jvb-4b-cJq">
+                                        <rect key="frame" x="0.0" y="256" width="303" height="197"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="yUe-nW-7GL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LZH-Tt-lDB" firstAttribute="top" secondItem="gJl-4z-5RI" secondAttribute="bottom" constant="140" id="EVc-PO-cfF"/>
+                            <constraint firstItem="gJl-4z-5RI" firstAttribute="centerX" secondItem="y91-nX-Jgh" secondAttribute="centerX" id="ZXz-r9-glE"/>
+                            <constraint firstItem="gJl-4z-5RI" firstAttribute="top" secondItem="Ndy-bY-KYI" secondAttribute="bottom" constant="10" id="guC-Yx-RtG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="preçoTexto" destination="VLs-M9-amv" id="w8S-UL-pRy"/>
+                        <outlet property="tipoDePreço" destination="1Jn-uM-UKY" id="pV9-F3-f8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8p-oo-4g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="1777"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Inscrições" width="373" height="504"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wc5-ax-sFR"/>
         <segue reference="OFp-Nz-tvU"/>
+        <segue reference="DEI-HT-Eyk"/>
     </inferredMetricsTieBreakers>
 </document>

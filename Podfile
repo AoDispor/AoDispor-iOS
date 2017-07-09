@@ -33,5 +33,6 @@ target 'Ao Dispor' do
   pod 'PhoneNumberKit', '~> 1.2'
   pod 'Locksmith'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
-  pod 'PopupKit'
+  pod 'InputMask'
+  pod 'ImagePicker'
 end

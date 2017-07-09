@@ -125,7 +125,7 @@ class CardStackViewController: UIViewController {
             parâmetrosLocais["lat"] = String(location.coordinate.latitude)
             parâmetrosLocais["lon"] = String(location.coordinate.longitude)
             self.executarPesquisa(parâmetrosLocais)
-        }) { (_, _, error) -> (Void) in
+        }) { (_, _, error) -> Void in
             print("Location monitoring failed due to an error \(error)")
             self.executarPesquisa(parâmetrosLocais)
         }
