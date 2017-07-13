@@ -27,13 +27,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A sua localização" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRS-oL-fit">
-                                    <rect key="frame" x="0.0" y="0.0" width="253.5" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="204" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="O seu preço" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tqn-dc-dBL">
-                                    <rect key="frame" x="253.5" y="0.0" width="91.5" height="30"/>
+                                    <rect key="frame" x="204" y="0.0" width="141" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="25"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -63,13 +63,13 @@
                             </constraints>
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="O seu nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBg-px-mpn">
-                            <rect key="frame" x="0.0" y="271" width="345" height="44"/>
+                            <rect key="frame" x="0.0" y="271" width="345" height="42"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A sua profissão" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qs7-1q-1yj">
-                            <rect key="frame" x="0.0" y="315" width="345" height="32"/>
+                            <rect key="frame" x="0.0" y="313" width="345" height="34"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="36"/>
                             <textInputTraits key="textInputTraits"/>

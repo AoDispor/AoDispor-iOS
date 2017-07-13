@@ -10,10 +10,17 @@ import UIKit
 import Siesta
 import ImagePicker
 
+enum VindoDe {
+    case registo
+    case pilha
+}
+
 class PerfilViewController: PerfilSuperViewController {
     var profissional: Profissional?
 
     var cartãoEditável: CartãoProfissionalEditável?
+
+    var vindoDe: VindoDe?
 
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
@@ -72,8 +79,21 @@ class PerfilViewController: PerfilSuperViewController {
     }
 
     func fazerLogOff() {
-        AoDisporAPI.sair()
-        self.voltar()
+        let alerta = UIAlertController(title: "Fazer log off", message: "Tem a certeza que deseja fazer logoff?", preferredStyle: .alert)
+
+        let cancelar = UIAlertAction(title: "Cancelar", style: .cancel) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alerta.addAction(cancelar)
+
+        let acçãoDoAlerta = UIAlertAction(title: "Sim", style: .destructive) { _ in
+            self.dismiss(animated: true, completion: nil)
+            AoDisporAPI.sair()
+            self.voltar()
+        }
+        alerta.addAction(acçãoDoAlerta)
+
+        self.present(alerta, animated: true, completion: nil)
     }
 
     func mostraSelectorAvatar() {
@@ -107,6 +127,15 @@ class PerfilViewController: PerfilSuperViewController {
                 break
             default:
                 break
+        }
+    }
+
+    override func voltar() {
+        switch self.vindoDe! {
+            case .registo:
+                self.navigationController?.popToRootViewController(animated: true)
+            case .pilha:
+                super.voltar()
         }
     }
 
@@ -167,14 +196,24 @@ class PerfilViewController: PerfilSuperViewController {
             print("Perfil actualizado com sucesso")
         }
     }
+
+    func preencheCartão(_ resource: Resource) {
+        self.profissional = resource.typedContent()! as Profissional
+        self.cartãoEditável?.preencherComDados(profissional: self.profissional!)
+    }
 }
 
 extension PerfilViewController: ResourceObserver {
     func resourceChanged(_ resource: Resource, event: ResourceEvent) {
-        if case .newData = event {
-            //AoDisporAPI.perfil = resource.typedContent()! as Profissional
-            self.profissional = resource.typedContent()! as Profissional
-            self.cartãoEditável?.preencherComDados(profissional: self.profissional!)
+        switch event {
+        case .newData(let value):
+            if value != .wipe {
+                self.preencheCartão(resource)
+            }
+        case .notModified:
+            self.preencheCartão(resource)
+        default:
+            return
         }
     }
 }

@@ -194,6 +194,13 @@ class CardStackViewController: UIViewController {
     func recognizeTap() {
         self.kolodaView.delegate?.koloda(kolodaView, didSelectCardAt: self.kolodaView.currentCardIndex)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mostraPerfil" {
+            let controller = segue.destination as? PerfilViewController
+            controller?.vindoDe = .pilha
+        }
+    }
 }
 
 // MARK: - KolodaViewDataSource

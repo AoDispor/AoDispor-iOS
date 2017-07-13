@@ -46,6 +46,7 @@ class ValidarPasswordViewController: RegistoViewController {
 //        AoDisporAPI.perfil = self.profissional!
         if segue.identifier == "editarPerfil" {
             let controller = segue.destination as? PerfilViewController
+            controller?.vindoDe = .registo
             controller?.profissional = self.profissional!
         }
     }
